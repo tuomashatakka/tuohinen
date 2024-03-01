@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export function Background ({ image }) {
+export function Background ({ image }: { image: string }) {
   const style = {
     backgroundImage: `url(${image})`
   }
@@ -8,7 +8,7 @@ export function Background ({ image }) {
   return <div className='background-image' style={style} />
 }
 
-export default function BackgroundImage ({ alt, image }) {
+export default function BackgroundImage ({ alt, image }: { alt: string, image: string }) {
   return <div className='absolute -z-10'>
     <Image
       alt={alt}
