@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { PropsWithChildren } from 'react'
+import { classNameWithFont } from '@/theme/fonts'
 
-import './globals.css'
+import Navigation from './_components/Navigation'
+import '@/styles/globals.css'
 
-const inter = Inter({ subsets: [ 'latin' ]})
 
 interface Meta extends Metadata {
   title: string
@@ -16,9 +16,16 @@ export const metadata: Meta = {
 }
 
 
+const classNameWithInter = classNameWithFont('inter')
+
 export default function RootLayout ({ children }: RootLayoutProps) {
+  const bodyClassName = classNameWithInter()
+
   return <html lang='en'>
-    <body className={inter.className}>{ children }</body>
+    <body className={bodyClassName}>
+      <Navigation />
+      { children }
+    </body>
   </html>
 }
 
