@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
-import { classNameWithFont } from '@/theme/fonts'
 
 import Navigation from './_components/Navigation'
+import { classNameWithFont } from '@/theme/fonts'
+import { Background } from '@/components/Image'
+import { Title } from '@/components/Type'
+
 import '@/styles/globals.css'
+
+import bannerImage from '@/public/tuohinen-hero.jpg'
 
 
 interface Meta extends Metadata {
@@ -23,6 +28,10 @@ export default function RootLayout ({ children }: RootLayoutProps) {
 
   return <html lang='en'>
     <body className={bodyClassName}>
+      <section className='banner'>
+        <Background image={bannerImage.src} />
+        <Title>{metadata.title}</Title>
+      </section>
       <Navigation />
       { children }
     </body>
