@@ -3,15 +3,15 @@ import { PropsWithChildren } from 'react'
 
 type TitlePropsType = PropsWithChildren<{ className?: string }>
 
-const classNameWithAntonioFont = classNameWithFont('antonio')
+const classNameWith = classNameWithFont('epilogue')
 
 export const Title = ({ children, className }: Readonly<TitlePropsType>) =>
-  <h1 className={classNameWithAntonioFont('heading', className)}>
+  <h1 className={classNameWith('heading', className)}>
     {children}
   </h1>
 
 export const Subtitle = ({ children, className }: Readonly<TitlePropsType>) =>
-  <p className={classNameWithAntonioFont('subheading', className)}>
+  <p className={classNameWith('subheading', className)}>
     {children}
   </p>
 

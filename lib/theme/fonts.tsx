@@ -1,7 +1,11 @@
 import toClassNames, { Value } from 'classnames'
-import { Inter, Lobster_Two, Gluten } from 'next/font/google'
+import { Inter, Lobster_Two, Gluten,  Epilogue } from 'next/font/google'
 
 const inter = Inter({
+  subsets:  [ 'latin' ]
+})
+
+const epilogue = Epilogue({
   subsets:  [ 'latin' ]
 })
 
@@ -19,6 +23,7 @@ const fonts = {
   inter,
   antonio,
   lobster,
+  epilogue,
 }
 
 export type FontName = keyof typeof fonts

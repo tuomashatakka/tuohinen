@@ -3,6 +3,14 @@ import { metadata } from './layout'
 export default function Home () {
 
   return <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+
+    <section className='hero'>
+
+    </section>
+
+    <div className='card'>
+
+    </div>
     <div className='z-10 max-w-5xl w-full items-center justify-between'>
       <h1>{metadata.title}</h1>
       <p>{metadata.description}</p>

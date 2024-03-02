@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image, { ImageProps, StaticImageData } from 'next/image'
+
 
 export function Background ({ image }: { image: string }) {
   const style = {
@@ -8,27 +9,21 @@ export function Background ({ image }: { image: string }) {
   return <div className='background-image' style={style} />
 }
 
-export default function BackgroundImage ({ alt, image }: { alt: string, image: string }) {
-  return <div className='absolute -z-10'>
-    <Image
-      alt={alt}
-      src={image}
-      layout='fill'
-      objectFit='cover'
-      quality={100}
-    />
-  </div>
 
-  //   <Image
-  //     alt={alt}
-  //     src={image}
-  //     placeholder='blur'
-  //     quality={100}
-  //     fill
-  //     sizes='100vw'
-  //     style={{
-  //       objectFit: 'cover',
-  //     }}
-  //   />
-  // )
+export default function BackgroundImage ({ alt, image, ...props }: BackgroundImagePropTypes) {
+  const { src, ...attrs } = props
+  return <Image
+    alt={alt || ''}
+    src={image.src || src}
+    quality={100}
+    {...attrs} />
+}
+
+BackgroundImage.defaultProps = {
+  alt: '',
+  src: null,
+}
+
+type BackgroundImagePropTypes = ImageProps & {
+  image: StaticImageData
 }

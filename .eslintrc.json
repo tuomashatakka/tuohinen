@@ -49,7 +49,7 @@
     "jsx-quotes":             [ 1, "prefer-single" ],
     "react/jsx-uses-vars":      2,
     "react/jsx-uses-react":     2,
-    "react/jsx-closing-bracket-location": [ 1, { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }],
+    "react/jsx-closing-bracket-location": [ 1, { "selfClosing": "after-props", "nonEmpty": "after-props" }],
     "react/jsx-wrap-multilines": [ 2, {
       "declaration": false,
       "assignment": false,
