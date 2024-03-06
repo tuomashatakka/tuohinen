@@ -7,12 +7,8 @@ import { Subtitle, Title } from '@/components/Type'
 
 import '@/styles/globals.css'
 
-import bannerImage from '@/public/tuohinen-hero.jpg'
-import bannerImage2 from '@/public/tuohinen-hero-3.jpg'
-import bannerImage3 from '@/public/tuohinen-hero-2.jpg'
 import heroImage from '@/public/tuohinen-39.jpg'
 import logoImage from '@/public/tuohinen-logoLogo-OG.png'
-import CarouselComponent from '@/lib/components/Carousel'
 import Image from '@/lib/components/Image'
 
 
@@ -28,6 +24,7 @@ export const metadata: Meta = {
 
 const classNameWithInter = classNameWithFont('inter')
 
+
 export default function RootLayout ({ children }: RootLayoutProps) {
   const bodyClassName = classNameWithInter()
 
@@ -36,32 +33,34 @@ export default function RootLayout ({ children }: RootLayoutProps) {
 
       <section className='banner min-h-screen'>
         <Image image={ heroImage } alt='background' className='backdrop' />
-
         <header>
-          <Image image={ logoImage } alt='Tuohinen logo' width='96' className='logo' />
+          <Image image={ logoImage } width={96} alt='Tuohinen logo' className='logo' />
           <div>
-            <Title>Tuohinen</Title>
-            <Subtitle>Tuohea ja vuohea ja muuta</Subtitle>
+            <Title>{metadata.title}</Title>
+            <Subtitle>{metadata.description}</Subtitle>
           </div>
         </header>
       </section>
 
+      <Navigation />
+
       <main>
         { children }
       </main>
-
-      <section className='banner'>
-        <CarouselComponent slides={[
-          bannerImage,
-          bannerImage2,
-          bannerImage3,
-        ]} />
-        <Title>{metadata.title}</Title>
-        <Navigation />
-      </section>
 
     </body>
   </html>
 }
 
 type RootLayoutProps = Readonly<PropsWithChildren<{}>>
+
+// const Carousel = () =>
+//   <section className='banner'>
+//     <CarouselComponent slides={[
+//       bannerImage,
+//       bannerImage2,
+//       bannerImage3,
+//     ]} />
+//     <Title>{metadata.title}</Title>
+//     <Navigation />
+//   </section>

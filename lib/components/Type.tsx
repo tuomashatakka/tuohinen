@@ -19,3 +19,8 @@ export const Heading = ({ children }: Readonly<TitlePropsType>) =>
   <h1 className='font-bold text-xl mb-2'>
     { children }
   </h1>
+
+export const Subheading = ({ children }: Readonly<TitlePropsType>) =>
+  <h2 className='font-bold text-lg mb-2'>
+    { children }
+  </h2>

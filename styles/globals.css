@@ -69,11 +69,25 @@ body {
   position:     absolute;
   align-items:  center;
   display:      flex;
-  left:         60%;
-  width:        40%;
+  left:         30%;
+  width:        60%;
   top:          50%;
   gap:          1em;
   transform:    translateY(-50%);
+}
+
+@media screen and (max-width: 960px) {
+
+  .banner {
+    height:     40vh;
+    min-height: 40vh;
+  }
+
+  .banner .backdrop + header {
+    left: 50%;
+    width: 90vw;
+    transform: translate(-50%, -50%)
+  }
 }
 
 .slide {
@@ -133,4 +147,39 @@ p.subheading {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+@keyframes animate-in {
+  from { transform: translateY(5vh) }
+  to { transform: translateY(0) }
+}
+
+.animate-in {
+  animation: animate-in 1000ms ease-out 0ms paused 1;
+}
+
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  transform: translateY(-196px)
+}
+
+.cards .card {
+  flex: 1 0 30%;
+  min-width: 16rem;
+  max-width: 100%;
+  animation: 5000ms animate-in 0ms ease alternate infinite;
+}
+
+.card:nth-child(2) { animation-delay: -2000ms }
+.card:nth-child(3) { animation-delay: -4000ms }
+
+.card img {
+  height: 240px;
+  object-fit: cover
 }

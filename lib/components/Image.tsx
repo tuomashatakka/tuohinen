@@ -11,10 +11,13 @@ export function Background ({ image }: { image: string }) {
 
 
 export default function BackgroundImage ({ alt, image, ...props }: BackgroundImagePropTypes) {
-  const { src, ...attrs } = props
+  const { src, width, height, ...attrs } = props
+
   return <Image
     alt={alt || ''}
     src={image.src || src}
+    width={width || 640}
+    height={height || 640}
     quality={100}
     {...attrs} />
 }

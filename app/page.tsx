@@ -1,19 +1,27 @@
-import { metadata } from './layout'
+import Card from '@/lib/components/Card'
+import bannerImage from '@/public/tuohinen-hero.jpg'
+import bannerImage2 from '@/public/tuohinen-39.jpg'
+import bannerImage3 from '@/public/tuohinen-40.jpg'
 
 export default function Home () {
 
-  return <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+  return <main className='min-h-screen p-24 w-full'>
 
-    <section className='hero'>
+    <div className='cards'>
+      <Card title='tuote 1' image={bannerImage}>
+        Ensimmäinen tuote!
+      </Card>
 
-    </section>
+      <Card title='tuote 2' image={bannerImage2}>
+        tokca tuote!
+      </Card>
 
-    <div className='card'>
-
+      <Card title='tuote 3' image={bannerImage3}>
+        3. tuote!
+      </Card>
     </div>
+
     <div className='z-10 max-w-5xl w-full items-center justify-between'>
-      <h1>{metadata.title}</h1>
-      <p>{metadata.description}</p>
     </div>
 
     <div className='mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left'>
