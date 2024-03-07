@@ -183,3 +183,106 @@ p.subheading {
   height: 240px;
   object-fit: cover
 }
+
+
+
+form {
+  display: block;
+  width: 100%;
+}
+
+label, .label {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+label h3, .label span {
+  flex: 1 0 240px;
+  padding: 0 12px 0 0;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 100;
+  opacity: 0.7;
+}
+
+label input, .label h1, .label button {
+  flex: 1 1 800px;
+}
+
+
+input {
+  border: 1px solid;
+  border-radius: 1.5px;
+  background-color: transparent;
+  appearance: none;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 16px;
+  font-size: 20px;
+}
+
+button {
+  display: block;
+  border-radius: 1.5px;
+  background-color: white !important;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 900;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 16px 24px;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+
+
+
+@keyframes animate-blur-in {
+  from { filter: blur(20px) }
+  to { filter: blur(0px) }
+}
+
+.animate-blur-in {
+  animation: 5s animate-blur-in 500ms ease 1;
+}
+@keyframes animate-words {
+  from { transform: rotateX(0)}
+  to { transform: rotateX(360deg)}
+}
+
+.scene {
+  perspective: 1000px;
+  perspective-origin: 50px 50px;
+  width: 100px;
+  height: 100px;
+}
+.animated-words{
+  position: relative;
+  transform-style: preserve-3d;
+  display: block;
+  width: 100%;
+  height: inherit;
+  animation: 10s animate-words 0s linear infinite;
+
+}
+.animated-words span {
+  display: block;
+  position: absolute;
+  transform: rotateX(0deg) translateZ(50px);
+  width: 100%;
+  height: 100%;
+}
+.animated-words span:nth-child(2) {
+  transform: rotateX(120deg) translateZ(50px);
+  background: green;
+}
+.animated-words span:nth-child(3) {
+  transform: rotateX(240deg) translateZ(50px);
+  background: blue;
+}
+span:nth-child(1) {
+  background: red;
+}

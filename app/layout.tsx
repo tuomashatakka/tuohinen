@@ -11,6 +11,8 @@ import heroImage from '@/public/tuohinen-39.jpg'
 import logoImage from '@/public/tuohinen-logoLogo-OG.png'
 import Image from '@/lib/components/Image'
 
+// import classNames from 'classnames'
+
 
 interface Meta extends Metadata {
   title: string
@@ -22,7 +24,7 @@ export const metadata: Meta = {
 }
 
 
-const classNameWithInter = classNameWithFont('inter')
+const classNameWithInter = classNameWithFont('epilogue')
 
 
 export default function RootLayout ({ children }: RootLayoutProps) {
@@ -31,13 +33,16 @@ export default function RootLayout ({ children }: RootLayoutProps) {
   return <html lang='en'>
     <body className={bodyClassName}>
 
-      <section className='banner min-h-screen'>
+      <section className='banner min-h-screen animate-blur-in'>
         <Image image={ heroImage } alt='background' className='backdrop' />
         <header>
           <Image image={ logoImage } width={96} alt='Tuohinen logo' className='logo' />
           <div>
             <Title>{metadata.title}</Title>
-            <Subtitle>{metadata.description}</Subtitle>
+            <Subtitle>
+              {/* Tuo <AnimatedWord words={[ 'luonto', 'valo', 'tuohinen' ]} /> kotiisi. */}
+              {metadata.description}
+            </Subtitle>
           </div>
         </header>
       </section>
@@ -51,6 +56,15 @@ export default function RootLayout ({ children }: RootLayoutProps) {
     </body>
   </html>
 }
+
+// const AnimatedWord = ({ words }: { words: Array<string> }) => {
+//   const className = classNames('animated-words', words.length)
+//   return <div className='scene'>
+//     <span className={className}>
+//       { words.map((word) => <span key={word}>{word}</span>)}
+//     </span>
+//   </div>
+// }
 
 type RootLayoutProps = Readonly<PropsWithChildren<{}>>
 

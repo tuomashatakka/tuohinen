@@ -2,6 +2,7 @@ import Card from '@/lib/components/Card'
 import bannerImage from '@/public/tuohinen-hero.jpg'
 import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
+import ContactForm from './_components/ContactForm'
 
 export default function Home () {
 
@@ -21,12 +22,25 @@ export default function Home () {
       </Card>
     </div>
 
-    <div className='z-10 max-w-5xl w-full items-center justify-between'>
+    <Separator />
+
+    <div className='cards'>
+      <Card title='tuote 1' image={bannerImage}>
+        Ensimmäinen tuote!
+      </Card>
+
+      <Card title='tuote 2' image={bannerImage3}>
+        tokca tuote!
+      </Card>
     </div>
 
-    <div className='mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left'>
-      <h3>Yhteydenotot</h3>
-      <a href='mailto:kakka@kakka.fi'>kakka@kakka.fi</a>
-    </div>
+    <Separator />
+
+    <ContactForm />
+
+    <Separator />
   </main>
 }
+
+
+const Separator = () => <div className='' style={{ margin: '260px', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
