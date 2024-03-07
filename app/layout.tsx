@@ -47,11 +47,12 @@ export default function RootLayout ({ children }: RootLayoutProps) {
         </header>
       </section>
 
-      <Navigation />
-
-      <main>
-        { children }
-      </main>
+      <div className='main-content-wrapper'>
+        <Navigation />
+        <main className='main-content min-h-screen'>
+          { children }
+        </main>
+      </div>
 
     </body>
   </html>

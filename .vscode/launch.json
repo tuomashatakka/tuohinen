@@ -11,6 +11,9 @@
         "Launch localhost"
       ],
       "stopAll": true,
+      "presentation": {
+        "order": 1
+      }
     }
   ],
 
@@ -19,7 +22,11 @@
       "type": "node-terminal",
       "command": "npm run dev",
       "name": "npm dev",
-      "request": "launch"
+      "request": "launch",
+      "presentation": {
+        "hidden": true,
+        "order": 2
+      }
     },
     {
       "name": "Launch localhost",
@@ -27,12 +34,15 @@
       "firefoxExecutable": "C:\\Program Files\\Firefox Nightly\\firefox.exe",
       "request": "launch",
       "reAttach": true,
-      // "file": "${workspaceFolder}/index.html",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
       "keepProfileChanges": false,
       "profile": "default",
       "suggestPathMappingWizard": true,
+      "presentation": {
+        "hidden": true,
+        "order": 3
+      }
     }
   ]
 }

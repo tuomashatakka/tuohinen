@@ -3,10 +3,12 @@ import bannerImage from '@/public/tuohinen-hero.jpg'
 import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
+import { Fragment } from 'react'
 
 export default function Home () {
 
-  return <main className='min-h-screen p-24 w-full'>
+  return <Fragment>
+
 
     <div className='cards'>
       <Card title='tuote 1' image={bannerImage}>
@@ -39,7 +41,7 @@ export default function Home () {
     <ContactForm />
 
     <Separator />
-  </main>
+  </Fragment>
 }
 
 
