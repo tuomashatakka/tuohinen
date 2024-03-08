@@ -56,17 +56,15 @@ body {
 }
 
 .main-content-wrapper {
-  display: flex;
-  gap: 2rem;
+  width: 100%;
 }
 
 .main-navigation {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .main-content {
-  flex: 1 0 auto;
-  padding: 4rem;
+  padding: 8rem;
 }
 
 .banner {
@@ -117,7 +115,7 @@ body {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  animation: smooth-display 30s ease 15s infinite;
+  /* animation: smooth-display 30s ease 15s infinite; */
 }
 
 .slide img {
@@ -188,14 +186,13 @@ p.subheading {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
-  transform: translateY(-196px)
 }
 
 .cards .card {
   flex: 1 0 30%;
   min-width: 16rem;
   max-width: 100%;
-  animation: 5000ms animate-in 0ms ease alternate infinite;
+  /* animation: 5000ms animate-in 0ms ease alternate infinite; */
 }
 
 .card:nth-child(2) { animation-delay: -2000ms }
@@ -270,6 +267,7 @@ button {
 .animate-blur-in {
   animation: 5s animate-blur-in 500ms ease 1;
 }
+
 @keyframes animate-words {
   from { transform: rotateX(0)}
   to { transform: rotateX(360deg)}

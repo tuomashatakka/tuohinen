@@ -4,11 +4,29 @@ import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
 import { Fragment } from 'react'
+import { Title } from '@/lib/components/Type'
+import Image from 'next/image'
 
 export default function Home () {
 
   return <Fragment>
 
+    <section className='segment-primary flex space-between p-1'>
+      <div style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} className=' p-8'>
+        <Title>Luonnollista valoa</Title>
+        <p>
+          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+        </p>
+      </div>
+      <div style={{ flex: '1 0 auto' }}>
+        <Image width={640} height={640} className='object-cover w-full' src={bannerImage} alt='Tits or gtfo' />
+      </div>
+    </section>
+
+    <Separator />
 
     <div className='cards'>
       <Card title='tuote 1' image={bannerImage}>
