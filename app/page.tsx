@@ -4,27 +4,93 @@ import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
 import { Fragment } from 'react'
-import { Title } from '@/lib/components/Type'
-import Image from 'next/image'
+import { Subheading, Title } from '@/lib/components/Type'
+import Segment, { ScreenSize } from './_components/Segment'
+import Img from '@/lib/components/Img'
 
 export default function Home () {
 
   return <Fragment>
+    <Segment variant='dark'>
+      {(Column) => <>
+        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+          <Title>Kakkaa ja pissaa</Title>
+          <p>
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          </p>
+        </Column>
+        <Column width={ 2 }>
+          <Img image={bannerImage} />
+        </Column>
+      </>}
+    </Segment>
 
-    <section className='segment-primary flex space-between p-1'>
-      <div style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} className=' p-8'>
-        <Title>Luonnollista valoa</Title>
-        <p>
-          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
-          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
-          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
-          kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
-        </p>
-      </div>
-      <div style={{ flex: '1 0 auto' }}>
-        <Image width={640} height={640} className='object-cover w-full' src={bannerImage} alt='Tits or gtfo' />
-      </div>
-    </section>
+    <Segment>
+      {(Column) => <>
+        <Column padding width={ 2 }>
+          <Img image={bannerImage2} />
+        </Column>
+        <Column width={ 4 } minWidth={ ScreenSize.lg }>
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          <Title>Kakkaa ja pissaa</Title>
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          <Subheading>Kakkaa ja pissaa</Subheading>
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+          sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
+        </Column>
+      </>}
+    </Segment>
+
+    <Segment variant='light'>
+      {(Column) => <>
+        <Column padding width={ 3 }>
+          <Title>Luonnollista valoa</Title>
+          <p>
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          </p>
+        </Column>
+        <Column width={ 3 }>
+          <Img image={bannerImage3} />
+        </Column>
+      </>}
+    </Segment>
+
+    <Segment variant='dark'>
+      {(Column) => <>
+        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+          <Title>Luonnollista valoa</Title>
+          <p>
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+            kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
+          </p>
+        </Column>
+        <Column width={ 2 } minWidth={ ScreenSize.sm }>
+          <Img image={bannerImage2} />
+        </Column>
+      </>}
+    </Segment>
 
     <Separator />
 

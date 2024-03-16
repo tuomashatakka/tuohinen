@@ -1,0 +1,38 @@
+.segment {
+  display:          flex;
+  align-items:      stretch;
+  justify-content:  stretch;
+  flex-wrap:        wrap;
+}
+
+.segment-light {
+  background-color: rgba(255,255,255,0.05)
+}
+.segment-dark{
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.padding {
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.segmentColumn {
+  flex:             1 1;
+  position:         relative;
+  text-align:       right;
+  align-content:    center;
+}
+
+.column-1 { flex-grow: 1 }
+.column-2 { flex-grow: 2 }
+.column-3 { flex-grow: 3 }
+
+.min-width-nil  {  }
+.min-width-xs   { min-width: 284px }
+.min-width-sm   { min-width: 480px }
+.min-width-md   { min-width: 720px }
+.min-width-lg   { min-width: 960px }
+.min-width-xl   { min-width: 1200px }
+
+/* style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} */
