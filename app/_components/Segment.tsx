@@ -19,7 +19,7 @@ function SegmentColumn ({ children, width, padding, minWidth }: SegmentColumnPro
 }
 
 
-export default function Segment ({ children , variant }: SegmentPropsType) {
+export default function Segment ({ children, variant }: SegmentPropsType) {
   const classes = classNames(
     styles.segment,
     styles[`segment-${variant}`]

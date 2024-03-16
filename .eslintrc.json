@@ -1,8 +1,7 @@
 {
   "extends": ["next/core-web-vitals"],
   "plugins": [
-    "@stylistic/eslint-plugin",
-    "@typescript-eslint/eslint-plugin"
+    "@stylistic/eslint-plugin"
   ],
 
   "rules": {
@@ -39,7 +38,6 @@
     "no-func-assign":                       2,
     "no-class-assign":                      2,
     "no-array-constructor":                 2,
-    "@typescript-eslint/no-unused-vars":    2,
 
     // Import
     "import/no-mutable-exports":            2,
