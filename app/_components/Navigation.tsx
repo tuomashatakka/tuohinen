@@ -23,6 +23,7 @@ const NavigationLink = ({ href, children }: PropsWithChildren<{ href: string }>)
 
 export default function Navigation () {
   const className = classNames(styles.navigation, 'main-navigation')
+
   return <nav className={ className }>
     <ul className={ styles.list }>
       <NavigationLink href=''>Etusivu</NavigationLink>

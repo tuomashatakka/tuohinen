@@ -35,4 +35,29 @@
 .min-width-lg   { min-width: 960px }
 .min-width-xl   { min-width: 1200px }
 
+@media screen and (max-width: 284px) {
+  .min-width-xs,
+  .min-width-sm,
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 480px) {
+  .min-width-sm,
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 720px) {
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 960px) {
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 1200px) {
+  .min-width-xl   { min-width: 100vw }}
+
+.segmentColumn {
+  max-width:        100vw;
+}
+
 /* style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} */

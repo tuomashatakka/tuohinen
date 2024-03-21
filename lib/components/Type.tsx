@@ -6,7 +6,7 @@ type TitlePropsType = PropsWithChildren<{ className?: string }>
 const classNameWith = classNameWithFont('epilogue')
 
 export const Title = ({ children, className }: Readonly<TitlePropsType>) =>
-  <h1 className={classNameWith('heading', className)}>
+  <h1 className={classNameWith(className)}>
     {children}
   </h1>
 

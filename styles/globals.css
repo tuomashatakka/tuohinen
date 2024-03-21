@@ -48,6 +48,10 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground-color);
   background-color: var(--background-color);
@@ -102,8 +106,6 @@ body {
 img {
   user-select: none;
 }
-
-.logo {}
 
 @media screen and (max-width: 960px) {
 
@@ -319,14 +321,4 @@ button {
 }
 span:nth-child(1) {
   background: red;
-}
-
-
-
-
-
-.picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }

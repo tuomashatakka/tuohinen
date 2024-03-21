@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
 
 import Navigation from './_components/Navigation'
@@ -8,24 +7,10 @@ import { classNameWithFont } from '@/theme/fonts'
 import '@/styles/globals.css'
 
 
-// import classNames from 'classnames'
-
-
-interface Meta extends Metadata {
-  title: string
-}
-
-export const metadata: Meta = {
-  title:        'Tuohinen Tunnelmavalaisimet',
-  description:  'Tuo luonto kotiisi',
-}
-
-
-const classNameWithInter = classNameWithFont('epilogue')
-
+const className = classNameWithFont('epilogue')
 
 export default function RootLayout ({ children }: RootLayoutProps) {
-  const bodyClassName = classNameWithInter()
+  const bodyClassName = className()
 
   return <html lang='en'>
     <body className={bodyClassName}>

@@ -4,8 +4,8 @@ import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
 import { Fragment } from 'react'
-import { Subheading, Title } from '@/lib/components/Type'
-import Segment, { ScreenSize } from './_components/Segment'
+import { Subheading, Title } from '@/components/Type'
+import Segment, { ScreenSize } from '@/components/Segment'
 import Img from '@/lib/components/Img'
 
 export default function Home () {

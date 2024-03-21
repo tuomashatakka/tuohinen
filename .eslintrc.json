@@ -79,7 +79,8 @@
       { "blankLine": "any", "prev": ["const", "let", "var"], "next": "*" },
       { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var" ]},
       { "blankLine": "always", "prev": "import", "next": "*" },
-      { "blankLine": "any", "prev": "import", "next": "import" }
+      { "blankLine": "any", "prev": "import", "next": "import" },
+      { "blankLine": "always", "prev": "*", "next": [ "return", "export", "function", "class", "block-like", "multiline-let", "multiline-const", "multiline-var" ] }
     ],
 
     // Comments

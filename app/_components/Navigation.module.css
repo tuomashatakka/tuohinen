@@ -4,34 +4,34 @@
   position: relative;
   z-index: 10;
 
-  .list {
-    display: flex;
-    flex-direction: column;
-  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+}
 
-  .list_item {
-    flex: 1 0 auto;
-    text-wrap: nowrap;
-    padding: 1rem;
-    font-size: 1.4rem;
-    font-weight: 100;
-    background-color: var(--navigation-item-background);
-    color: var(--navigation-item-text);
-  }
+.list_item {
+  flex: 1 0 auto;
+  text-wrap: nowrap;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  background-color: var(--navigation-item-background);
+  color: var(--navigation-item-text);
+}
 
-  .list_item:hover {
-    background-color: var(--navigation-item-background-hover);
-    color: var(--navigation-item-text-hover);
-  }
+.list_item:hover {
+  background-color: var(--navigation-item-background-hover);
+  color: var(--navigation-item-text-hover);
+}
 
-  .list_item_active {
-    background-color: var(--navigation-item-background-focus);
-    color: var(--navigation-item-text-focus);
-  }
+.list_item_active {
+  background-color: var(--navigation-item-background-focus);
+  color: var(--navigation-item-text-focus);
+}
 
-  .list_item_link {
-    display: block;
-    width: 100%;
-    height: inherit;
-  }
+.list_item_link {
+  display: block;
+  width: 100%;
+  height: inherit;
 }

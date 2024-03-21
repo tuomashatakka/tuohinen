@@ -1,0 +1,39 @@
+.scrollDownButton {
+  position:         absolute;
+  transform:        translateX(-50%);
+  left:             50%;
+  bottom:           8em;
+  width:            4em;
+  height:           4em;
+  padding:          0;
+  border-radius:    50%;
+  border-color:     black;
+  background-color: white;
+  transition:       300ms all;
+}
+
+.scrollDownButton:hover {
+  border-color:     white;
+  background-color: black !important;
+}
+.scrollDownButton:focus {
+  border-color:     white;
+  background-color: black !important;
+  outline:          none;
+}
+
+
+.scrollDownButton::after {
+  border-style: solid;
+  box-sizing:   border-box;
+  content:      " ";
+  border-color: inherit;
+  border-width: 0px 2px 2px 0;
+  top:          50%;
+  left:         50%;
+  width:        1em;
+  height:       1em;
+  transform:    translate(-50%, -50%) rotate(45deg);
+  margin-top:   -0.23em;
+  position:     absolute;
+}
