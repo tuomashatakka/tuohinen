@@ -2,6 +2,7 @@ import { ComponentClass, ComponentType, FunctionComponentFactory, PropsWithChild
 
 import styles from './Segment.module.css'
 import classNames from 'classnames'
+import { WithNavigationItem } from '@/app/_components/NavigationContext'
 
 
 function SegmentColumn ({ children, width, padding, minWidth }: SegmentColumnPropsType) {
@@ -19,15 +20,18 @@ function SegmentColumn ({ children, width, padding, minWidth }: SegmentColumnPro
 }
 
 
-export default function Segment ({ children, variant }: SegmentPropsType) {
+export default function Segment ({ children, variant, title }: SegmentPropsType) {
+
   const classes = classNames(
     styles.segment,
     styles[`segment-${variant}`]
   )
 
-  return <section className={ classes } >
-    {children(SegmentColumn)}
-  </section>
+  return <WithNavigationItem text={ title }>
+    <section className={ classes } >
+      {children(SegmentColumn)}
+    </section>
+  </WithNavigationItem>
 }
 
 
@@ -44,10 +48,12 @@ SegmentColumn.defaultProps = {
   minWidth: ScreenSize.nil
 }
 
-interface SegmentPropsType {
-  children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode;
-  variant?: 'light' | 'dark'
+type SegmentPropsType = {
+  children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode,
+  variant?: 'light' | 'dark',
+  title:    string,
 }
+
 
 type SegmentColumnPropsType = PropsWithChildren<{
   width:      number,

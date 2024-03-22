@@ -5,6 +5,7 @@ import PageHeadSection from './_components/PageHeadSection'
 import { classNameWithFont } from '@/theme/fonts'
 
 import '@/styles/globals.css'
+import { NavigationProvider } from './_components/NavigationContext'
 
 
 const className = classNameWithFont('epilogue')
@@ -16,10 +17,12 @@ export default function RootLayout ({ children }: RootLayoutProps) {
     <body className={bodyClassName}>
       <PageHeadSection />
       <div className='main-content-wrapper'>
-        <Navigation />
-        <main className='main-content min-h-screen'>
-          { children }
-        </main>
+        <NavigationProvider>
+          <Navigation />
+          <main className='main-content min-h-screen'>
+            { children }
+          </main>
+        </NavigationProvider>
       </div>
     </body>
   </html>

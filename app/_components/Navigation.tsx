@@ -1,33 +1,33 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import classNames from 'classnames'
-import { PropsWithChildren } from 'react'
+import { createContext, PropsWithChildren, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 import styles from './Navigation.module.css'
+import NavigationLink from './NavigationLink'
+import { usePages } from './NavigationContext'
 
-const NavigationLink = ({ href, children }: PropsWithChildren<{ href: string }>) => {
-  const pathname  = usePathname()
-  const url       = `/${href}`
-  const active    = pathname === url
-  const className = classNames(styles.list_item, { [styles.list_item_active]: active  })
+const DynamicNavigationLinks = () => {
+  const pages = usePages()
 
-  return <li className={ className }>
-    <Link className={ styles.list_item_link } href={ url }>
-      { children }
-    </Link >
-  </li>
+  return <>
+    {pages?.map(page => <NavigationLink
+      key={page.href}
+      href={page.href}
+      offset={page.offset}>
+      {page.text}
+    </NavigationLink>)}
+  </>
 }
 
-
 export default function Navigation () {
-  const className = classNames(styles.navigation, 'main-navigation')
+  const className = classNames(styles.navigation)
 
-  return <nav className={ className }>
-    <ul className={ styles.list }>
-      <NavigationLink href=''>Etusivu</NavigationLink>
-      <NavigationLink href='contact'>Ota yhteyttä</NavigationLink>
+  return <nav className={className}>
+    <ul className={styles.list}>
+      <DynamicNavigationLinks />
+      {/* <NavigationLink href=''>Etusivu</NavigationLink> */}
+      {/* <NavigationLink href='contact'>Ota yhteyttä</NavigationLink> */}
     </ul>
   </nav>
 }

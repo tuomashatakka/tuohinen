@@ -1,37 +1,40 @@
 
 .navigation {
-  display: block;
   position: relative;
-  z-index: 10;
-
+  display:  block;
+  z-index:  10;
+  padding:  2rem;
 }
 .list {
-  display: flex;
+  display:        flex;
   flex-direction: column;
 }
 
 .list_item {
-  flex: 1 0 auto;
-  text-wrap: nowrap;
-  padding: 1rem;
-  font-size: 1.4rem;
-  font-weight: 100;
+  flex:             1 0 auto;
+  text-wrap:        nowrap;
+  padding:          1rem;
+  font-size:        1.4rem;
+  font-weight:      100;
+  cursor:           pointer;
   background-color: var(--navigation-item-background);
-  color: var(--navigation-item-text);
+  color:            var(--navigation-item-text);
 }
 
+.list_item:focus,
 .list_item:hover {
   background-color: var(--navigation-item-background-hover);
-  color: var(--navigation-item-text-hover);
+  color:            var(--navigation-item-text-hover);
+  outline:          none;
 }
 
 .list_item_active {
   background-color: var(--navigation-item-background-focus);
-  color: var(--navigation-item-text-focus);
+  color:            var(--navigation-item-text-focus);
 }
 
 .list_item_link {
-  display: block;
-  width: 100%;
-  height: inherit;
+  display:          block;
+  width:            100%;
+  height:           inherit;
 }

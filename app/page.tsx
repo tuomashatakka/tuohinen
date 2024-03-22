@@ -7,11 +7,12 @@ import { Fragment } from 'react'
 import { Subheading, Title } from '@/components/Type'
 import Segment, { ScreenSize } from '@/components/Segment'
 import Img from '@/lib/components/Img'
+import { NavigationProvider } from './_components/NavigationContext'
 
 export default function Home () {
 
-  return <Fragment>
-    <Segment variant='dark'>
+  return <>
+    <Segment variant='dark' title='Tietoa'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           <Title>Kakkaa ja pissaa</Title>
@@ -28,7 +29,7 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment>
+    <Segment title='Kakkapissa 2'>
       {(Column) => <>
         <Column padding width={ 2 }>
           <Img image={bannerImage2} />
@@ -58,7 +59,7 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment variant='light'>
+    <Segment variant='light' title='Luonnollista valoa'>
       {(Column) => <>
         <Column padding width={ 3 }>
           <Title>Luonnollista valoa</Title>
@@ -75,7 +76,7 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment variant='dark'>
+    <Segment variant='dark' title='Luonnollista valoa, osa 2'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           <Title>Luonnollista valoa</Title>
@@ -125,7 +126,7 @@ export default function Home () {
     <ContactForm />
 
     <Separator />
-  </Fragment>
+  </>
 }
 
 
