@@ -1,13 +1,15 @@
+'use client'
 import Card from '@/lib/components/Card'
 import bannerImage from '@/public/tuohinen-hero.jpg'
 import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Subheading, Title } from '@/components/Type'
 import Segment, { ScreenSize } from '@/components/Segment'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
+import Editor from '@/components/Editor'
 
 export default function Home () {
 
