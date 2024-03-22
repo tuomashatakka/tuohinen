@@ -32,6 +32,7 @@
       "name": "Launch localhost",
       "type": "firefox",
       "firefoxExecutable": "C:\\Program Files\\Firefox Nightly\\firefox.exe",
+      "addonPath": "",
       "request": "launch",
       "reAttach": true,
       "url": "http://localhost:3000",
