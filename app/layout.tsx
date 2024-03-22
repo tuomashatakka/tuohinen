@@ -2,10 +2,11 @@ import { PropsWithChildren } from 'react'
 
 import Navigation from './_components/Navigation'
 import PageHeadSection from './_components/PageHeadSection'
+import { NavigationProvider } from './_components/NavigationContext'
 import { classNameWithFont } from '@/theme/fonts'
 
 import '@/styles/globals.css'
-import { NavigationProvider } from './_components/NavigationContext'
+import 'material-icons/iconfont/material-icons.css'
 
 
 const className = classNameWithFont('epilogue')
