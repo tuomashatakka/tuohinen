@@ -8,6 +8,12 @@
   height:       auto;
 }
 
+.menuToggleWrapper {
+  display:        flex;
+  alignItems:     center;
+  justifyContent: space-between;
+}
+
 .menuToggle {
   width:        var(--menu-size);
   height:       var(--menu-size);
@@ -36,7 +42,6 @@
 .list_item {
   flex:             1 0 auto;
   text-wrap:        nowrap;
-  padding:          1rem;
   font-size:        1.4rem;
   font-weight:      100;
   cursor:           pointer;
@@ -58,32 +63,43 @@
 
 .list_item_link {
   display:          block;
-  width:            100%;
   height:           inherit;
+  width:            100%;
+  padding:          1rem;
 }
 
-.navigation h1 {
+.navigation_h1 {
   display: none;
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-weight: 900;
-  font-family: serif;
   line-height: 1em;
 }
+
+.navigation {
+  position:         fixed;
+  top:              0;
+  left:             0;
+  right:            0;
+  background-color: var(--background-color);
+}
+
 @media screen and (max-width: 1200px) {
   .list {
     max-height: 0;
   }
-  .navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--background-color);
-  }
 
-  .navigation h1 {
+  .navigation_h1 {
     display: block;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .menuToggle {
+    display: none;
+  }
+  .list {
+    display: flex;
+    flex-flow: row nowrap;
   }
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import { createContext, PropsWithChildren, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, MouseEventHandler, PointerEventHandler, PropsWithChildren, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 import styles from './Navigation.module.css'
 import NavigationLink from './NavigationLink'
@@ -11,15 +11,23 @@ import metadata from '@/lib/metadata'
 const DynamicNavigationLinks = () => {
   const pages = usePages()
 
-  return <>
-    {pages?.map(page => <NavigationLink
-      key={page.href}
-      href={page.href}
-      offset={page.offset}>
-      {page.text}
-    </NavigationLink>)}
-  </>
+  return pages?.map(page => <NavigationLink
+    key={page.href}
+    href={page.href}
+    offset={page.offset}>
+    {page.text}
+  </NavigationLink>)
 }
+
+const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
+  <div className={ styles.menuToggleWrapper }>
+    <button
+      className={ styles.menuToggle }
+      onClick={ onClick }>
+      ⁝
+    </button>
+    <h1 className={ styles.navigation_h1 }>{ metadata.title }</h1>
+  </div>
 
 export default function Navigation () {
   const [ menuOpen, toggleMenu ] = useState(false)
@@ -30,19 +38,11 @@ export default function Navigation () {
 
   useEffect(() => {
     if (menuOpen)
-      document.addEventListener('click', closeMenu, { once: true, passive: true })
+      return document.addEventListener('click', closeMenu, { once: true, passive: true })
   }, [ menuOpen ])
 
   return <nav className={ className }>
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <button
-        className={ styles.menuToggle }
-        onClick={ handleClick }>
-        ⁝
-      </button>
-      <h1>{ metadata.title }</h1>
-    </div>
-
+    <NavigationMenuButton onClick={ handleClick } />
     <ul className={styles.list}>
       <DynamicNavigationLinks />
       {/* <NavigationLink href=''>Etusivu</NavigationLink> */}
