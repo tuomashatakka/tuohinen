@@ -8,11 +8,8 @@ import ScrollDownButton from './ScrollDownButton'
 import CarouselComponent from '@/lib/components/Carousel'
 
 const SLIDES = [
-  require('@/public/tuohinen-hero.jpg').default,
-  require('@/public/tuohinen-hero-2.jpg').default,
-  require('@/public/tuohinen-hero-3.jpg').default,
-  require('@/public/tuohinen-39.jpg').default,
-  require('@/public/tuohinen-40.jpg').default,
+  require('@/public/hero-001.jpg').default,
+  require('@/public/hero-002.jpg').default,
 ]
 
 export default function PageHeadSection () {
