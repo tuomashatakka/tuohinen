@@ -1,6 +1,4 @@
 
-import { default as stylus } from '@zeit/next-stylus'
-
 const plugins = [
 ]
 

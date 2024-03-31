@@ -1,5 +1,5 @@
 
-
+// eslint-disable-next-line
 export enum ScreenSize { nil, xs, sm, md, lg, xl }
 
 export type ScreenSizeIdentifier = keyof typeof ScreenSize

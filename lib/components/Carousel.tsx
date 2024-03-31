@@ -2,9 +2,8 @@
 
 import { StaticImageData } from 'next/image'
 import { BackgroundImageWithRef } from './Image'
-import { Title } from './Type'
 import classNames from 'classnames'
-import { AnimationEventHandler, createRef, DOMAttributes, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { AnimationEventHandler, createRef, useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
 import styles from './Carousel.module.css'
 
@@ -16,7 +15,7 @@ type SlideProps = {
 }
 
 
-const CarouselSlide = ({ image, className, onAnimationEnd, animationPlayState }: SlideProps) => {
+const CarouselSlide = ({ image, className, onAnimationEnd }: SlideProps) => {
   const classes = classNames(styles.slide, className)
   const ref = createRef<HTMLDivElement>()
 
@@ -57,7 +56,7 @@ export default function CarouselComponent ({ slides = [], className }: CarouselP
   const navigatePrevious = () =>
     setCurrent(getPreviousIndex())
 
-  const handleAnimationEnd: AnimationEventHandler = (e) => {
+  const handleAnimationEnd: AnimationEventHandler = ( ) => {
     navigateNext()
   }
 

@@ -1,5 +1,5 @@
 import Image, { ImageProps, StaticImageData } from 'next/image'
-import { AnimationEventHandler, createRef, EventHandler, ForwardedRef, forwardRef, Ref, RefObject, UIEventHandler, useEffect } from 'react'
+import { forwardRef, Ref } from 'react'
 
 
 export function Background ({ image }: { image: string }) {
