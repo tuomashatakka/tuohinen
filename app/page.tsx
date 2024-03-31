@@ -9,7 +9,6 @@ import Segment from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
-import Editor from '@/components/Editor'
 
 function fetchContent () {
   return <>
