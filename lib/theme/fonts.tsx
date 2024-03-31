@@ -1,5 +1,5 @@
 import toClassNames, { Value } from 'classnames'
-import { Inter, Lobster_Two, Gluten,  Epilogue } from 'next/font/google'
+import { Inter, Lobster_Two, Gluten,  Epilogue, Montserrat } from 'next/font/google'
 
 const inter = Inter({
   subsets:  [ 'latin' ]
@@ -10,9 +10,9 @@ const epilogue = Epilogue({
   weight:   [ '100', '200', '300', '400', '800' ]
 })
 
-const antonio = Gluten({
+const gluten = Gluten({
   subsets:  [ 'latin' ],
-  weight:   [ '100', '400', '800' ]
+  weight:   [ '100', '400', '800', '900' ]
 })
 
 const lobster = Lobster_Two({
@@ -20,11 +20,17 @@ const lobster = Lobster_Two({
   weight:   [ '400', '700' ]
 })
 
+const montserrat = Montserrat({
+  subsets:  [ 'latin' ],
+  weight:   [ '400', '700', '900' ]
+})
+
 const fonts = {
   inter,
-  antonio,
+  gluten,
   lobster,
   epilogue,
+  montserrat,
 }
 
 export type FontName = keyof typeof fonts
