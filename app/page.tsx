@@ -14,20 +14,13 @@ function fetchContent () {
   return <>
     <H2>Luonnollista valoa</H2>
     <Ingress>
-        We are a small team of skilled artisans who handcraft beautiful,
-        one-of-a-kind lamps. Our journey began in a small workshop, where we
-        started experimenting with different materials and lamp-making techniques.
+      Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä. Tompurin tavoitteena on liittää kaatuneiden koivujen henki tunnelmallisiin valaisimiin.
     </Ingress>
     <Paragraph>
-        As we honed our craft, we realized there was a need for custom,
-        artisanal lighting that captures the warmth and imperfection of handmade pieces.
-        That&apos;s when we decided to turn our passion into a business.
+      Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
     </Paragraph>
     <Paragraph>
-        Today, we pour our hearts into designing and creating lamps that bring joy,
-        comfort and a touch of nature into people&apos;s homes. We source
-        high-quality materials like wood, glass, ceramic, metals and textiles,
-        and combine them into lamps that are functional works of art.
+      Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!
     </Paragraph>
 
     <Spacer align='right' />
