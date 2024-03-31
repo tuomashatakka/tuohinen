@@ -1,7 +1,9 @@
 import { classNameWithFont } from '@/theme/fonts'
-import { PropsWithChildren } from 'react'
+import { ClassAttributes, DetailedHTMLProps, HTMLAttributes, HTMLProps, PropsWithChildren } from 'react'
 
 type TitlePropsType = PropsWithChildren<{ className?: string }>
+
+type HeadingProps = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>
 
 const classNameWith = classNameWithFont('epilogue')
 
@@ -24,3 +26,12 @@ export const Subheading = ({ children }: Readonly<TitlePropsType>) =>
   <h2 className='font-bold text-lg mb-2'>
     { children }
   </h2>
+
+export const H2 = (props: HeadingProps) =>
+  <h2 { ...props }>{ props.children }</h2>
+
+export const H3 = (props: HeadingProps) =>
+  <h3 { ...props }>{ props.children }</h3>
+
+export const H4 = (props: HeadingProps) =>
+  <h4 { ...props }>{ props.children }</h4>

@@ -1,12 +1,13 @@
-import { ComponentClass, ComponentType, FunctionComponentFactory, PropsWithChildren, ReactNode } from 'react'
+import { ComponentClass, ComponentType, FunctionComponentFactory, PropsWithChildren, ReactNode, useMemo } from 'react'
 
 import styles from './Segment.module.css'
 import classNames from 'classnames'
 import { WithNavigationItem } from '@/app/_components/NavigationContext'
+import { H3 } from '@/components/Type'
+import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
 
 
-function SegmentColumn ({ children, width, padding, minWidth }: SegmentColumnPropsType) {
-
+function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {
   const classes = classNames(
     styles.segmentColumn,
     styles[`column-${width}`],
@@ -21,32 +22,23 @@ function SegmentColumn ({ children, width, padding, minWidth }: SegmentColumnPro
 
 
 export default function Segment ({ children, variant, title }: SegmentPropsType) {
+  const renderChildren = () =>
+    children(SegmentColumn)
 
   const classes = classNames(
     styles.segment,
     styles[`segment-${variant}`]
   )
 
+  const content = useMemo(renderChildren, [ children ])
+
   return <WithNavigationItem text={ title }>
-    <section className={ classes } >
-      {children(SegmentColumn)}
+    <section className={ classes }>
+      { content }
     </section>
   </WithNavigationItem>
 }
 
-
-export enum ScreenSize { nil, xs, sm, md, lg, xl }
-
-export type ScreenSizeIdentifier = keyof typeof ScreenSize
-
-export const SCREEN_SIZES: Array<ScreenSizeIdentifier> = [ 'nil', 'xs', 'sm', 'md', 'lg', 'xl' ]
-
-
-SegmentColumn.defaultProps = {
-  width:    1,
-  padding:  false,
-  minWidth: ScreenSize.nil
-}
 
 type SegmentPropsType = {
   children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode,

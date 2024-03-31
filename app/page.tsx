@@ -3,9 +3,9 @@ import bannerImage from '@/public/tuohinen-hero.jpg'
 import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
 import ContactForm from './_components/ContactForm'
-import { Fragment } from 'react'
-import { Subheading, Title } from '@/components/Type'
-import Segment, { ScreenSize } from '@/components/Segment'
+import { H2, H3 } from '@/components/Type'
+import Segment from '@/components/Segment'
+import { ScreenSize } from '@/lib/theme/ScreenSize'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
 
@@ -15,7 +15,7 @@ export default function Home () {
     <Segment variant='dark' title='Tietoa'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          <Title>Kakkaa ja pissaa</Title>
+          <H3>Kakkaa ja pissaa</H3>
           <p>
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
@@ -24,7 +24,7 @@ export default function Home () {
           </p>
         </Column>
         <Column width={ 2 }>
-          <Img image={bannerImage} />
+          <Img alt='' image={bannerImage} />
         </Column>
       </>}
     </Segment>
@@ -32,9 +32,9 @@ export default function Home () {
     <Segment title='Kakkapissa 2'>
       {(Column) => <>
         <Column padding width={ 2 }>
-          <Img image={bannerImage2} />
+          <Img alt='' image={bannerImage2} />
         </Column>
-        <Column width={ 4 } minWidth={ ScreenSize.lg }>
+        <Column padding width={ 4 } minWidth={ ScreenSize.lg }>
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
@@ -44,14 +44,14 @@ export default function Home () {
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
-          <Title>Kakkaa ja pissaa</Title>
+          <H2>Kakkaa ja pissaa</H2>
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
-          <Subheading>Kakkaa ja pissaa</Subheading>
+          <H3>Kakkaa ja pissaa</H3>
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
           sfdölkldgnbkjfgdn gkjfjnskafödslfjmngbkgfjdn gfkbgfjnxcvk bgjnsfdk gbnsgfkdlg gf
@@ -62,7 +62,7 @@ export default function Home () {
     <Segment variant='light' title='Luonnollista valoa'>
       {(Column) => <>
         <Column padding width={ 3 }>
-          <Title>Luonnollista valoa</Title>
+          <H2>Luonnollista valoa</H2>
           <p>
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
@@ -71,7 +71,7 @@ export default function Home () {
           </p>
         </Column>
         <Column width={ 3 }>
-          <Img image={bannerImage3} />
+          <Img alt='' image={bannerImage3} />
         </Column>
       </>}
     </Segment>
@@ -79,7 +79,7 @@ export default function Home () {
     <Segment variant='dark' title='Luonnollista valoa, osa 2'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          <Title>Luonnollista valoa</Title>
+          <H2>Luonnollista valoa</H2>
           <p>
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
             kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa kakka pissa
@@ -88,7 +88,7 @@ export default function Home () {
           </p>
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
-          <Img image={bannerImage2} />
+          <Img alt='' image={bannerImage2} />
         </Column>
       </>}
     </Segment>

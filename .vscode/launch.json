@@ -24,26 +24,29 @@
       "name": "npm dev",
       "request": "launch",
       "presentation": {
-        "hidden": true,
+        "hidden": false,
         "order": 2
       }
     },
     {
       "name": "Launch localhost",
       "type": "firefox",
-      "firefoxExecutable": "C:\\Program Files\\Firefox Nightly\\firefox.exe",
-      "addonPath": "",
       "request": "launch",
+      "firefoxExecutable": "C:\\Program Files\\Firefox Nightly\\firefox.exe",
+      // "firefoxArgs": [ "-P" ],
       "reAttach": true,
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
       "keepProfileChanges": false,
-      "profile": "default",
-      "suggestPathMappingWizard": true,
+      "profile": "default-nightly",
+      // "suggestPathMappingWizard": true,
       "presentation": {
         "hidden": true,
         "order": 3
-      }
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }

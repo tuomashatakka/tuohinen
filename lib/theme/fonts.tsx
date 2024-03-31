@@ -6,7 +6,8 @@ const inter = Inter({
 })
 
 const epilogue = Epilogue({
-  subsets:  [ 'latin' ]
+  subsets:  [ 'latin' ],
+  weight:   [ '100', '200', '300', '400', '800' ]
 })
 
 const antonio = Gluten({

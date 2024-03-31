@@ -11,18 +11,15 @@ export default function ImageComponent (props: ImgProps) {
   return <Image
     src={ image.src }
     alt={ alt }
-    width={ width }
-    height={ height || width }
+    style={{
+      width:  width || '100%',
+      height: height || '100%'
+    }}
+    width={ width || 640 }
+    height={ height || width || 640 }
     className={ clsName }
     quality={ 100 }
     {...attrs} />
-}
-
-ImageComponent.defaultProps = {
-  alt:    '',
-  image:  null,
-  width:  640,
-  height: null,
 }
 
 export type ImgProps = Omit<ImageProps & {

@@ -1,0 +1,99 @@
+.carousel {
+  --carousel-animation-pos-x-start:  100px;
+  --carousel-animation-pos-x-end:   -100px;
+  --carousel-animation-pos-y-start:  10px;
+  --carousel-animation-pos-y-end:   -20px;
+}
+
+@keyframes animateSlide {
+  0% {
+    opacity:    0;
+    transform:  translate(
+      var(--carousel-animation-pos-x-start),
+      var(--carousel-animation-pos-y-start)
+    ) scale(1.2);
+  }
+  10% {
+    opacity:    1;
+    transform:  translate(
+      var(--carousel-animation-pos-x-start),
+      var(--carousel-animation-pos-y-start)
+    ) scale(1.2);
+  }
+  90% {
+    opacity:    1;
+    transform:  translate(
+      var(--carousel-animation-pos-x-end),
+      var(--carousel-animation-pos-y-end)
+    ) scale(1.38);
+  }
+  100% {
+    opacity:    0;
+    transform:  translate(
+      var(--carousel-animation-pos-x-end),
+      var(--carousel-animation-pos-y-end)
+    ) scale(1.4);
+  }
+}
+
+.carousel {
+  user-select:  none;
+  height:       100vh;
+  max-height:   100%;
+  overflow:     hidden;
+}
+
+.presentation {
+  position:   relative;
+  min-height: inherit;
+  height:     inherit;
+  width:      100%;
+}
+
+.presentation > div {
+  opacity: 0;
+}
+
+.controls {
+  position: absolute;
+  z-index: 500;
+}
+
+.slide {
+  z-index:              90;
+  position:             absolute;
+  height:               100%;
+  width:                100%;
+  opacity:              0;
+  animation:            animateSlide 30s infinite ease-in-out alternate;
+  animation-play-state: paused;
+  transition:           all 100ms;
+  overflow:             hidden;
+}
+
+.slide_image {
+  pointer-events: none;
+  user-select:    none;
+  object-fit:     cover;
+  position:       relative;
+  height:         100%;
+  width:          100%;
+}
+
+.current_slide {
+  opacity:    1;
+  z-index:    100;
+  animation-play-state: running;
+}
+
+.next_slide {
+  z-index:    75;
+  opacity:    1 !important;
+  transform:  translate(
+    var(--carousel-animation-pos-x-start),
+    var(--carousel-animation-pos-y-start)
+  ) scale(1.2);
+}
+
+.previous_slide {
+}

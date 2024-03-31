@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@zeit/next-stylus": "^1.0.1",
     "classnames": "^2.5.1",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "stylus": "^0.54.8"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.6.3",
