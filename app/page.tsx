@@ -9,6 +9,7 @@ import Segment from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
+import LightboxItem from '../lib/components/Lightbox'
 
 function fetchContent () {
   return <>
@@ -47,6 +48,12 @@ export default function Home () {
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           { fetchContent() }
+          <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
+          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage} />
+          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage} />
+          <LightboxItem id='banner image 4' description='Banner image 4' image={bannerImage} />
+          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage} />
+          <LightboxItem id='banner image 6' description='Banner image 6' image={bannerImage} />
         </Column>
         <Column width={ 2 }>
           <Img alt='' image={bannerImage} />
