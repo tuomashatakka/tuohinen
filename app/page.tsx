@@ -3,6 +3,8 @@ import Card from '@/lib/components/Card'
 import bannerImage from '@/public/tuohinen-hero.jpg'
 import bannerImage2 from '@/public/tuohinen-39.jpg'
 import bannerImage3 from '@/public/tuohinen-40.jpg'
+import bannerImage4 from '@/public/hero-002.jpg'
+import bannerImage5 from '@/public/tuohinen-hero-3.jpg'
 import ContactForm from './_components/ContactForm'
 import { H2, H3, Ingress, Paragraph, Spacer } from '@/components/Type'
 import Segment from '@/components/Segment'
@@ -49,11 +51,10 @@ export default function Home () {
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           { fetchContent() }
           <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage} />
-          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage} />
-          <LightboxItem id='banner image 4' description='Banner image 4' image={bannerImage} />
-          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage} />
-          <LightboxItem id='banner image 6' description='Banner image 6' image={bannerImage} />
+          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
+          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
+          <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
         </Column>
         <Column width={ 2 }>
           <Img alt='' image={bannerImage} />
