@@ -7,16 +7,27 @@ import styles from './Navigation.module.css'
 import NavigationLink from './NavigationLink'
 import { usePages } from './NavigationContext'
 import metadata from '@/lib/metadata'
+import { usePathname } from 'next/navigation'
 
 const DynamicNavigationLinks = () => {
   const pages = usePages()
+  const pathname  = usePathname()
 
-  return pages?.map(page => <NavigationLink
-    key={page.href}
-    href={page.href}
-    offset={page.offset}>
-    {page.text}
-  </NavigationLink>)
+  return pages?.map(page => {
+    const active    = pathname === page.url || page.hash === window.location.hash
+    const url       = `/${ page.href }`
+    const hash      = `#${ page.href }`
+
+    return <NavigationLink
+      active={active || page.active}
+      url={url}
+      hash={hash}
+      key={page.href}
+      href={page.href}
+      offset={page.offset}>
+      {page.text}
+    </NavigationLink>
+  })
 }
 
 const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>

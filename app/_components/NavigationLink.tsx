@@ -5,13 +5,9 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import classNames from 'classnames'
 import styles from './Navigation.module.css'
+import { NavigationPage } from './NavigationContext'
 
-export default function NavigationLink ( { href, children, offset }: PropsWithChildren<{ href: string, offset?: number } > ) {
-  const pathname  = usePathname()
-  const url       = `/${ href }`
-  const hash      = `#${href}`
-  const active    = pathname === url || hash === window.location.hash
-
+export default function NavigationLink ( { hash, href, children, offset, active }: PropsWithChildren<NavigationPage> ) {
   const className = classNames( styles.list_item, { [ styles.list_item_active ]: active } )
 
   if (typeof offset === 'number') {

@@ -1,0 +1,21 @@
+.gallery
+  justify-content:  center
+  align-items:      center
+  flex-flow:        row wrap
+  display:          flex
+  gap:              1em
+  max-width:        100%
+
+  & > *
+    width:    20em
+    height:   20em
+    opacity:  0.8
+    cursor:   pointer
+    transition: 300ms all
+    max-width:  100%
+
+    &:hover
+      opacity: 1
+      z-index:   10
+      transform: scale(1.04)
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15)

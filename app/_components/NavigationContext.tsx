@@ -1,5 +1,6 @@
 'use client'
 
+import { useWithinViewport } from '@/lib/components/Segment'
 import { createContext, PropsWithChildren, ReactElement, RefObject, useContext, useEffect, useReducer, useRef, useState } from 'react'
 
 // Define type for navigation action
@@ -16,12 +17,15 @@ export const NavigationPagesContext = createContext<NavigationPage[]>([])
 export const NavigationPagesDispatchContext = createContext<Dispatch | null>(null)
 
 
-type NavigationPage = {
+export type NavigationPage = {
   id: string,
+  url: string,
+  hash: string,
   href: string,
   text: string,
   offset: number,
   active: boolean,
+  state?: boolean,
 }
 
 const initialPages: NavigationPage[] = []
@@ -77,6 +81,7 @@ export function useNavigation () {
   }
 
   const setActivePage = (id: string = '') => {
+    console.warn("Set active page", id)
     dispatch({
       type: 'active',
       page: { id }
@@ -88,23 +93,30 @@ export function useNavigation () {
 
 export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<any> }) {
   const { addPage, removePage, setActivePage } = useNavigation()
-  const [ rect, offset, active, ref ] = useRect()
+
+  const [ active, ref ] = useWithinViewport((e) => {
+    if (e.isIntersecting){
+      console.log(e)
+      setActivePage(slug.current)
+    }
+  })
+
+  // const [ rect, offset, active, ref ] = useRect()
   const slug = useRef<string>()
 
   useEffect(() => {
-    slug.current = addPage(text, offset, active)
+    slug.current = addPage(text, /*offset*/0, active )
 
     return () => {
       removePage(text)
     }
-  }, [ text, ref.current ]) // eslint-disable-line
+  }, [ text, ref ]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (active)
       setActivePage(slug.current)
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ active ])
+  }, [ active, setActivePage ])
 
   // @ts-ignore
   return <div ref={ ref } id={ slug.current }>
@@ -144,7 +156,7 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
   case 'changed':
     return pages.map((t: NavigationPage) => {
       if (t.id === action.page.id)
-        return action.page
+        return { ...action.page }
       else
         return t
     })
@@ -153,8 +165,11 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
     return pages.filter((t) => t.id !== action.page.id)
 
   case 'active':
-    return pages.map((t) =>
-      Object.assign(t, { active: t.id === action.page.id }))
+    return pages.map((t) => {
+      if (t.id === action.page.id)
+        return { ...t, active: typeof action.page.state === 'boolean' }
+      return t
+    })
 
   default:
     throw Error('Unknown action: ' + action.type)

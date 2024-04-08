@@ -1,7 +1,18 @@
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(4) }
+  50% { transform: rotate(-180deg) scale(2) }
+  65% { transform: rotate(-380deg) scaleX(3) }
+  100% { transform: rotate(-360deg) }
+}
+
 .logo {
   width:      12em;
   height:     12em;
-  /* min-height: 100%; */
+  animation: rotate 2s ease-in 0s infinite forwards;
+
+  animation: rotate 2s cubic-bezier(.01,.47,.22,1) 0s infinite forwards;
+  animation-delay: 0s;
+  animation-direction: alternate-reverse;
 }
 
 
@@ -11,14 +22,17 @@
   text-align:     right;
   position:       absolute;
   display:        flex;
-  right:          10%;
+  right:          0;
   width:          48%;
   top:            50%;
   gap:            1em;
+
+  padding:        10vw;
   transform:      translateY(-50%) scale(1.2);
   text-shadow:    -1px 1px 9px rgb(0, 0, 0);
   z-index:        200;
   mix-blend-mode: color-dodge;
+  box-sizing:     border-box;
   color:          var(--header-text);
 
   @media screen and (max-width: 960px) {

@@ -3,29 +3,30 @@
   --carousel-animation-pos-x-end:   -100px;
   --carousel-animation-pos-y-start:  10px;
   --carousel-animation-pos-y-end:   -20px;
+  --carousel-animation-duration:     8s;
 }
 
 @keyframes animateSlide {
   0% {
-    opacity:    0;
+    opacity:    1;
     transform:  translate(
       var(--carousel-animation-pos-x-start),
       var(--carousel-animation-pos-y-start)
-    ) scale(1.2);
+    ) scale(1.3);
   }
   10% {
     opacity:    1;
     transform:  translate(
       var(--carousel-animation-pos-x-start),
       var(--carousel-animation-pos-y-start)
-    ) scale(1.2);
+    ) scale(1.3);
   }
   90% {
     opacity:    1;
     transform:  translate(
       var(--carousel-animation-pos-x-end),
       var(--carousel-animation-pos-y-end)
-    ) scale(1.38);
+    ) scale(1.39);
   }
   100% {
     opacity:    0;
@@ -41,6 +42,7 @@
   height:       100vh;
   max-height:   100%;
   overflow:     hidden;
+  background:   linear-gradient(30deg, #392624, #642b0f, #41331b)
 }
 
 .presentation {
@@ -48,6 +50,7 @@
   min-height: inherit;
   height:     inherit;
   width:      100%;
+  opacity:    0.8;
 }
 
 .presentation > div {
@@ -65,7 +68,7 @@
   height:               100%;
   width:                100%;
   opacity:              0;
-  animation:            animateSlide 30s infinite ease-in-out alternate;
+  animation:            animateSlide var(--carousel-animation-duration) infinite linear alternate;
   animation-play-state: paused;
   transition:           all 100ms;
   overflow:             hidden;

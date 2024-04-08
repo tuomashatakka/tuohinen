@@ -6,12 +6,14 @@ import bannerImage3 from '@/public/tuohinen-40.jpg'
 import bannerImage4 from '@/public/hero-002.jpg'
 import bannerImage5 from '@/public/tuohinen-hero-3.jpg'
 import ContactForm from './_components/ContactForm'
-import { H2, H3, Ingress, Paragraph, Spacer } from '@/components/Type'
+import { H2, H3, Heading, Ingress, Paragraph, Spacer, Title } from '@/components/Type'
 import Segment from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
 import LightboxItem from '../lib/components/Lightbox'
+import Separator from '../lib/components/Separator'
+import { ClassType, ElementType, ReactElement, ReactNode } from 'react'
 
 function fetchContent () {
   return <>
@@ -48,13 +50,8 @@ export default function Home () {
   return <>
     <Segment variant='dark' title='Tietoa'>
       {(Column) => <>
-        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+        <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
           { fetchContent() }
-          <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
-          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
-          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
-          <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
         </Column>
         <Column width={ 2 }>
           <Img alt='' image={bannerImage} />
@@ -118,6 +115,29 @@ export default function Home () {
 
     <Separator />
 
+    <Segment title='Galleria'>
+      {(Column) =>
+        <Column width={ 1 } padding>
+          <H2>Otoksia ja tunnelmaa™️</H2>
+          <Spacer align='right' />
+          <Paragraph>Tässä alla hieman tunnelmakuvastoa kylmiin iltoihin.....;)</Paragraph>
+          <div className='gallery'>
+            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
+            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
+            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+            <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
+            <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
+            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
+            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
+            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
+            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
+            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+          </div>
+        </Column>
+      }
+    </Segment>
+
     <div className='cards'>
       <Card title='tuote 1' image={bannerImage}>
         Ensimmäinen tuote!
@@ -152,5 +172,34 @@ export default function Home () {
   </>
 }
 
+enum SegmentVariantType {
+  'dark',
+  'light',
+}
 
-const Separator = () => <div className='' style={{ margin: '260px', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
+type SegmentData = {
+  title: string,
+  variant?: keyof typeof SegmentVariantType,
+  children: (Column: ElementType) => unknown
+}
+
+const segments: SegmentData[] = [
+  {
+    title: 'Tietoa',
+    variant: 'dark',
+    children: (Column) =>
+      <>
+        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+          { fetchContent() }
+          <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
+          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
+          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
+          <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
+        </Column>
+        <Column width={ 2 }>
+          <Img alt='' image={bannerImage} />
+        </Column>
+      </>
+  },
+]

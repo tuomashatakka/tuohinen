@@ -5,11 +5,10 @@ import PageHeadSection from './_components/PageHeadSection'
 import { NavigationProvider } from './_components/NavigationContext'
 import { classNameWithFont } from '@/theme/fonts'
 import { Analytics } from '@vercel/analytics/react'
-
-import '@/styles/globals.css'
-import 'material-icons/iconfont/material-icons.css'
+import { Lightbox } from '@/components/Lightbox'
 import metadata from '@/lib/metadata'
-import { Lightbox } from '@/lib/components/Lightbox'
+
+import '@/styles/globals.scss'
 
 
 const className = classNameWithFont('epilogue')
