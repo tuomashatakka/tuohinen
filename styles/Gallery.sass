@@ -1,0 +1,27 @@
+.gallery
+  justify-content:  center
+  align-items:      center
+  flex-flow:        row wrap
+  display:          flex
+  gap:              0.4em
+  max-width:        100%
+
+  & > *
+    --w: 14em
+
+    width:    var(--w)
+    height:   var(--w)
+    opacity:  0.8
+    cursor:   pointer
+    transition: 300ms all
+    max-width:  100%
+    flex:       1 1 var(--w)
+
+    @include lg
+      --w: 7em
+
+    &:hover
+      opacity: 1
+      z-index:   10
+      transform: scale(1.04)
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15)

@@ -1,19 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'reset.sass';
+@import 'animations.sass';
+@import 'breakpoints';
+
+@import 'Gallery';
+@import 'Navigation.module';
+@import 'Segment.module';
+
+@import 'material-icons/iconfont/material-icons.css';
 
 
 :root {
-  --foreground-color: #ffffff;
+  --typeface: 'Urbanist',
+              system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+              'Cantarell', 'Open Sans', 'Helvetica Neue',
+              sans-serif;
+  --line-height: 1.65em;
+
+  --foreground-color: #dfddd6;
   --background-color: #131212;
 
-  --navigation-item-text:             var(--foreground-color);
+  --navigation-item-text:             rgba(223, 221, 214, 0.75);
   --navigation-item-text-hover:       var(--foreground-color);
   --navigation-item-text-focus:       #e0e0e0;
 
-  --navigation-item-background:         transparent;
-  --navigation-item-background-hover: #191818;
-  --navigation-item-background-focus: #292727;
+  --navigation-item-background:                   transparent;
+  --navigation-item-background-hover:           #292727;
+  --navigation-item-background-focus:           #191818;
+  --navigation-item-background-focus-secondary: #191818;
 
   --header-text:                      #e8e6e4;
 }
@@ -26,35 +40,22 @@
   }
 } */
 
-@keyframes smooth-display {
-  0% {
-    transform: translate(60px, -30px) scale(1.25);
-    opacity: 0;
-  }
-  20% {
-    transform: translate(30px, -15px) scale(1.3);
-    opacity: 1;
-  }
-  40% {
-    transform: translate(-30px, 15px) scale(1.2);
-    opacity: 1;
-  }
-  60% {
-    transform: translate(-60px, 30px) scale(1.1);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(60px, 0) scale(1.1);
-    opacity: 0;
-  }
-}
+
 
 
 html {
   scroll-behavior: smooth;
-  font-family:      system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:      var(--typeface);
+  line-height:      var(--line-height, 1.65em);
   font-size:        24px;
   font-weight:      300;
+
+  @include sm {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+  }
 }
 
 body {
@@ -62,14 +63,16 @@ body {
   background-color: var(--background-color);
   width:            100vw;
   overflow-x:       hidden;
-  font-family:      system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:      var(--typeface);
+  line-height:      var(--line-height, 1.65em);
+
+  @include sm {
+    --line-height: 1.5em;
+  }
 }
 
 .main-content-wrapper {
   width: 100%;
-}
-
-.main-content {
 }
 
 .banner {
@@ -81,26 +84,39 @@ body {
   height:     var(--height);
   min-height: var(--height);
 
-  @media screen and (max-width: 960px) {
-    --height: 40vh;
+  @media screen and (max-width: $breakpoint-lg) {
+    --height: 75vh;
   }
-}
+  @media screen and (max-width: $breakpoint-sm) {
+    --height: 44vh;
+  }
 
-.banner .backdrop {
-  position: absolute;
-  top:            0;
-  left:           0;
-  right:          0;
-  bottom:         0;
-  height:         100%;
-  width:          100%;
-  object-fit:     cover;
-  pointer-events: none;
-}
+  .backdrop {
+    position: absolute;
+    top:            0;
+    left:           0;
+    right:          0;
+    bottom:         0;
+    height:         100%;
+    width:          100%;
+    object-fit:     cover;
+    pointer-events: none;
+  }
 
-.banner header h1 {
-  @media screen and (max-width: 960px) {
-    font-size: 1.2em;
+  header h1 {
+    @media screen and (max-width: $breakpoint-xl) {
+      font-size: 3em;
+    }
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+      font-size: 1em;
+    }
+  }
+
+  header p.subheading {
+    font-size: 0.75em;
   }
 }
 
@@ -109,39 +125,6 @@ img {
   user-select: none;
 }
 
-
-.slide {
-  position: absolute;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  /* animation: smooth-display 30s ease 15s infinite; */
-}
-
-.slide img {
-  opacity: inherit;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
-}
-
-.slide:nth-of-type(2) {
-  animation-delay:  30s;
-}
-
-.slide:nth-of-type(3) {
-  animation-delay:  0s;
-}
-
-.slides {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
 
 .background-image {
   width: 100%;
@@ -153,9 +136,12 @@ img {
 }
 
 h1 {
-  font-size:    4em;
-  font-weight:  300;
-  line-height:  1;
+  font-size:        4em;
+  font-weight:      300;
+  letter-spacing:   -0.025em;
+  line-height:      0.8em;
+  word-break:       keep-all;
+  color:          #efcbc6;
 }
 
 h2,
@@ -182,17 +168,7 @@ h3 {
   text-transform:   uppercase;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 
-
-@keyframes animate-in {
-  from { transform: translateY(5vh) }
-  to { transform: translateY(0) }
-}
 
 .animate-in {
   animation: animate-in 1000ms ease-out 0ms paused 1;
@@ -280,19 +256,12 @@ button {
 
 
 
-@keyframes animate-blur-in {
-  from { filter: blur(20px) }
-  to { filter: blur(0px) }
-}
+
 
 .animate-blur-in {
   animation: 5s animate-blur-in 500ms ease 1;
 }
 
-@keyframes animate-words {
-  from { transform: rotateX(0)}
-  to { transform: rotateX(360deg)}
-}
 
 .scene {
   perspective: 1000px;
@@ -332,4 +301,40 @@ button {
 .spacer.align_left {
   margin-right:   25vw;
   margin-left:    5vw;
+}
+
+
+dialog {
+  position:         fixed;
+  top:              0;
+  left:             0;
+  right:            0;
+  bottom:           0;
+  background:       rgba(0, 0, 0, 0.75);
+  margin:           0;
+  padding:          0;
+  appearance:       none;
+  width:            auto;
+  height:           100vh;
+  align-items:      center;
+  justify-content:  center;
+  z-index:          1000;
+  cursor:           pointer;
+  user-select:      none;
+}
+
+dialog:active {
+  opacity: 0.85;
+}
+
+dialog[open] {
+  display:          flex;
+}
+
+dialog > div {
+  max-width:  100%;
+  width:      60rem;
+  box-sizing: border-box;
+  padding:    8vw;
+  color:      var(--foreground-color);
 }

@@ -10,18 +10,30 @@
   border-color:     black;
   background-color: white;
   transition:       300ms all;
+  z-index:          200;
+  border-width:     2px;
+  background:       transparent !important;
+  border-color:     transparent aliceblue aquamarine violet;
+  transform:        scale(0.5);
+  cursor:           pointer;
+  mix-blend-mode: screen;
+  filter:           saturate(3);
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .scrollDownButton:hover {
-  border-color:     white;
-  background-color: black !important;
+  transform: scale(1.2)
 }
 .scrollDownButton:focus {
-  border-color:     white;
-  background-color: black !important;
   outline:          none;
 }
 
+.scrollDownButton:hover::after {
+  border-color: white
+}
 
 .scrollDownButton::after {
   border-style: solid;

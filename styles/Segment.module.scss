@@ -1,0 +1,70 @@
+
+.segment {
+  display:          flex;
+  align-items:      stretch;
+  justify-content:  stretch;
+  flex-wrap:        wrap;
+  position: relative;
+  box-sizing: border-box;
+
+  @include sm {
+    flex-flow: row-reverse wrap;
+  }
+}
+
+.segment-light {
+  background-color: rgba(255,255,255,0.05)
+}
+.segment-dark{
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.padding {
+  box-sizing: border-box;
+  padding:    15vw;
+
+  @include md {
+    padding: 8vw;
+  }
+}
+
+.segment-column {
+  flex:             1 1;
+  position:         relative;
+  text-align:       right;
+  align-content:    center;
+  box-sizing: border-box;
+
+}
+.segment-column {
+  transform:  translateY(4em) scale(1.2);
+  opacity:    0;
+  transition-duration: 4s;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(.17,.84,.44,1);
+
+  .active .segment & {
+
+    transition-duration: 4s;
+    transition-delay: 800ms;
+    transform:  translateY(0);
+    opacity:    1;
+  }
+
+  @for $i from 1 through 12 {
+    &.column-#{$i} {
+      flex-grow: #{$i};
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    flex-flow: column wrap
+  }
+}
+
+
+.segment-column {
+  max-width:        100vw;
+}
+
+/* style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} */

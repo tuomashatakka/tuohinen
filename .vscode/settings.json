@@ -1,3 +1,11 @@
 {
-  "opencodegraph.enable": false
+  "opencodegraph.enable": true,
+  "eslint.useESLintClass": true,
+  "eslint.lintTask.enable": true,
+  "typescript.validate.enable": true,
+  "editor.defaultFormatter": null,
+  "eslint.debug": true,
+  "eslint.workingDirectories": [
+    "."
+  ]
 }

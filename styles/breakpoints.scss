@@ -1,0 +1,71 @@
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 960px;
+$breakpoint-xl: 1200px;
+$breakpoints: (
+  nil:  0px,
+  xs:   284px,
+  sm:   $breakpoint-sm,
+  md:   $breakpoint-sm,
+  lg:   $breakpoint-lg,
+  xl:   $breakpoint-xl
+);
+
+
+
+
+.segment-column {
+  @each $name, $value in $breakpoints {
+    --breakpoint-#{$name}: #{$value};
+
+    .min-width-#{$name} {
+      min-width: #{$value}
+    }
+  }
+}
+
+@mixin sm {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-sm) {
+    & {
+      @content;
+    }
+  }
+}
+@mixin md {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-md) {
+    & {
+      @content;
+    }
+  }
+}
+@mixin lg {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-lg) {
+    & {
+      @content;
+    }
+  }
+}
+
+@media screen and (max-width: 284px) {
+  .min-width-xs,
+  .min-width-sm,
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 480px) {
+  .min-width-sm,
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 720px) {
+  .min-width-md,
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 960px) {
+  .min-width-lg,
+  .min-width-xl   { min-width: 100vw }}
+@media screen and (max-width: 1200px) {
+  .min-width-xl   { min-width: 100vw }}

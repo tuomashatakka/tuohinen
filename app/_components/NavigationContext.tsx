@@ -1,11 +1,13 @@
 'use client'
 
+import { useWithinViewport } from '@/lib/components/Segment'
+import classNames from 'classnames'
 import { createContext, PropsWithChildren, ReactElement, RefObject, useContext, useEffect, useReducer, useRef, useState } from 'react'
 
 // Define type for navigation action
 type NavigationAction = {
   type: string;
-  page: Partial<NavigationPage>
+  page: Partial<NavigationPage> | { statuses: Map<string, boolean> }
 }
 
 // Define type for dispatch function
@@ -16,12 +18,15 @@ export const NavigationPagesContext = createContext<NavigationPage[]>([])
 export const NavigationPagesDispatchContext = createContext<Dispatch | null>(null)
 
 
-type NavigationPage = {
+export type NavigationPage = {
   id: string,
+  url: string,
+  hash: string,
   href: string,
   text: string,
   offset: number,
   active: boolean,
+  state?: boolean,
 }
 
 const initialPages: NavigationPage[] = []
@@ -76,38 +81,55 @@ export function useNavigation () {
     })
   }
 
-  const setActivePage = (id: string = '') => {
+  const setActivePage = (id: string = '', state?: boolean) => {
+    console.warn('Set active page', id) // eslint-disable-line no-console
     dispatch({
       type: 'active',
-      page: { id }
+      page: { id, state }
     })
   }
 
-  return { addPage, removePage, updatePage, setActivePage }
+  const setActiveStatusesForPages = (statuses: Map<string, boolean>) => {
+    dispatch({
+      type: 'actives',
+      page: { statuses }
+    })
+  }
+
+  return { addPage, removePage, updatePage, setActivePage, setActiveStatusesForPages }
 }
 
 export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<any> }) {
-  const { addPage, removePage, setActivePage } = useNavigation()
-  const [ rect, offset, active, ref ] = useRect()
+  const { addPage, removePage, setActivePage, setActiveStatusesForPages } = useNavigation()
   const slug = useRef<string>()
 
+  const [ active, ref ] = useWithinViewport((entry) => {
+    const mmap = new Map()
+    mmap.set(slug.current, entry.isIntersecting)
+    setActiveStatusesForPages(mmap)
+  })
+
+  // const [ rect, offset, active, ref ] = useRect()
+
   useEffect(() => {
-    slug.current = addPage(text, offset, active)
+    if (ref.current) {
+      slug.current = addPage(text, /*offset*/0, active )
+      ref.current.id = slug.current
+    }
 
     return () => {
       removePage(text)
     }
-  }, [ text, ref.current ]) // eslint-disable-line
+  }, [ text ]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    if (active)
-      setActivePage(slug.current)
+  // useEffect(() => {
+  //   if (active)
+  //     setActivePage(slug.current)
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ active ])
+  // }, [ active, setActivePage ])
 
   // @ts-ignore
-  return <div ref={ ref } id={ slug.current }>
+  return <div ref={ ref } id={ slug.current } className={ classNames({ active })}>
     { children }
   </div>
 }
@@ -129,7 +151,8 @@ export function NavigationProvider ({ children }: PropsWithChildren<{}>) {
   </NavigationPagesContext.Provider>
 }
 
-function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'changed' | 'deleted' | 'active', page: Partial<NavigationPage> }) {
+// eslint-disable-next-line complexity
+function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'changed' | 'deleted' | 'active' | 'actives', page: Partial<NavigationPage> & { statuses?: Map<string, boolean>} }) {
   switch (action.type) {
 
   case 'added':
@@ -144,7 +167,7 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
   case 'changed':
     return pages.map((t: NavigationPage) => {
       if (t.id === action.page.id)
-        return action.page
+        return { ...action.page }
       else
         return t
     })
@@ -153,8 +176,21 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
     return pages.filter((t) => t.id !== action.page.id)
 
   case 'active':
-    return pages.map((t) =>
-      Object.assign(t, { active: t.id === action.page.id }))
+    return pages.map((t) => {
+      if (t.id === action.page.id)
+        return { ...t, active: typeof action.page.state === 'boolean' }
+
+      return t
+    })
+
+  case 'actives': {
+    const m = action.page.statuses as Map<string, boolean>
+
+    return pages.map(page => {
+      if (!m.has(page.id)) return page
+      else return { ...page, active: m?.get(page.id) }
+    })
+  }
 
   default:
     throw Error('Unknown action: ' + action.type)

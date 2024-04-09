@@ -1,10 +1,9 @@
 import { classNameWithFont } from '@/theme/fonts'
-import { BlockquoteHTMLAttributes, ClassAttributes, DetailedHTMLProps, HTMLAttributes, HTMLProps, PropsWithChildren } from 'react'
 
 import style from './Type.module.scss'
 import classNames from 'classnames'
+import { HTMLProps } from 'react'
 
-type TitlePropsType             = PropsWithChildren<{ className?: string }>
 type HeadingProps               = HTMLProps<HTMLHeadingElement>
 type ParagraphProps             = HTMLProps<HTMLParagraphElement>
 const classNameWith             = classNameWithFont('epilogue')
@@ -51,4 +50,8 @@ export const Spacer = ({ align }: { align?: 'left' | 'right'}) => {
   const classes = classNames(style.spacer, 'spacer', { align_right: align === 'right', align_left: align === 'left' })
 
   return <p className={ classes} />
+}
+
+export function Separator () {
+  return <div className={ style.separator } />
 }
