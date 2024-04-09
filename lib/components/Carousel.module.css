@@ -3,8 +3,8 @@
   --carousel-animation-pos-x-end:     10vw;
   --carousel-animation-pos-y-start:   1vw;
   --carousel-animation-pos-y-end:    -4vw;
-  --carousel-animation-duration:      8s;
-  --carousel-rotation:                -8deg;
+  --carousel-animation-duration:      15s;
+  --carousel-rotation:                0deg;
 }
 
 @keyframes animateSlide {
