@@ -1,7 +1,7 @@
 'use client'
 
 import { StaticImageData } from 'next/image'
-import { BackgroundImageWithRef } from './Image'
+import BackgroundImage from './Image'
 import classNames from 'classnames'
 import { AnimationEventHandler, createRef, useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
@@ -33,7 +33,7 @@ const CarouselSlide = ({ image, className, onAnimationEnd }: SlideProps) => {
   }
 
   return <div className={ classes } ref={ ref } onAnimationIteration={ handleAnimationEnd }>
-    <BackgroundImageWithRef image={image} className={ styles.slide_image } alt='kuva' />
+    <BackgroundImage image={image} className={ styles.slide_image } width={800} height={800} alt='kuva' />
   </div>
 }
 
