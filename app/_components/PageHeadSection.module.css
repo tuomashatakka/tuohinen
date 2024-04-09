@@ -34,7 +34,7 @@
 
   padding:        10vw;
   z-index:        200;
-  mix-blend-mode: color-dodge;
+/*  mix-blend-mode: color-dodge; */
   box-sizing:     border-box;
   color:          var(--header-text);
   word-break:     keep-all;
