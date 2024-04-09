@@ -1,10 +1,5 @@
 'use client'
 import Card from '@/lib/components/Card'
-import bannerImage from '@/public/tuohinen-hero.jpg'
-import bannerImage2 from '@/public/tuohinen-39.jpg'
-import bannerImage3 from '@/public/tuohinen-40.jpg'
-import bannerImage4 from '@/public/hero-002.jpg'
-import bannerImage5 from '@/public/tuohinen-hero-3.jpg'
 import ContactForm from './_components/ContactForm'
 import { H2, H3, Heading, Ingress, Paragraph, Spacer, Separator, Title } from '@/components/Type'
 import Segment from '@/components/Segment'
@@ -14,9 +9,19 @@ import { NavigationProvider } from './_components/NavigationContext'
 import LightboxItem from '../lib/components/Lightbox'
 import { ClassType, ElementType, ReactElement, ReactNode } from 'react'
 
+import photoIstuu from '@/public/hero/istuu.jpg'
+import photoLaituri from '@/public/tuohinen-39.jpg'
+import photoLahikuva from '@/public/tuohinen-40.jpg'
+import photoPhotoshopMadeMeDoIt from '@/public/hero-001.jpg'
+import photoNoise from '@/public/tuohinen-hero.jpg'
+import heroLukee from '@/public/hero/lukee.jpg'
+import heroTunnelmoi from '@/public/hero/tunnelmoi.jpg'
+import heroHakkaa from '@/public/hero/hakkaa.jpg'
+import heroKyykkii from '@/public/hero/kyykkii.jpg'
+
+
 function fetchContent () {
   return <>
-    <H2>Luonnollista valoa</H2>
     <Ingress>
       Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä. Tompurin tavoitteena on liittää kaatuneiden koivujen henki tunnelmallisiin valaisimiin.
     </Ingress>
@@ -26,45 +31,65 @@ function fetchContent () {
     <Paragraph>
       Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!
     </Paragraph>
-
-    <Spacer align='right' />
-
-    <H3>Valmistettu sydämellä </H3>
-    <Paragraph>
-        Our process is hands-on from start to finish.
-        We work closely with each client to understand their aesthetic,
-        space and lighting needs. Then, we concept designs and collaborate
-        to bring their vision to life. No two lamps are exactly alike.
-    </Paragraph>
-    <Paragraph>
-        More than a lighting company, we consider ourselves artists and craftspeople.
-        We take pride in what we do. Our goal is to craft lamps that become
-        cherished pieces our customers will enjoy for years to come.
-    </Paragraph>
   </>
 }
 
 export default function Home () {
 
   return <>
-    <Segment variant='dark' title='Tietoa'>
+    <Segment variant='dark' title='Visio'>
       {(Column) => <>
         <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-          { fetchContent() }
+          <H2>Luonnollista valoa</H2>
+          <Ingress>
+            Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin
+            kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on
+            elämän ja kuoleman yhdistäjä. Tompurin tavoitteena on liittää kaatuneiden
+            koivujen henki tunnelmallisiin valaisimiin.
+          </Ingress>
+          <Paragraph>
+            Tärkeintä valaisimien suunnittelussa ja valmistamisessa on
+            ymmärrys siitä, että luonto ohjaa ja määrää tahdin.
+            Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
+          </Paragraph>
+          <Paragraph>
+            Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan
+            valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!
+          </Paragraph>
         </Column>
         <Column width={ 2 }>
-          <Img alt='' image={bannerImage} />
+          <Img alt='' image={photoLaituri} />
         </Column>
       </>}
     </Segment>
 
-    <Segment title='Kakkapissa 2'>
+    <Segment title='Hieman menneestä'>
       {(Column) => <>
         <Column width={ 2 }>
-          <Img alt='' image={bannerImage2} />
+          <Img alt='' image={photoLahikuva} />
         </Column>
         <Column padding width={ 4 } minWidth={ ScreenSize.lg }>
-          { fetchContent() }
+          <H3>Valmistettu sydämellä </H3>
+          <Paragraph>
+            Tuohisen ja Tompurin yhteinen tarina alkoi vuonna 2016 heidän kohdatessa
+            hämyisem lehdon katveessa. Kevätauringon pilkahdellessa puiden latvoista
+            Tuohinen tarkkaili Tompurin metsässä samoilua.
+            Voimakkaan yhteenkuuluvuuden tunteen voimalla Tuohinen teki jotain mitä
+            ei ollut tehnyt satoihin vuosiin — Tuohinen paljasti todellisen olomuotonsa Tompurille.
+          </Paragraph>
+          <Paragraph>
+            Rakkaudesta luontoa kohtaan Tuohisen ja Tompurin yhteine taival alkoi Tompurin
+            osaavissa käsissä. Kaatuneet koivut saavat uuden elämäntarinan kotien katseenvangitsijoina.
+          </Paragraph>
+
+          <Spacer align='right' />
+
+          <H3>Luonnon kunniaksi</H3>
+          <Paragraph>
+            Luonnon monimuotoisuutta kunnioittaen Tuohinen -desingvalaisimien valmistukseen
+            ei kaadeta yhtään elävää puuta, vaan materiaali kerätään kaatuneista puista
+            maanomistajien suostumuksella.
+          </Paragraph>
         </Column>
       </>}
     </Segment>
@@ -75,15 +100,10 @@ export default function Home () {
           <H2>Valon ja varjon tanssi.</H2>
           <Spacer align='right' />
           <Ingress>
-              Our process is hands-on from start to finish.
-              We work closely with each client to understand their aesthetic,
-              space and lighting needs. Then, we concept designs and collaborate
-              to bring their vision to life. No two lamps are exactly alike.
+            ...ja Anssi (Kela)
           </Ingress>
           <Spacer align='right' />
-        </Column>
-        <Column width={ 3 }>
-          <Img alt='' image={bannerImage3} />
+          <Img alt='' image={photoNoise} />
         </Column>
       </>}
     </Segment>
@@ -91,23 +111,22 @@ export default function Home () {
     <Segment variant='dark' title='Luonnollista valoa, osa 2'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          <H3>Valmistettu sydämellä ja dokaamalla,,</H3>
+          <H3>Valmistettu sydämellä</H3>
           <Paragraph>
-              Our process is hands-on from start to finish.
-              We work closely with each client to understand their aesthetic,
-              space and lighting needs. Then, we concept designs and collaborate
-              to bring their vision to life. No two lamps are exactly alike.
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
           </Paragraph>
           <Spacer align='right' />
-          <H3>Valo, tiennäyttäjä, liibalaba paatos, eetos...</H3>
+          <H3>Valo, tiennäyttäjä</H3>
           <Paragraph>
-              More than a lighting company, we consider ourselves artists and craftspeople.
-              We take pride in what we do. Our goal is to craft lamps that become
-              cherished pieces our customers will enjoy for years to come.
+          lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
           </Paragraph>
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
-          <Img alt='' image={bannerImage2} />
+          <Img alt='' image={photoPhotoshopMadeMeDoIt} />
         </Column>
       </>}
     </Segment>
@@ -117,27 +136,24 @@ export default function Home () {
     <Segment title='Galleria'>
       {(Column) =>
         <Column width={ 1 } padding>
-          <H2>Otoksia ja tunnelmaa™️</H2>
-          <Spacer align='right' />
-          <Paragraph>Tässä alla hieman tunnelmakuvastoa kylmiin iltoihin.....;)</Paragraph>
+          <H3>Tunnelmaa luomaan</H3>
           <div className='gallery'>
-            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
-            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
-            <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
-            <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
-            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
-            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
-            <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-            <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
-            <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
+            <LightboxItem id='image1' description='Kuva 3' image={heroLukee} />
+            <LightboxItem id='image2' description='Kuva 5' image={heroTunnelmoi} />
+            <LightboxItem id='image3' description='Kuva 4' image={heroHakkaa} />
+            <LightboxItem id='image4' description='Kuva 1' image={heroKyykkii} />
+            <LightboxItem id='image5' description='Kuva 2' image={photoIstuu} />
+            <LightboxItem id='image6' description='Kuva 3' image={photoLaituri} />
+            <LightboxItem id='image7' description='Kuva 1' image={photoLahikuva} />
+            <LightboxItem id='image8' description='Kuva 2' image={photoPhotoshopMadeMeDoIt} />
+            <LightboxItem id='image9' description='Kuva 3' image={photoNoise} />
           </div>
+          <Separator />
         </Column>
       }
     </Segment>
 
-    <div className='cards'>
+    {/* <div className='cards'>
       <Card title='tuote 1' image={bannerImage}>
         Ensimmäinen tuote!
       </Card>
@@ -165,7 +181,7 @@ export default function Home () {
 
     <Separator />
 
-    <ContactForm />
+    <ContactForm /> */}
   </>
 }
 
@@ -173,30 +189,3 @@ enum SegmentVariantType {
   'dark',
   'light',
 }
-
-type SegmentData = {
-  title: string,
-  variant?: keyof typeof SegmentVariantType,
-  children: (Column: ElementType) => unknown
-}
-
-const segments: SegmentData[] = [
-  {
-    title: 'Tietoa',
-    variant: 'dark',
-    children: (Column) =>
-      <>
-        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          { fetchContent() }
-          <LightboxItem id='banner image 1' description='Banner image 1' image={bannerImage} />
-          <LightboxItem id='banner image 2' description='Banner image 2' image={bannerImage2} />
-          <LightboxItem id='banner image 3' description='Banner image 3' image={bannerImage3} />
-          <LightboxItem id='banner image 5' description='Banner image 5' image={bannerImage5} />
-          <LightboxItem id='banner image 6' description='Banner image 4' image={bannerImage4} />
-        </Column>
-        <Column width={ 2 }>
-          <Img alt='' image={bannerImage} />
-        </Column>
-      </>
-  },
-]
