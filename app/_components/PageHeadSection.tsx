@@ -26,7 +26,23 @@ export default function PageHeadSection () {
         <Image image={logoImage} alt='Tuohinen logo' className={style.logo} width={160} height={160} />
         <div>
           <Title>{metadata.title}</Title>
-          <Subtitle>{metadata.description}</Subtitle>
+
+          <Subtitle>
+            {/* {metadata.description} */}
+            <div className='rotating-text-container'>
+              <span>Tuo</span>
+              <span className='rotating-text'>
+                <span>luonto</span>
+                <span>lämpö</span>
+                <span>valo</span>
+                <span>anoppis</span>
+                <span>-tanto</span>
+                <strong>luonto</strong>
+              </span>
+              <span>kotiisi.</span>
+            </div>
+          </Subtitle>
+
         </div>
       </header>
 

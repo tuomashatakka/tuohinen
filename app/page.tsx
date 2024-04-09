@@ -6,13 +6,12 @@ import bannerImage3 from '@/public/tuohinen-40.jpg'
 import bannerImage4 from '@/public/hero-002.jpg'
 import bannerImage5 from '@/public/tuohinen-hero-3.jpg'
 import ContactForm from './_components/ContactForm'
-import { H2, H3, Heading, Ingress, Paragraph, Spacer, Title } from '@/components/Type'
+import { H2, H3, Heading, Ingress, Paragraph, Spacer, Separator, Title } from '@/components/Type'
 import Segment from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import Img from '@/lib/components/Img'
 import { NavigationProvider } from './_components/NavigationContext'
 import LightboxItem from '../lib/components/Lightbox'
-import Separator from '../lib/components/Separator'
 import { ClassType, ElementType, ReactElement, ReactNode } from 'react'
 
 function fetchContent () {
@@ -167,8 +166,6 @@ export default function Home () {
     <Separator />
 
     <ContactForm />
-
-    <Separator />
   </>
 }
 

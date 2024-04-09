@@ -3,6 +3,7 @@ import { ComponentType, createRef, MutableRefObject, PropsWithChildren, ReactNod
 import classNames from 'classnames'
 import { WithNavigationItem } from '@/app/_components/NavigationContext'
 import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
+import getObserver, { IntersectionObserverCallback, observeIntersection } from './getObserver'
 
 
 function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {
@@ -23,48 +24,44 @@ function SegmentColumn ({ children, width = 1, padding = false, minWidth = Scree
 
 export default function Segment ({ children, variant, title }: SegmentPropsType) {
 
-  const [ visible, ref ] = useWithinViewport()
-
   const classes = classNames('segment', {
-    [`segment-${variant}`]: !!variant,
-    visible,
+    [`segment-${variant}`]: !!variant
   })
 
   return <WithNavigationItem text={title}>
     {/* @ts-ignore */}
-    <section className={classes} ref={ ref }>
+    <section className={classes}>
       {children(SegmentColumn)}
     </section>
   </WithNavigationItem>
 }
-interface IntersectionObserverCallback {
-    (entries: IntersectionObserverEntry[], observer: IntersectionObserver): void;
-}
 
-export function useWithinViewport (onShow?: IntersectionObserverCallback): [ boolean, MutableRefObject<HTMLElement | undefined> ] {
+export function useWithinViewport (onShow?: (entry: IntersectionObserverEntry) => void): [ boolean, MutableRefObject<HTMLElement | undefined> ] {
   const ref = useRef<HTMLElement>()
   const [ visible, setVisibilityState ] = useState(false)
 
   useEffect(() => {
-    const options = {
-      root:       null,
-      threshold:  0,
-      rootMargin: '0px',
-    }
 
     const handleIntersectionObservation: IntersectionObserverCallback = (entries, observer) => {
-      if (onShow)
-        onShow(entries, observer)
-      entries.forEach(entry => setVisibilityState(entry.isIntersecting))
+      const index = entries.findIndex(entry => entry.target === ref.current)
+      if (index === -1)
+        return
+      const entry  = [ ...entries ][index]
+
+      if (!entry)
+        return setVisibilityState(false)
+
+      setVisibilityState(entry.isIntersecting)
+      if (onShow && index > -1)
+        return onShow(entry)
     }
 
     if (ref.current) {
-      const observer = new IntersectionObserver(handleIntersectionObservation, options)
-      observer.observe(ref.current.parentElement as HTMLElement)
-
-      return () => observer.disconnect()
+      return observeIntersection(ref.current, handleIntersectionObservation).dispose
     }
-  }, [ onShow, ref ])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ ref ])
+
 
   return [ visible, ref ]
 }

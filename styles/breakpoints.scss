@@ -14,17 +14,40 @@ $breakpoints: (
 
 
 
-@each $name, $value in $breakpoints {
-  :root {
+.segment-column {
+  @each $name, $value in $breakpoints {
     --breakpoint-#{$name}: #{$value};
-  }
 
-  .min-width-#{$name} {
-    min-width: #{$value}
+    .min-width-#{$name} {
+      min-width: #{$value}
+    }
   }
 }
 
-
+@mixin sm {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-sm) {
+    & {
+      @content;
+    }
+  }
+}
+@mixin md {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-md) {
+    & {
+      @content;
+    }
+  }
+}
+@mixin lg {
+  @warn('asd');
+  @media screen and (max-width: $breakpoint-lg) {
+    & {
+      @content;
+    }
+  }
+}
 
 @media screen and (max-width: 284px) {
   .min-width-xs,

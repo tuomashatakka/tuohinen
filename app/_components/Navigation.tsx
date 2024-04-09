@@ -3,11 +3,11 @@
 import classNames from 'classnames'
 import { createContext, MouseEventHandler, PointerEventHandler, PropsWithChildren, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
-import styles from './Navigation.module.css'
 import NavigationLink from './NavigationLink'
 import { usePages } from './NavigationContext'
 import metadata from '@/lib/metadata'
 import { usePathname } from 'next/navigation'
+
 
 const DynamicNavigationLinks = () => {
   const pages = usePages()
@@ -19,11 +19,13 @@ const DynamicNavigationLinks = () => {
     const hash      = `#${ page.href }`
 
     return <NavigationLink
+      id={ page.href }
       active={active || page.active}
       url={url}
       hash={hash}
       key={page.href}
       href={page.href}
+      text={ page.text }
       offset={page.offset}>
       {page.text}
     </NavigationLink>
@@ -31,18 +33,18 @@ const DynamicNavigationLinks = () => {
 }
 
 const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
-  <div className={ styles.menuToggleWrapper }>
+  <div className={ 'menuToggleWrapper' }>
     <button
-      className={ styles.menuToggle }
+      className={ 'menuToggle' }
       onClick={ onClick }>
       ⁝
     </button>
-    <h1 className={ styles.navigation_h1 }>{ metadata.title }</h1>
+    <h1 className={ 'navigation_h1' }>{ metadata.title }</h1>
   </div>
 
 export default function Navigation () {
   const [ menuOpen, toggleMenu ] = useState(false)
-  const className = classNames(styles.navigation, { [styles.menuOpen]: menuOpen })
+  const className = classNames('navigation', { menuOpen })
 
   const handleClick = () => toggleMenu(!menuOpen)
   const closeMenu = () => toggleMenu(false)
@@ -54,7 +56,7 @@ export default function Navigation () {
 
   return <nav className={ className }>
     <NavigationMenuButton onClick={ handleClick } />
-    <ul className={styles.list}>
+    <ul className={'list'}>
       <DynamicNavigationLinks />
       {/* <NavigationLink href=''>Etusivu</NavigationLink> */}
       {/* <NavigationLink href='contact'>Ota yhteyttä</NavigationLink> */}

@@ -6,34 +6,39 @@
 }
 
 .logo {
-  width:      12em;
-  height:     12em;
+
+  width:      12vw;
+  height:     12vw;
   animation: rotate 2s ease-in 0s infinite forwards;
 
   animation: rotate 2s cubic-bezier(.01,.47,.22,1) 0s infinite forwards;
   animation-delay: 0s;
   animation-direction: alternate-reverse;
+
+  position: absolute;
+  bottom: 80%;
+  right: 30vw;
 }
 
 
 .heading_content {
   flex-direction: column;
-  align-items:    flex-end;
+  align-items:    flex-start;
   text-align:     right;
   position:       absolute;
   display:        flex;
   right:          0;
-  width:          48%;
   top:            50%;
+  transform:      translateY(-50%);
   gap:            1em;
 
   padding:        10vw;
-  transform:      translateY(-50%) scale(1.2);
-  text-shadow:    -1px 1px 9px rgb(0, 0, 0);
   z-index:        200;
   mix-blend-mode: color-dodge;
   box-sizing:     border-box;
   color:          var(--header-text);
+  word-break:     keep-all;
+  word-wrap:      nowrap;
 
   @media screen and (max-width: 960px) {
     top:          50%;
@@ -42,4 +47,8 @@
     max-width:    100%;
     transform:    translate(50%, -50%) scale(0.8);
   }
+}
+
+.heading_content > div {
+  text-align: right;
 }

@@ -1,0 +1,130 @@
+@keyframes smooth-display
+  0%
+    transform: translate(60px, -30px) scale(1.25)
+    opacity: 1
+
+  20%
+    transform: translate(30px, -15px) scale(1.3)
+    opacity: 1
+
+  40%
+    transform: translate(-30px, 15px) scale(1.2)
+    opacity: 1
+
+  60%
+    transform: translate(-60px, 30px) scale(1.1)
+    opacity: 0
+
+  100%
+    transform: translate(60px, 0) scale(1.1)
+    opacity: 0
+
+@keyframes animate-blur-in
+  from
+    filter: blur(20px)
+  to
+    filter: blur(0px)
+
+@keyframes animate-words
+  from
+    transform: rotateX(0)
+  to
+    transform: rotateX(360deg)
+
+@keyframes animate-in
+  from
+    transform: translateY(5vh)
+  to
+    transform: translateY(0)
+
+$step: 1em
+
+@keyframes aaa
+  0%
+    transform: translateY($step)
+  1%
+    transform: translateY(0)
+  16%
+    transform: translateY(0)
+  17%
+    transform: translateY(-$step)
+  33%
+    transform: translateY(-$step)
+  34%
+    transform: translateY(-2 * $step)
+  49%
+    transform: translateY(-2 * $step)
+  50%
+    transform: translateY(-3 * $step)
+  66%
+    transform: translateY(-3 * $step)
+  67%
+    transform: translateY(-4 * $step)
+  84%
+    transform: translateY(-4 * $step)
+  85%
+    transform: translateY(-5 * $step)
+  99%
+    transform: translateY(-5 * $step)
+  100%
+    transform: translateY(-6 * $step)
+
+@keyframes aab
+  0%
+    filter:     blur(1em)
+    opacity:    0
+  10%
+    filter:     blur(0px)
+    opacity:    1
+  15%
+    filter:     blur(0.2em)
+    opacity:    0.75
+  25%
+    filter:     blur(1em)
+    opacity:    0
+  28%
+    filter:     blur(0px)
+    opacity:    1
+  43%
+    filter:     blur(1em)
+    opacity:    0
+  46%
+    filter:     blur(0px)
+    opacity:    1
+
+
+
+.rotating-text
+  animation:            animate-blur-in 3s linear infinite alternate-reverse
+  display:              block
+  animation-play-state: paused
+  flex-direction:       column
+  height:               1em
+  overflow:             hidden
+  line-height:          $step
+
+  > *
+    display:              block
+    animation:            aaa 30s linear infinite normal
+    line-height:          inherit
+    text-align:           right
+
+  strong
+    background: red
+
+.rotating-text-container
+  // filter: brightness(1.2) contrast(0.65) saturate(10)
+  mix-blend-mode: screen
+  word-break: keep-all
+  display: flex
+  justify-content: center
+  align-content: center
+  font-size: 2em
+
+  > span
+    display: inline-block
+    line-height: 1em
+    height: 1em
+    margin: 0
+    padding: 0em 0.2em 0 0
+    border: none

@@ -51,3 +51,7 @@ export const Spacer = ({ align }: { align?: 'left' | 'right'}) => {
 
   return <p className={ classes} />
 }
+
+export function Separator () {
+  return <div className={ style.separator } />
+}
