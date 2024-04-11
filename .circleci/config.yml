@@ -4,16 +4,15 @@ orbs:
 
 jobs:
   test:
-    executor:
-      name: node/default
-      tag: '13.14'
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
-      - node/install
-      - run:
-          command: npm run ci:test
-      - run:
-          command: npm run ci:lint
+      - node/install:
+          node-version: '16.13'
+      - run: node --version
+      - run: npm run ci:test
+      - run: npm run ci:lint
       - store_test_results:
           path: results.xml
 workflows:
