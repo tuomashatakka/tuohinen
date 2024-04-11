@@ -1,4 +1,4 @@
-version: '2.1'
+version: 2.1
 orbs:
   node: circleci/node@5.2
 
@@ -9,11 +9,13 @@ jobs:
       tag: '13.14'
     steps:
       - checkout
-      - node/install-packages
+      # - node/install-packages
       - run:
-          command: npm run test
+          command: npm run ci:test
+      - run:
+          command: npm run ci:lint
       - store_test_results:
-          path: junit.xml
+          path: results.xml 
 workflows:
   test_my_app:
     jobs:
