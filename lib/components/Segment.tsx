@@ -3,7 +3,7 @@ import { ComponentType, createRef, MutableRefObject, PropsWithChildren, ReactNod
 import classNames from 'classnames'
 import { WithNavigationItem } from '@/app/_components/NavigationContext'
 import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
-import getObserver, { IntersectionObserverCallback, observeIntersection } from './getObserver'
+import { IntersectionObserverCallback, observeIntersection } from './getObserver'
 
 
 function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {

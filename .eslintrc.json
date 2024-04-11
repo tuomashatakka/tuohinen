@@ -1,6 +1,10 @@
 {
   "extends": ["eslint:recommended", "next"],
 
+  "env": {
+    "jest": true
+  },
+
   "rules": {
     "semi":                               [ 2, "never" ],
     "indent":                             [ 2, 2 ],
@@ -36,7 +40,7 @@
 
     "import/no-mutable-exports":            2,
     "import/prefer-default-export":         2,
-    "import/no-unassigned-import":        [ 2, { "allow": [ "**/*.{le,c,sc}ss" ] }],
+    "import/no-unassigned-import":        [ 2, { "allow": [ "**/*.{le,c,sc}ss", "@testing-library/jest-dom" ] }],
     "import/no-extraneous-dependencies":    0,
 
     "jsx-quotes":                         [ 1, "prefer-single" ],
