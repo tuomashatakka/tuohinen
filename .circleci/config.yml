@@ -9,7 +9,7 @@ jobs:
       tag: '13.14'
     steps:
       - checkout
-      - node/install-packages
+      - node/install
       - run:
           command: npm run ci:test
       - run:
