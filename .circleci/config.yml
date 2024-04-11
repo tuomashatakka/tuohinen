@@ -7,8 +7,15 @@ jobs:
       - checkout
       - run: echo "Running tests"
       - run: npm install
-      - run: npm run ci:lint
+      - run: npm run ci:lintne
       - run: npm run ci:test
+      - store_artifacts:
+          path: coverage
+      - store_artifacts:
+          path: reports
+      - store_artifacts:
+          path: junit.xml
+          
   build:
     docker:
       - image: cimg/node:21.7.2
@@ -26,3 +33,4 @@ workflows:
       - build:
           requires:
             - test
+
