@@ -1,23 +1,10 @@
-@keyframes rotate {
-  0% { transform: rotate(0deg) scale(4) }
-  50% { transform: rotate(-180deg) scale(2) }
-  65% { transform: rotate(-380deg) scaleX(3) }
-  100% { transform: rotate(-360deg) }
-}
 
 .logo {
-
+  position:   absolute;
   width:      12vw;
   height:     12vw;
-  animation: rotate 2s ease-in 0s infinite forwards;
-
-  animation: rotate 2s cubic-bezier(.01,.47,.22,1) 0s infinite forwards;
-  animation-delay: 0s;
-  animation-direction: alternate-reverse;
-
-  position: absolute;
-  bottom: 80%;
-  right: 30vw;
+  bottom:     80%;
+  right:      30vw;
 }
 
 
