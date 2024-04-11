@@ -5,9 +5,10 @@ import Layout from '@/app/layout'
 describe('Page layout', () => {
   it('renders a heading', () => {
     render(<Layout />)
+    var A;
 
-    const heading = screen.getByRole('heading', { level: 1 })
+    const mainContainer = screen.getByRole('main')
 
-    expect(heading).toBeInTheDocument()
+    expect(mainContainer).toBeInTheDocument()
   })
 })

@@ -26,9 +26,11 @@ const CarouselSlide = ({ image, className, onAnimationEnd }: SlideProps) => {
   const handleAnimationEnd: AnimationEventHandler = (e) => {
     if (!ref.current || !onAnimationEnd)
       return
-    ref.current.getAnimations().forEach(a => {
-      a.pause()
-    })
+
+    if (typeof ref.current.getAnimations === 'function')
+      ref.current.getAnimations().forEach(a => {
+        a.pause()
+      })
     onAnimationEnd(e)
   }
 
@@ -74,9 +76,10 @@ export default function CarouselComponent ({ slides = [], className }: CarouselP
         Array.from(node.children)
           .forEach(child => child.classList.remove(styles.current_slide))
         node.children[current].classList.add(styles.current_slide)
-        node.children[current].getAnimations().forEach(a => {
-          a.play()
-        })
+        if (typeof ref.current.getAnimations === 'function')
+          node.children[current].getAnimations().forEach(a => {
+            a.play()
+          })
       }
     }
   }, [ current, ref ])

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "ci:test": "jest --ci --testResultsProcessor=jest-junit",
-    "ci:lint": " eslint --format junit -o reports/junit/js-lint-results.xml",
+    "ci:lint": " next lint --format junit -o reports/junit/js-lint-results.xml",
     "test": "jest"
   },
   "dependencies": {

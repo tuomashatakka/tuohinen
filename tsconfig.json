@@ -14,6 +14,7 @@
     "checkJs": true,
     "incremental": true,
     "baseUrl": ".",
+    "newLine": "crlf",
     "plugins": [
       {
         "name": "next"
