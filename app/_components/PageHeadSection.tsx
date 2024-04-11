@@ -1,49 +1,37 @@
 import { Subtitle, Title } from '@/components/Type'
-import logoImage from '@/public/logo-white.png'
-import Image from '@/lib/components/Img'
 import metadata from '@/metadata'
 
-import style from './PageHeadSection.module.css'
 import ScrollDownButton from './ScrollDownButton'
 import CarouselComponent from '@/lib/components/Carousel'
 
-const SLIDES = [
-  require('@/public/hero/lukee.jpg').default,
-  require('@/public/hero/tunnelmoi.jpg').default,
-  require('@/public/hero/hakkaa.jpg').default,
-  require('@/public/hero/istuu.jpg').default,
-  require('@/public/hero/kyykkii.jpg').default,
-]
+import style from './PageHeadSection.module.scss'
+import slides from './PageHeadImages'
 
 export default function PageHeadSection () {
   return <>
     <section className='banner min-h-screen animate-blur-in'>
       <CarouselComponent
         className='h-100 h-screen'
-        slides={ SLIDES } />
+        slides={ slides } />
       {/* <Image image={heroImage} alt='background' className='backdrop' /> */}
       <header className={ style.heading_content }>
-        <Image image={logoImage} alt='Tuohinen logo' className={style.logo} width={160} height={160} />
-        <div>
-          <Title>{metadata.title}</Title>
-
-          <Subtitle>
-            {/* {metadata.description} */}
-            <div className='rotating-text-container'>
-              <span>Tuo</span>
-              <span className='rotating-text'>
-                <span>luonto</span>
-                <span>lämpö</span>
-                <span>valo</span>
-                <span>anoppis</span>
-                <span>-tanto</span>
-                <strong>luonto</strong>
-              </span>
-              <span>kotiisi.</span>
-            </div>
-          </Subtitle>
-
-        </div>
+        <Subtitle>
+          {metadata.title}
+        </Subtitle>
+        <Title>
+          <div className='rotating-text-container'>
+            <span>Tuo</span>
+            <span className='rotating-text'>
+              <span>luonto</span>
+              <span>lämpö</span>
+              <span>valo</span>
+              <span>luonto</span>
+              <span>lämpö</span>
+              <strong>valo</strong>
+            </span>
+            <span>kotiisi.</span>
+          </div>
+        </Title>
       </header>
 
       <ScrollDownButton />

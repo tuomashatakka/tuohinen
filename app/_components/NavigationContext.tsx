@@ -52,48 +52,53 @@ export function useNavigation () {
 
   const addPage = (text: string, offset: number = 0, active = false) => {
     const href = toSlug(text)
-    dispatch({
-      type: 'added',
-      page: {
-        href,
-        text,
-        offset,
-        active,
-      }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'added',
+        page: {
+          href,
+          text,
+          offset,
+          active,
+        }
+      })
 
     return href
   }
 
   const removePage = (text: string) => {
     const id = toSlug(text)
-    dispatch({
-      type: 'deleted',
-      page: { id },
-    })
+    if (dispatch)
+      dispatch({
+        type: 'deleted',
+        page: { id },
+      })
   }
 
   const updatePage = (id: string, text: string) => {
     const href = toSlug(text)
-    dispatch({
-      type: 'changed',
-      page: { id, href, text },
-    })
+    if (dispatch)
+      dispatch({
+        type: 'changed',
+        page: { id, href, text },
+      })
   }
 
   const setActivePage = (id: string = '', state?: boolean) => {
     console.warn('Set active page', id) // eslint-disable-line no-console
-    dispatch({
-      type: 'active',
-      page: { id, state }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'active',
+        page: { id, state }
+      })
   }
 
   const setActiveStatusesForPages = (statuses: Map<string, boolean>) => {
-    dispatch({
-      type: 'actives',
-      page: { statuses }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'actives',
+        page: { statuses }
+      })
   }
 
   return { addPage, removePage, updatePage, setActivePage, setActiveStatusesForPages }

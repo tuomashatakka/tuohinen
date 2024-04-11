@@ -92,7 +92,7 @@ body {
   }
 
   .backdrop {
-    position: absolute;
+    position:       absolute;
     top:            0;
     left:           0;
     right:          0;
@@ -104,6 +104,9 @@ body {
   }
 
   header h1 {
+    color: white;
+    font-weight: 100;
+    letter-spacing: -0.08em;
     @media screen and (max-width: $breakpoint-xl) {
       font-size: 3em;
     }
@@ -113,10 +116,18 @@ body {
     @media screen and (max-width: $breakpoint-sm) {
       font-size: 1em;
     }
+
+    span {
+      font-weight: inherit;
+      text-align: left;
+    }
+    strong {
+      font-weight: 400;
+    }
   }
 
   header p.subheading {
-    font-size: 0.75em;
+    font-size: 1.5em;
   }
 }
 
@@ -337,4 +348,16 @@ dialog > div {
   box-sizing: border-box;
   padding:    8vw;
   color:      var(--foreground-color);
+}
+
+.logo-container {
+  width:      16vw;
+  height:     16vw;
+  flex:       0 0 auto;
+  align-self: flex-start;
+}
+
+.logo {
+  width:      100%;
+  height:     inherit;
 }

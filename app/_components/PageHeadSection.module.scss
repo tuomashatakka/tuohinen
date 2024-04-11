@@ -1,31 +1,22 @@
 
-.logo {
-  position:   absolute;
-  width:      12vw;
-  height:     12vw;
-  bottom:     80%;
-  right:      30vw;
-}
-
 
 .heading_content {
   flex-direction: column;
-  align-items:    flex-start;
-  text-align:     right;
+  align-items:    center;
   position:       absolute;
   display:        flex;
-  right:          0;
+  left:           50%;
   top:            50%;
-  transform:      translateY(-50%);
+  transform:      translate(-50%, -50%);
   gap:            1em;
 
   padding:        10vw;
   z-index:        200;
-  mix-blend-mode: color-dodge;
   box-sizing:     border-box;
   color:          var(--header-text);
   word-break:     keep-all;
   word-wrap:      nowrap;
+  text-align:     center;
 
   @media screen and (max-width: 960px) {
     top:          50%;
@@ -34,8 +25,4 @@
     max-width:    100%;
     transform:    translate(50%, -50%) scale(0.8);
   }
-}
-
-.heading_content > div {
-  text-align: right;
 }

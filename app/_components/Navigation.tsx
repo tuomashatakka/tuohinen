@@ -3,10 +3,13 @@
 import classNames from 'classnames'
 import { createContext, MouseEventHandler, PointerEventHandler, PropsWithChildren, SetStateAction, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
+import Image from '@/lib/components/Img'
 import NavigationLink from './NavigationLink'
 import { usePages } from './NavigationContext'
 import metadata from '@/lib/metadata'
 import { usePathname } from 'next/navigation'
+
+import logoImage from '@/public/logo-white.png'
 
 
 const DynamicNavigationLinks = () => {
@@ -55,6 +58,9 @@ export default function Navigation () {
   }, [ menuOpen ])
 
   return <nav className={ className }>
+    <div className='logo-container' style={{ order: 10 }}>
+      <Image image={logoImage} alt='Tuohinen logo' className='logo' />
+    </div>
     <NavigationMenuButton onClick={ handleClick } />
     <ul className={'list'}>
       <DynamicNavigationLinks />

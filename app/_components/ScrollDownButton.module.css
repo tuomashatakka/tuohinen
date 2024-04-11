@@ -16,7 +16,6 @@
   border-color:     transparent aliceblue aquamarine violet;
   transform:        scale(0.5);
   cursor:           pointer;
-  mix-blend-mode: screen;
   filter:           saturate(3);
 
   @media screen and (max-width: 768px) {
