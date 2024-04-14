@@ -19,7 +19,7 @@ const config: Config = {
 
   moduleNameMapper: {
     '^(.*).(css|scss|sass)$':       '<rootDir>/__mock__/MockImageInstance.tsx',
-    '^(.*).(png|jpg)$':             '<rootDir>/__mock__/MockiStyleModule.tsx',
+    '^(.*).(png|jpg)$':             '<rootDir>/__mock__/MockStyleModule.tsx',
     '^@/(.*)$':                     '<rootDir>/$1',
     '^@/components/(.*)$':          '<rootDir>/lib/components/$1',
     '^@/theme/(.*)$':               '<rootDir>/lib/theme/$1',
