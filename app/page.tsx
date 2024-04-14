@@ -35,7 +35,6 @@ function fetchContent () {
 }
 
 export default function Home () {
-
   return <>
     <Segment variant='dark' title='Visio'>
       {(Column) => <>

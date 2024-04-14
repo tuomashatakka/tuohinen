@@ -5,7 +5,6 @@ import Layout from '@/app/layout'
 describe('Page layout', () => {
   it('renders a heading', () => {
     render(<Layout />)
-    var A;
 
     const mainContainer = screen.getByRole('main')
 
