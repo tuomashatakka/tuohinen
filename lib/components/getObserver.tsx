@@ -12,7 +12,7 @@ const OBSERVER_OPTIONS = {
 }
 
 
-const intersectionHandlers: Set<Function> = new Set()
+const intersectionHandlers: Set<IntersectionObserverCallback> = new Set()
 
 
 const handleRegisteredIntersectionCallbacks = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) =>

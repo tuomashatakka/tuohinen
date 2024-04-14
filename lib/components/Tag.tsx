@@ -1,6 +1,6 @@
 ﻿import { PropsWithChildren } from 'react'
 
-type TagProps = PropsWithChildren<{}>
+type TagProps = PropsWithChildren<unknown>
 
 
 const Tag = ({ children }: TagProps) =>

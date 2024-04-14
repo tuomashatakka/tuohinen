@@ -1,7 +1,6 @@
 'use client'
 
 import { PropsWithChildren } from 'react'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import classNames from 'classnames'
 import { NavigationPage } from './NavigationContext'

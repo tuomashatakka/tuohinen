@@ -104,8 +104,8 @@ export function useNavigation () {
   return { addPage, removePage, updatePage, setActivePage, setActiveStatusesForPages }
 }
 
-export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<any> }) {
-  const { addPage, removePage, setActivePage, setActiveStatusesForPages } = useNavigation()
+export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<unknown> }) {
+  const { addPage, removePage, setActiveStatusesForPages } = useNavigation()
   const slug = useRef<string>()
 
   const [ active, ref ] = useWithinViewport((entry) => {
@@ -133,23 +133,22 @@ export function WithNavigationItem ({ text, children }: { text: string, children
 
   // }, [ active, setActivePage ])
 
-  // @ts-ignore
+  // @ts-expect-error FIXME
   return <div ref={ ref } id={ slug.current } className={ classNames({ active })}>
     { children }
   </div>
 }
 
 
-export function NavigationProvider ({ children }: PropsWithChildren<{}>) {
+export function NavigationProvider ({ children }: PropsWithChildren<unknown>) {
 
-  // @ts-ignore
+  // @ts-expect-error TODO: define explicit types for actions
   const [ pages, dispatch ] = useReducer(
     pagesReducer,
     initialPages
   )
 
   return <NavigationPagesContext.Provider value={pages}>
-    {/* @ts-ignore */}
     <NavigationPagesDispatchContext.Provider value={dispatch}>
       {children}
     </NavigationPagesDispatchContext.Provider>
@@ -202,11 +201,6 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
   }
 }
 
-type MutableRefObject<T> = {
-  current: T;
-};
-
-// @ts-ignore
 export const useEffectInEvent = <K extends keyof WindowEventMap>( // eslint-disable-line
   event: K,
   set: () => void,
@@ -239,7 +233,6 @@ export const useRect = <T extends HTMLElement | null>(): [
   const set = (): void => {
     const bodyRect = document.body.getBoundingClientRect()
     const elemRect = ref.current?.getBoundingClientRect() as DOMRect
-    const offset   = elemRect.top - bodyRect.top
     setRect(elemRect)
     setOffset(elemRect.top - bodyRect.top)
 

@@ -1,13 +1,9 @@
 'use client'
-import Card from '@/lib/components/Card'
-import ContactForm from './_components/ContactForm'
-import { H2, H3, Heading, Ingress, Paragraph, Spacer, Separator, Title } from '@/components/Type'
-import Segment from '@/components/Segment'
+import { H2, H3, Ingress, Paragraph, Spacer, Separator } from '@/components/Type'
+import Segment, { SegmentVariantType } from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
+import { LightboxImageItem } from '@/lib/components/Lightbox'
 import Img from '@/lib/components/Img'
-import { NavigationProvider } from './_components/NavigationContext'
-import LightboxItem from '../lib/components/Lightbox'
-import { ClassType, ElementType, ReactElement, ReactNode } from 'react'
 
 import photoIstuu from '@/public/hero/istuu.jpg'
 import photoLaituri from '@/public/tuohinen-39.jpg'
@@ -20,23 +16,9 @@ import heroHakkaa from '@/public/hero/hakkaa.jpg'
 import heroKyykkii from '@/public/hero/kyykkii.jpg'
 
 
-function fetchContent () {
-  return <>
-    <Ingress>
-      Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä. Tompurin tavoitteena on liittää kaatuneiden koivujen henki tunnelmallisiin valaisimiin.
-    </Ingress>
-    <Paragraph>
-      Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
-    </Paragraph>
-    <Paragraph>
-      Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!
-    </Paragraph>
-  </>
-}
-
 export default function Home () {
   return <>
-    <Segment variant='dark' title='Visio'>
+    <Segment variant={ SegmentVariantType.dark } title='Visio'>
       {(Column) => <>
         <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
           <H2>Luonnollista valoa</H2>
@@ -93,7 +75,7 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment variant='light' title='Luonnollista valoa'>
+    <Segment variant={ SegmentVariantType.light } title='Luonnollista valoa'>
       {(Column) => <>
         <Column padding width={ 3 }>
           <H2>Valon ja varjon tanssi.</H2>
@@ -107,7 +89,7 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment variant='dark' title='Luonnollista valoa, osa 2'>
+    <Segment variant={ SegmentVariantType.dark } title='Luonnollista valoa, osa 2'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           <H3>Valmistettu sydämellä</H3>
@@ -137,15 +119,15 @@ export default function Home () {
         <Column width={ 1 } padding>
           <H3>Tunnelmaa luomaan</H3>
           <div className='gallery'>
-            <LightboxItem id='image1' description='Kuva 3' image={heroLukee} />
-            <LightboxItem id='image2' description='Kuva 5' image={heroTunnelmoi} />
-            <LightboxItem id='image3' description='Kuva 4' image={heroHakkaa} />
-            <LightboxItem id='image4' description='Kuva 1' image={heroKyykkii} />
-            <LightboxItem id='image5' description='Kuva 2' image={photoIstuu} />
-            <LightboxItem id='image6' description='Kuva 3' image={photoLaituri} />
-            <LightboxItem id='image7' description='Kuva 1' image={photoLahikuva} />
-            <LightboxItem id='image8' description='Kuva 2' image={photoPhotoshopMadeMeDoIt} />
-            <LightboxItem id='image9' description='Kuva 3' image={photoNoise} />
+            <LightboxImageItem description='Kuva 3' image={heroLukee} />
+            <LightboxImageItem description='Kuva 5' image={heroTunnelmoi} />
+            <LightboxImageItem description='Kuva 4' image={heroHakkaa} />
+            <LightboxImageItem description='Kuva 1' image={heroKyykkii} />
+            <LightboxImageItem description='Kuva 2' image={photoIstuu} />
+            <LightboxImageItem description='Kuva 3' image={photoLaituri} />
+            <LightboxImageItem description='Kuva 1' image={photoLahikuva} />
+            <LightboxImageItem description='Kuva 2' image={photoPhotoshopMadeMeDoIt} />
+            <LightboxImageItem description='Kuva 3' image={photoNoise} />
           </div>
           <Separator />
         </Column>
@@ -182,9 +164,4 @@ export default function Home () {
 
     <ContactForm /> */}
   </>
-}
-
-enum SegmentVariantType {
-  'dark',
-  'light',
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="1.816">
-  <testsuite name="Page layout" errors="0" failures="0" skipped="0" timestamp="2024-04-11T18:05:37" time="1.085" tests="1">
-    <testcase classname="Page layout renders a heading" name="Page layout renders a heading" time="0.14">
-    </testcase>
-  </testsuite>
-</testsuites>

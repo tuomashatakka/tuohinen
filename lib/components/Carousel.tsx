@@ -6,10 +6,6 @@ import classNames from 'classnames'
 import { AnimationEventHandler, createRef, useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
 import styles from './Carousel.module.css'
-import { openAsBlob, readFileSync } from 'fs'
-import { nextImageLoaderRegex } from 'next/dist/build/webpack-config'
-import { renderToPipeableStream } from 'react-dom/server'
-import { imageOptimizer } from 'next/dist/server/image-optimizer'
 
 type SlideProps = {
   image: StaticImageData,
@@ -131,7 +127,7 @@ type CarouselProps = {
 }
 
 
-const redraw = async (canvas: HTMLCanvasElement) => {
+const redraw = async (_canvas: HTMLCanvasElement) => {
 
   // const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
   // const i = await openAsBlob(require('@/public/hero/kyykkii.jpg').default.src)

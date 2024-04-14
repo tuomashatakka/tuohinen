@@ -24,4 +24,4 @@ export default function RootLayout ({ children }: RootLayoutProps) {
   </html>
 }
 
-export type RootLayoutProps = Readonly<PropsWithChildren<{}>>
+export type RootLayoutProps = Readonly<PropsWithChildren<unknown>>

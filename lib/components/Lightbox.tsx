@@ -1,26 +1,9 @@
 'use client'
-import { createContext, ReactElement, RefObject, useContext, useEffect, useReducer, useRef, useState, PropsWithChildren, ComponentClass, ReactNode, ReducerAction, createRef, MouseEventHandler } from 'react'
+import { createContext, ReactElement, useContext, useEffect, useReducer, PropsWithChildren, ReactNode, MouseEventHandler } from 'react'
 
 import ImageComponent from './Img'
 import { StaticImageData } from 'next/image'
-import { createPortal } from 'react-dom'
 import { Paragraph } from './Type'
-
-type LightboxComponentProps = {
-
-  // @ts-ignore
-  // eslint-disable-next-line no-unused-vars
-  children: (Column: ComponentClass) => ReactNode,
-}
-
-const LightboxItemNode = (props: LightboxItemType) => {
-  console.log(props) // eslint-disable-line
-
-  return <ImageComponent
-    key={ props.id }
-    image={ props.image }
-    alt={ props.description || '' } />
-}
 
 enum LightboxActionType {
   addItem,
@@ -28,22 +11,45 @@ enum LightboxActionType {
   setActiveItem,
 }
 
-type LightboxItemType<ID = string | null> = {
-  id: ID,
-  image: StaticImageData,
-  description: string | null,
+type LightboxItemType = {
+  id: string,
+  content: ReactNode,
+  description: string,
   active: boolean,
 }
 
-type LightboxItemProps = {
+type LightboxItemProps = PropsWithChildren<{
   id: string,
+  description: string,
+}>
+
+type LightboxImageItemProps = {
+  description: string,
   image: StaticImageData,
-  description?: string,
 }
+
+type LightboxAddItemActionPayloadType = {
+  id: string,
+  content: ReactNode,
+  description: string,
+}
+
+type LightboxRemoveItemActionPayloadType = {
+  id: string,
+}
+
+type LightboxSetActiveItemActionPayloadType = {
+  id: string | null
+}
+
+type LightboxActionPayloadType =
+  LightboxAddItemActionPayloadType |
+  LightboxRemoveItemActionPayloadType |
+  LightboxSetActiveItemActionPayloadType
 
 type LightboxAction = {
   type: LightboxActionType
-  payload: Partial<LightboxItemType>
+  payload: LightboxActionPayloadType
 }
 
 type Dispatch = (action: LightboxAction) => void
@@ -68,11 +74,11 @@ export function useActiveLightboxItem (): LightboxItemType | null {
 export function useLightboxDispatch () {
   const dispatch = useContext(LightboxDispatchContext)
 
-  const dispatchAction = (type: LightboxActionType, payload: Partial<LightboxItemType>) =>
+  const dispatchAction = (type: LightboxActionType, payload: LightboxActionPayloadType) =>
     dispatch && dispatch({ type, payload })
 
-  const addItem = (id: string, image: StaticImageData, description: string | null  = null) => {
-    dispatchAction(LightboxActionType.addItem, { id, image, description })
+  const addItem = (id: string, content: ReactNode, description: string) => {
+    dispatchAction(LightboxActionType.addItem, { id, content, description })
   }
 
   const removeItem = (id: string) => {
@@ -86,22 +92,26 @@ export function useLightboxDispatch () {
   return { addItem, removeItem, setActiveItem }
 }
 
-export default function LightboxItem ({ id, description, image, children }: PropsWithChildren<LightboxItemProps>) {
+export default function LightboxItem ({ id, description, children }: PropsWithChildren<LightboxItemProps>) {
   const { addItem, removeItem, setActiveItem } = useLightboxDispatch()
-  const slug = useRef<string>()
 
   useEffect(() => {
-    addItem(id, image, description)
+    addItem(id, children, description)
 
     return () => {
       removeItem(id)
     }
-  }, [ description, image, id, addItem, removeItem ])
+  }, [ description, id, addItem, removeItem, children ])
 
-  // @ts-ignore
   return <div key={ id } onClick={ () => setActiveItem(id) }>
-    <ImageComponent image={ image } alt={ description || ''} />
+    { children }
   </div>
+}
+
+export function LightboxImageItem ({ description, image }: LightboxImageItemProps) {
+  return <LightboxItem id={ description } description={ description }>
+    <ImageComponent image={ image } alt={ description } />
+  </LightboxItem>
 }
 
 const Dialog = ({ open, children, onClick }: { open: boolean, onClick: MouseEventHandler, children: () => ReactElement }) =>
@@ -117,16 +127,11 @@ const Dialog = ({ open, children, onClick }: { open: boolean, onClick: MouseEven
 const LightboxModal = () => {
   const item  = useActiveLightboxItem() as LightboxItemProps
   const { setActiveItem } = useLightboxDispatch()
-  const ref   = createRef<typeof Dialog>()
-
-  useEffect(() => {
-
-  }, [ item ])
 
   return <Dialog open={ item !== null } onClick={() => setActiveItem(null) }>
     {() => <>
       <div>
-        <ImageComponent image={ item.image } alt={ item.description || ''} />
+        { item.children }
       </div>
       <Paragraph>{ item.description }</Paragraph>
     </>}
@@ -134,16 +139,14 @@ const LightboxModal = () => {
 }
 
 
-export const Lightbox = ({ children }: PropsWithChildren<{}>) =>
+export const Lightbox = ({ children }: PropsWithChildren<object>) =>
   <LightboxProvider>
     { children }
     <LightboxModal />
   </LightboxProvider>
 
 
-function LightboxProvider ({ children }: PropsWithChildren<{}>) {
-
-  // @ts-ignore
+function LightboxProvider ({ children }: PropsWithChildren<object>) {
   const [ pages, dispatch ] = useReducer(
     lightboxReducer,
     initialLightboxItems
@@ -156,7 +159,10 @@ function LightboxProvider ({ children }: PropsWithChildren<{}>) {
   </LightboxContext.Provider>
 }
 
-function lightboxReducer (items: LightboxItemType[], action: LightboxAction) {
+type LightboxReducerType = (items: LightboxItemType[], action: LightboxAction) => LightboxItemType[]
+
+// @ts-expect-error FIXME
+const lightboxReducer: LightboxReducerType = (items, action) => {
   switch (action.type) {
 
   case LightboxActionType.addItem:
