@@ -12,11 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@lexical/react": "^0.14.3",
     "@zeit/next-stylus": "^1.0.1",
     "classnames": "^2.5.1",
-    "lexical": "^0.14.2",
+    "lexical": "^0.14.3",
     "material-icons": "^1.13.12",
-    "next": "14.1.0",
+    "next": "^14.2.1",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.72.0",

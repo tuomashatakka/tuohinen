@@ -134,7 +134,7 @@ export function WithNavigationItem ({ text, children }: { text: string, children
   // }, [ active, setActivePage ])
 
   // @ts-expect-error FIXME
-  return <div ref={ ref } id={ slug.current } className={ classNames({ active })}>
+  return <div ref={ ref } id={ slug.current } className={ classNames({ active }) }>
     { children }
   </div>
 }
@@ -148,8 +148,8 @@ export function NavigationProvider ({ children }: PropsWithChildren<unknown>) {
     initialPages
   )
 
-  return <NavigationPagesContext.Provider value={pages}>
-    <NavigationPagesDispatchContext.Provider value={dispatch}>
+  return <NavigationPagesContext.Provider value={ pages }>
+    <NavigationPagesDispatchContext.Provider value={ dispatch }>
       {children}
     </NavigationPagesDispatchContext.Provider>
   </NavigationPagesContext.Provider>

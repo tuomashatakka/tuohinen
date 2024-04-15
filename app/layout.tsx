@@ -16,7 +16,7 @@ export default function RootLayout ({ children }: RootLayoutProps) {
     <head>
       <title>{ metadata.title }</title>
     </head>
-    <body className={bodyClassName}>
+    <body className={ bodyClassName }>
       <BodyContent>
         {children}
       </BodyContent>

@@ -28,8 +28,8 @@ export default function Segment ({ children, variant, title }: SegmentPropsType)
     [`segment-${variant}`]: !!variant
   })
 
-  return <WithNavigationItem text={title}>
-    <section className={classes}>
+  return <WithNavigationItem text={ title }>
+    <section className={ classes }>
       {children(SegmentColumn)}
     </section>
   </WithNavigationItem>

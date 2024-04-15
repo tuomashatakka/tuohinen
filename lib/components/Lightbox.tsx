@@ -157,7 +157,7 @@ const LightboxModal = () => {
 
   return <Dialog
     open={ item !== null }
-    onClick={() => setActiveItem(null) }>
+    onClick={ () => setActiveItem(null) }>
     {() => <>
       <div className='content'>
         { item.content }
@@ -187,8 +187,8 @@ function LightboxProvider ({ children }: PropsWithChildren<object>) {
     initialLightboxItems
   )
 
-  return <LightboxContext.Provider value={pages}>
-    <LightboxDispatchContext.Provider value={dispatch}>
+  return <LightboxContext.Provider value={ pages }>
+    <LightboxDispatchContext.Provider value={ dispatch }>
       {children}
     </LightboxDispatchContext.Provider>
   </LightboxContext.Provider>

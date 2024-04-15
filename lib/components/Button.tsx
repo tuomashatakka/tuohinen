@@ -18,7 +18,7 @@ export function AlertButton ({ children }: PropsWithChildren<Record<string, neve
   const callback = () => alert('mahdollista vasta ensi vuonna :(')
   const handleButtonPress = useCallback(callback, [])
 
-  return <Button onClick={handleButtonPress}>
+  return <Button onClick={ handleButtonPress }>
     {children}
   </Button>
 }

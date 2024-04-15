@@ -10,19 +10,19 @@ export default function NavigationLink ( { url, hash, href, children, offset, ac
 
   if (typeof offset === 'number') {
 
-    return <li className={className} key={href}>
+    return <li className={ className } key={ href }>
       <a
 
         // onClick={ handleClick }
-        className={'list_item_link'}
+        className={ 'list_item_link' }
         href={ hash }>
         { children }
       </a>
     </li>
   }
 
-  return <li className={className} key={href}>
-    <Link className={'list_item_link'} href={url}>
+  return <li className={ className } key={ href }>
+    <Link className={ 'list_item_link' } href={ url }>
       {children}
     </Link>
   </li>

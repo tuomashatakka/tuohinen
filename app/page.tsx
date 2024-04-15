@@ -4,6 +4,7 @@ import Segment, { SegmentVariantType } from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import LightboxItem, { LightboxImageItem } from '@/lib/components/Lightbox'
 import Img from '@/lib/components/Img'
+import ContentEditor from '@/lib/components/ContentEditor'
 
 import photoIstuu from '@/public/hero/istuu.jpg'
 import photoLaituri from '@/public/tuohinen-39.jpg'
@@ -39,7 +40,7 @@ export default function Home () {
           </Paragraph>
         </Column>
         <Column width={ 2 }>
-          <Img alt='' image={photoLaituri} />
+          <Img alt='' image={ photoLaituri } />
         </Column>
       </>}
     </Segment>
@@ -47,7 +48,7 @@ export default function Home () {
     <Segment title='Hieman menneestä'>
       {(Column) => <>
         <Column width={ 2 }>
-          <Img alt='' image={photoLahikuva} />
+          <Img alt='' image={ photoLahikuva } />
         </Column>
         <Column padding width={ 4 } minWidth={ ScreenSize.lg }>
           <H3>Valmistettu sydämellä </H3>
@@ -84,7 +85,7 @@ export default function Home () {
             ...ja Anssi (Kela)
           </Ingress>
           <Spacer align='right' />
-          <Img alt='' image={photoNoise} />
+          <Img alt='' image={ photoNoise } />
         </Column>
       </>}
     </Segment>
@@ -102,15 +103,14 @@ export default function Home () {
             <Spacer align='right' />
             <H3>Valo, tiennäyttäjä</H3>
             <Paragraph>
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-              lisää pian lisää pian lisää pian lisää pian lisää pian
-              lisää pian lisää pian lisää pian lisää pian lisää pian
+              asd
             </Paragraph>
           </LightboxItem>
+          <ContentEditor active={ false } />
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
           <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
-            <Img alt='' image={photoPhotoshopMadeMeDoIt} />
+            <Img alt='' image={ photoPhotoshopMadeMeDoIt } />
           </LightboxItem>
         </Column>
       </>}
@@ -123,15 +123,15 @@ export default function Home () {
         <Column width={ 1 } padding>
           <H3>Tunnelmaa luomaan</H3>
           <div className='gallery'>
-            <LightboxImageItem description='Kuva 1' image={heroLukee} />
-            <LightboxImageItem description='Kuva 2' image={heroTunnelmoi} />
-            <LightboxImageItem description='Kuva 3' image={heroHakkaa} />
-            <LightboxImageItem description='Kuva 4' image={heroKyykkii} />
-            <LightboxImageItem description='Kuva 5' image={photoIstuu} />
-            <LightboxImageItem description='Kuva 6' image={photoLaituri} />
-            <LightboxImageItem description='Kuva 7' image={photoLahikuva} />
-            <LightboxImageItem description='Kuva 8' image={photoPhotoshopMadeMeDoIt} />
-            <LightboxImageItem description='Kuva 9' image={photoNoise} />
+            <LightboxImageItem description='Kuva 1' image={ heroLukee } />
+            <LightboxImageItem description='Kuva 2' image={ heroTunnelmoi } />
+            <LightboxImageItem description='Kuva 3' image={ heroHakkaa } />
+            <LightboxImageItem description='Kuva 4' image={ heroKyykkii } />
+            <LightboxImageItem description='Kuva 5' image={ photoIstuu } />
+            <LightboxImageItem description='Kuva 6' image={ photoLaituri } />
+            <LightboxImageItem description='Kuva 7' image={ photoLahikuva } />
+            <LightboxImageItem description='Kuva 8' image={ photoPhotoshopMadeMeDoIt } />
+            <LightboxImageItem description='Kuva 9' image={ photoNoise } />
           </div>
           <Separator />
         </Column>

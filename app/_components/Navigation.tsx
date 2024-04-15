@@ -8,9 +8,12 @@ import NavigationLink from './NavigationLink'
 import { usePages } from './NavigationContext'
 import metadata from '@/lib/metadata'
 import { usePathname } from 'next/navigation'
+import { classNameWithFont } from '@/theme/fonts'
 
 import logoImage from '@/public/logo-white.png'
 
+
+const classNamesWithMontserrat = classNameWithFont('montserrat')
 
 const DynamicNavigationLinks = () => {
   const pages = usePages()
@@ -23,34 +26,33 @@ const DynamicNavigationLinks = () => {
 
     return <NavigationLink
       id={ page.href }
-      active={active || page.active}
-      url={url}
-      hash={hash}
-      key={page.href}
-      href={page.href}
+      active={ active || page.active }
+      url={ url }
+      hash={ hash }
+      key={ page.href }
+      href={ page.href }
       text={ page.text }
-      offset={page.offset}>
-      {page.text}
+      offset={ page.offset }>
+      {page.text} aaa
     </NavigationLink>
   })
 }
 
 const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
-  <div className={ 'menuToggleWrapper' }>
+  <div className='menuToggleWrapper'>
     <button
-      className={ 'menuToggle' }
+      className='menuToggle'
       onClick={ onClick }>
       ⁝
     </button>
-    <h1 className={ 'navigation_h1' }>{ metadata.title }</h1>
+    <h1 className='navigation_h1'>{ metadata.title }</h1>
   </div>
 
 export default function Navigation () {
   const [ menuOpen, toggleMenu ] = useState(false)
-  const className = classNames('navigation', { menuOpen })
-
+  const className   = classNames('navigation', { menuOpen })
   const handleClick = () => toggleMenu(!menuOpen)
-  const closeMenu = () => toggleMenu(false)
+  const closeMenu   = () => toggleMenu(false)
 
   useEffect(() => {
     if (menuOpen)
@@ -59,10 +61,10 @@ export default function Navigation () {
 
   return <nav className={ className }>
     <div className='logo-container' style={{ order: 10 }}>
-      <Image image={logoImage} alt='Tuohinen logo' className='logo' />
+      <Image image={ logoImage } alt='Tuohinen logo' className='logo' />
     </div>
     <NavigationMenuButton onClick={ handleClick } />
-    <ul className={'list'}>
+    <ul className={ classNamesWithMontserrat('list') }>
       <DynamicNavigationLinks />
       {/* <NavigationLink href=''>Etusivu</NavigationLink> */}
       {/* <NavigationLink href='contact'>Ota yhteyttä</NavigationLink> */}

@@ -8,6 +8,7 @@
   align-items:      center;
   justify-content:  space-between;
   max-height:       var(--menu-size);
+  max-width:        100vw;
 }
 
 .menuToggleWrapper {
@@ -16,84 +17,76 @@
 }
 
 .menuToggle {
-  width:        var(--menu-size);
-  height:       var(--menu-size);
-  padding:      0 0 0 calc(var(--menu-size)/10);
-  box-sizing:   border-box;
-  margin:       0;
-  text-align:   center;
-  font-size:    1.5em;
-  line-height:  var(--menu-size);
-  appearance:   none;
-  border:       none;
-}
-
- .list {
-  max-height: 100vh;
+  width:            var(--menu-size);
+  height:           var(--menu-size);
+  padding:          0 0 0 calc(var(--menu-size)/10);
+  box-sizing:       border-box;
+  margin:           0;
+  text-align:       center;
+  font-size:        1.5em;
+  line-height:      var(--menu-size);
+  appearance:       none;
+  border:           none;
 }
 
 .list {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1 0 auto;
-}
-
-
-.list {
+  max-height:       100vh;
+  display:          flex;
+  flex-flow:        row nowrap;
+  flex:             1 0 auto;
   height:           auto;
   display:          flex;
-  flex-direction:   column;
   overflow:         hidden;
   transition:       300ms max-height linear;
-  flex-flow:        row nowrap;
   justify-content:  flex-start;
   align-items:      flex-start;
-  gap:              1em;
+  gap:              0.5em;
 }
 
 .list_item {
   cursor:           pointer;
   pointer-events:   none;
   flex:             1 0 auto;
-  text-wrap:        nowrap;
   text-transform:   uppercase;
   letter-spacing:   0.25em;
-  font-size:        0.6em;
-  font-weight:      800;
+  font-size:        0.45em;
+  font-weight:      700;
+  max-width:        100vw;
   background-color: var(--navigation-item-background);
   color:            var(--navigation-item-text);
   transition:       220ms background-color;
-  margin-left: -1px;
+  margin-left:     -1px;
+
   @include md {
-    font-size: 0.8em;
+    font-size: 0.6em
   }
 }
 
 .list_item:focus,
 .list_item:hover {
-  background-color: var(--navigation-item-background-hover);
-  color:            var(--navigation-item-text-hover);
-  outline:          none;
+  background-color:   var(--navigation-item-background-hover);
+  color:              var(--navigation-item-text-hover);
+  outline:            none;
 }
 
 .list_item_active {
-  background-color: var(--navigation-item-background-focus);
-  color:            var(--navigation-item-text-focus);
+  background-color:   var(--navigation-item-background-focus);
+  color:              var(--navigation-item-text-focus);
 
   & + .list_item_active {
     background-color: var(--navigation-item-background-focus-secondary);
     color:            var(--navigation-item-text-focus-secondary);
 
     .list_item_link {
-      border-width: 0 0 0 1px;
-      border-style: solid;
+      border-width:   0 0 0 1px;
+      border-style:   solid;
     }
   }
 
   .list_item_link {
-    border-width: 0 0 0 2.4em;
-    border-style: solid;
-    transition-duration: 300ms;
+    border-width:         0 0 0 2.4em;
+    border-style:         solid;
+    transition-duration:  200ms;
   }
 }
 
@@ -102,7 +95,7 @@
   display:          block;
   height:           inherit;
   width:            100%;
-  margin:           1em 1em 1em 1px;
+  margin:           0.6em 1em 0.6em 1px;
   border-left:      1px dotted #988;
   padding-left:     1.2em;
   transition:       1400ms border;
@@ -125,28 +118,32 @@
   background-color: var(--background-color);
 
   .menuToggle {
-    display: none;
+    display:        none;
   }
 
   @include lg {
-    flex-flow: column nowrap;
+    flex-flow:      row nowrap;
 
     .menuToggle {
-      display: block;
+      display:      block;
     }
 
     .list {
-      max-height: 0;
-      flex-flow:  column nowrap;
+      flex-flow:        column nowrap;
       transition-delay: 1s;
-      gap: 0;
-      justify-content: stretch;
-      align-items: stretch;
+      max-height:       0;
+      gap:              0;
+      justify-content:  stretch;
+      align-items:      stretch;
+      position:         absolute;
+      bottom:           0;
+      transform:        translateY(100%);
+      box-shadow:       var(--navigation-dropdown-shadow)
     }
 
     .list_item_link {
-      margin: 0;
-      padding: 1em;
+      margin:           0;
+      padding:          1em;
     }
 
     .navigation_h1 {
@@ -155,8 +152,7 @@
   }
 
   &.menuOpen .list {
-    max-height: 100vh !important;
-    transition-delay: 0s;
+    max-height:         100vh !important;
+    transition-delay:   0s;
   }
-
 }

@@ -4,15 +4,17 @@ import metadata from '@/metadata'
 import ScrollDownButton from './ScrollDownButton'
 import CarouselComponent from '@/lib/components/Carousel'
 
-import style from './PageHeadSection.module.scss'
 import slides from './PageHeadImages'
+import style from './PageHeadSection.module.sass'
+
 
 export default function PageHeadSection () {
   return <>
     <section className='banner min-h-screen animate-blur-in'>
       <CarouselComponent
         className='h-100 h-screen'
-        slides={ slides } />
+        slides={ slides }
+      />
       {/* <Image image={heroImage} alt='background' className='backdrop' /> */}
       <header className={ style.heading_content }>
         <Subtitle>

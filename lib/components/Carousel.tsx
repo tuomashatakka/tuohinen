@@ -31,7 +31,7 @@ const CarouselSlide = ({ image, className, onAnimationEnd }: SlideProps) => {
   }
 
   return <div className={ classes } ref={ ref } onAnimationIteration={ handleAnimationEnd }>
-    <BackgroundImageWithRef image={image} className={ styles.slide_image } alt='kuva' />
+    <BackgroundImageWithRef image={ image } className={ styles.slide_image } alt='kuva' />
   </div>
 }
 
@@ -111,7 +111,8 @@ export default function CarouselComponent ({ slides = [], className }: CarouselP
           key={ key }
           onAnimationEnd={ handleAnimationEnd }
           className={ slideClassNames }
-          image={ slides[key] } />
+          image={ slides[key] }
+        />
       })}
     </div>
     <aside className={ styles.controls } style={{ display: 'none' }}>
