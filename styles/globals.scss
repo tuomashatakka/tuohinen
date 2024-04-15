@@ -46,7 +46,7 @@
 
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:  smooth;
   font-family:      var(--typeface);
   line-height:      var(--line-height, 1.65em);
   font-size:        24px;
@@ -184,7 +184,7 @@ h3 {
 
 
 .animate-in {
-  animation: animate-in 1000ms ease-out 0ms paused 1;
+  animation: animate-in 2000ms ease-out 0ms paused 1;
 }
 
 
@@ -272,7 +272,7 @@ button {
 
 
 .animate-blur-in {
-  animation: 5s animate-blur-in 500ms ease 1;
+  animation: 5s animate-blur-in 0ms ease 1;
 }
 
 
@@ -282,7 +282,7 @@ button {
   width: 100px;
   height: 100px;
 }
-.animated-words{
+.animated-words {
   position: relative;
   transform-style: preserve-3d;
   display: block;
