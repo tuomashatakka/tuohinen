@@ -25,3 +25,29 @@
       z-index:   10
       transform: scale(1.04)
       box-shadow: 0 2px 12px rgba(0,0,0,0.15)
+
+
+dialog
+  img
+    object-fit: contain !important
+
+  p
+    flex: 0 0
+
+  .dialog-content-wrapper
+    display: flex
+    flex-flow: column nowrap
+    height: 100%
+
+    & > div
+      flex: 1 0 auto
+
+  .info
+    display: flex
+
+    p
+      flex: 1 0 auto
+
+    .controls
+      display:  flex
+      flex:     0 0

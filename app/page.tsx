@@ -2,7 +2,7 @@
 import { H2, H3, Ingress, Paragraph, Spacer, Separator } from '@/components/Type'
 import Segment, { SegmentVariantType } from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
-import { LightboxImageItem } from '@/lib/components/Lightbox'
+import LightboxItem, { LightboxImageItem } from '@/lib/components/Lightbox'
 import Img from '@/lib/components/Img'
 
 import photoIstuu from '@/public/hero/istuu.jpg'
@@ -92,22 +92,26 @@ export default function Home () {
     <Segment variant={ SegmentVariantType.dark } title='Luonnollista valoa, osa 2'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          <H3>Valmistettu sydämellä</H3>
-          <Paragraph>
+          <LightboxItem id='lsää pian' description='lisää pian'>
+            <H3>Valmistettu sydämellä</H3>
+            <Paragraph>
+              lisää pian lisää pian lisää pian lisää pian lisää pian
+              lisää pian lisää pian lisää pian lisää pian lisää pian
+              lisää pian lisää pian lisää pian lisää pian lisää pian
+            </Paragraph>
+            <Spacer align='right' />
+            <H3>Valo, tiennäyttäjä</H3>
+            <Paragraph>
             lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-          </Paragraph>
-          <Spacer align='right' />
-          <H3>Valo, tiennäyttäjä</H3>
-          <Paragraph>
-          lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-          </Paragraph>
+              lisää pian lisää pian lisää pian lisää pian lisää pian
+              lisää pian lisää pian lisää pian lisää pian lisää pian
+            </Paragraph>
+          </LightboxItem>
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
-          <Img alt='' image={photoPhotoshopMadeMeDoIt} />
+          <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
+            <Img alt='' image={photoPhotoshopMadeMeDoIt} />
+          </LightboxItem>
         </Column>
       </>}
     </Segment>
@@ -119,15 +123,15 @@ export default function Home () {
         <Column width={ 1 } padding>
           <H3>Tunnelmaa luomaan</H3>
           <div className='gallery'>
-            <LightboxImageItem description='Kuva 3' image={heroLukee} />
-            <LightboxImageItem description='Kuva 5' image={heroTunnelmoi} />
-            <LightboxImageItem description='Kuva 4' image={heroHakkaa} />
-            <LightboxImageItem description='Kuva 1' image={heroKyykkii} />
-            <LightboxImageItem description='Kuva 2' image={photoIstuu} />
-            <LightboxImageItem description='Kuva 3' image={photoLaituri} />
-            <LightboxImageItem description='Kuva 1' image={photoLahikuva} />
-            <LightboxImageItem description='Kuva 2' image={photoPhotoshopMadeMeDoIt} />
-            <LightboxImageItem description='Kuva 3' image={photoNoise} />
+            <LightboxImageItem description='Kuva 1' image={heroLukee} />
+            <LightboxImageItem description='Kuva 2' image={heroTunnelmoi} />
+            <LightboxImageItem description='Kuva 3' image={heroHakkaa} />
+            <LightboxImageItem description='Kuva 4' image={heroKyykkii} />
+            <LightboxImageItem description='Kuva 5' image={photoIstuu} />
+            <LightboxImageItem description='Kuva 6' image={photoLaituri} />
+            <LightboxImageItem description='Kuva 7' image={photoLahikuva} />
+            <LightboxImageItem description='Kuva 8' image={photoPhotoshopMadeMeDoIt} />
+            <LightboxImageItem description='Kuva 9' image={photoNoise} />
           </div>
           <Separator />
         </Column>
