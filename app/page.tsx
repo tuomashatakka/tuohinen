@@ -4,7 +4,8 @@ import Segment, { SegmentVariantType } from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import LightboxItem, { LightboxImageItem } from '@/lib/components/Lightbox'
 import Img from '@/lib/components/Img'
-import ContentEditor from '@/lib/components/ContentEditor'
+
+// import ContentEditor from '@/lib/components/ContentEditor'
 
 import photoIstuu from '@/public/hero/istuu.jpg'
 import photoLaituri from '@/public/tuohinen-39.jpg'
@@ -106,7 +107,7 @@ export default function Home () {
               asd
             </Paragraph>
           </LightboxItem>
-          <ContentEditor active={ false } />
+          {/* <ContentEditor active={ false } /> */}
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
           <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
