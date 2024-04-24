@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import { H2, H3, Ingress, Paragraph, Spacer, Separator } from '@/components/Type'
 import Segment, { SegmentVariantType } from '@/components/Segment'
@@ -23,7 +24,7 @@ export default function Home () {
     <Segment variant={ SegmentVariantType.dark } title='Visio'>
       {(Column) => <>
         <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-          <H2>Luonnollista valoa</H2>
+          <H2>Lämpöä ja tunnelmaa</H2>
           <Ingress>
             Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin
             kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on
@@ -52,7 +53,7 @@ export default function Home () {
           <Img alt='' image={ photoLahikuva } />
         </Column>
         <Column padding width={ 4 } minWidth={ ScreenSize.lg }>
-          <H3>Valmistettu sydämellä </H3>
+          <H3>Valmistettu sydämellä</H3>
           <Paragraph>
             Tuohisen ja Tompurin yhteinen tarina alkoi vuonna 2016 heidän kohdatessa
             hämyisem lehdon katveessa. Kevätauringon pilkahdellessa puiden latvoista
@@ -77,37 +78,48 @@ export default function Home () {
       </>}
     </Segment>
 
-    <Segment variant={ SegmentVariantType.light } title='Luonnollista valoa'>
+    <Segment variant={ SegmentVariantType.light } title='Ekologisuus'>
       {(Column) => <>
         <Column padding width={ 3 }>
-          <H2>Valon ja varjon tanssi.</H2>
-          <Spacer align='right' />
+          <H2>Ekologisuus</H2>
           <Ingress>
-            ...ja Anssi (Kela)
+            Valaisimet on valmistettu kierrätysmateriaaleista ekologisesti ja luontoa kunnioittaen, täysin käsityönä.
           </Ingress>
           <Spacer align='right' />
-          <Img alt='' image={ photoNoise } />
+          <Paragraph>
+            Valaisinmateriaaleina käytämme luonnollisesti kaatuneita koivuja. Luonto ohjaa ja materiaali puhuu puolestaan.
+          </Paragraph>
+          <Paragraph>
+            "Ajatuksia on toki paljon, mutta usein on hyvä pysähtyä ja olla läsnä."
+          </Paragraph>
+          <Spacer align='right' />
+          <H3>Kotimaasta, kierrätettynä ja uusiokäytettynä</H3>
+          <Paragraph>
+            Yksilölliset tunnelmavalaisimet ovat kotimaista käsityötä. Tuohisen arvot lepäävätkin vahvasti ekologisen
+            kestävyyden ja luonnon monimuotoisuuden säilyttämisessä.
+          </Paragraph>
+          <Paragraph>
+            Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan.
+          </Paragraph>
+          <Paragraph>
+            Jokaisella valaisimella on oma tarinansa. Ennen kaikkea materiaalissa sen kunnioitus: historia, tarina, uusiokäyttö. Ajan patina.
+            Materiaalia pitää osata lukea ja ennen kaikkea kunnioittaa. Sen muoto, ja olemus - kiertokulku.
+          </Paragraph>
         </Column>
       </>}
     </Segment>
 
-    <Segment variant={ SegmentVariantType.dark } title='Luonnollista valoa, osa 2'>
+    <Segment variant={ SegmentVariantType.dark } title='Artisti'>
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-          <LightboxItem id='lsää pian' description='lisää pian'>
-            <H3>Valmistettu sydämellä</H3>
-            <Paragraph>
-              lisää pian lisää pian lisää pian lisää pian lisää pian
-              lisää pian lisää pian lisää pian lisää pian lisää pian
-              lisää pian lisää pian lisää pian lisää pian lisää pian
-            </Paragraph>
-            <Spacer align='right' />
-            <H3>Valo, tiennäyttäjä</H3>
-            <Paragraph>
-              asd
-            </Paragraph>
-          </LightboxItem>
-          {/* <ContentEditor active={ false } /> */}
+          <H2>Artisti</H2>
+          <Paragraph>
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+            lisää pian lisää pian lisää pian lisää pian lisää pian
+          </Paragraph>
+          <Spacer align='right' />
+          <H3>Valo, tiennäyttäjä</H3>
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
           <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
