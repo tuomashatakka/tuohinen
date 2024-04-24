@@ -33,7 +33,7 @@ const DynamicNavigationLinks = () => {
       href={ page.href }
       text={ page.text }
       offset={ page.offset }>
-      {page.text} aaa
+      {page.text}
     </NavigationLink>
   })
 }

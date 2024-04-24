@@ -4,7 +4,7 @@
   --carousel-animation-pos-y-start:   1vw;
   --carousel-animation-pos-y-end:    -4vw;
   --carousel-animation-duration:      8s;
-  --carousel-rotation:                -8deg;
+  --carousel-rotation:                2deg;
 }
 
 @keyframes animateSlide {
@@ -43,7 +43,7 @@
   height:       100vh;
   max-height:   100%;
   overflow:     hidden;
-  background:   linear-gradient(30deg, #392624, #642b0f, #41331b)
+  /* background:   linear-gradient(30deg, #392624, #642b0f, #41331b) */
 }
 
 .presentation {
@@ -69,7 +69,7 @@
   height:               100%;
   width:                100%;
   opacity:              0;
-  animation:            animateSlide var(--carousel-animation-duration) infinite cubic-bezier(.5,.22,.18,.44) alternate;
+  animation:            animateSlide var(--carousel-animation-duration) infinite cubic-bezier(.5,.22,.18,.44) reverse;
   animation-play-state: paused;
   transition:           all 100ms;
   overflow:             hidden;
