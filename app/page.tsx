@@ -99,11 +99,37 @@ export default function Home () {
             kestävyyden ja luonnon monimuotoisuuden säilyttämisessä.
           </Paragraph>
           <Paragraph>
-            Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan.
+            Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan. Materiaalit aina maanomistajan luvalla.
           </Paragraph>
           <Paragraph>
             Jokaisella valaisimella on oma tarinansa. Ennen kaikkea materiaalissa sen kunnioitus: historia, tarina, uusiokäyttö. Ajan patina.
             Materiaalia pitää osata lukea ja ennen kaikkea kunnioittaa. Sen muoto, ja olemus - kiertokulku.
+          </Paragraph>
+
+          <Spacer align='right' />
+
+          <Ingress>
+            Koivussa minua inspiroi moni asia: sen pelkistetty kauneus.
+          </Ingress>
+          <Paragraph>
+            Hyvälaatuisen materiaalin käyttökelpoisuuteen vaikuttaa moni asia.
+          </Paragraph>
+          <Paragraph>
+            On käynyt monesti niinkin, että maanomistajan siunaus on, mutta laadukasta,
+            kriteerit täyttävää materiaalia ei löydy.
+            Vaikein osuus materiaalin suhteen on löytää laadukas tuohirulla.
+          </Paragraph>
+          <Paragraph>
+            Kaikki valaisimissa käytetyt tuohiaihiot on tarkkaan tarkistettu ja ehjiä.
+          </Paragraph>
+          <Paragraph>
+            Metallivarret ovat kaikki kierrätysmateriaalia. Kaikkeen liittyy tarina,
+            ja näiden osalta tarina jatkuu edelleen - uudenlaisena.
+          </Paragraph>
+
+          <Spacer align='right' />
+          <Paragraph>
+            Valmistettu rakkaudella ja tunteella luonnon kanssa harmoniassa. Luontoäidin säännöillä, sydämellä.
           </Paragraph>
         </Column>
       </>}
@@ -113,13 +139,38 @@ export default function Home () {
       {(Column) => <>
         <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
           <H2>Artisti</H2>
+          <Ingress>
+            Tompuri on koulutukseltaan kirvesmies. Metallihommia telakalla ja tehtailla.
+            Helsingissä varttunut taiteilijasielu.
+          </Ingress>
           <Paragraph>
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
-            lisää pian lisää pian lisää pian lisää pian lisää pian
+            Tompuri toimi tatuointiartistina vuosia. Kaiken ohella hän on aina tehnyt taidetta.
           </Paragraph>
+          <Paragraph>
+            Aidon käsityöläisen kädenjälki näkyy tuohisen tuotteissa.
+          </Paragraph>
+
           <Spacer align='right' />
-          <H3>Valo, tiennäyttäjä</H3>
+          <H3>Meri & luonto</H3>
+          <Paragraph>
+
+          </Paragraph>
+        </Column>
+        <Column width={ 2 } minWidth={ ScreenSize.sm }>
+          <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
+            <Img alt='' image={ photoPhotoshopMadeMeDoIt } />
+          </LightboxItem>
+        </Column>
+      </>}
+    </Segment>
+
+    <Segment variant={ SegmentVariantType.light } title='Taide & tunnelma'>
+      {(Column) => <>
+        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+          <H2>Taide & tunnelma</H2>
+          <Ingress>
+            Valaisimien saatavuus on täysin kytköksissä materiaalien saatavuuteen.
+          </Ingress>
         </Column>
         <Column width={ 2 } minWidth={ ScreenSize.sm }>
           <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
