@@ -223,35 +223,5 @@ export default function Home () {
         </Column>
       }
     </Segment>
-
-    {/* <div className='cards'>
-      <Card title='tuote 1' image={bannerImage}>
-        Ensimmäinen tuote!
-      </Card>
-
-      <Card title='tuote 2' image={bannerImage2}>
-        tokca tuote!
-      </Card>
-
-      <Card title='tuote 3' image={bannerImage3}>
-        3. tuote!
-      </Card>
-    </div>
-
-    <Separator />
-
-    <div className='cards'>
-      <Card title='tuote 1' image={bannerImage}>
-        Ensimmäinen tuote!
-      </Card>
-
-      <Card title='tuote 2' image={bannerImage3}>
-        tokca tuote!
-      </Card>
-    </div>
-
-    <Separator />
-
-    <ContactForm /> */}
   </>
 }
