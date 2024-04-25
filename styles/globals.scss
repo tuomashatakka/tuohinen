@@ -51,6 +51,8 @@ html {
   line-height:      var(--line-height, 1.65em);
   font-size:        24px;
   font-weight:      300;
+  width:            100vw;
+  overflow-x:       hidden;
 
   @include sm {
     font-size: 18px;
