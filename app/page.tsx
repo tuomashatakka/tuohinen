@@ -83,11 +83,13 @@ export default function Home () {
         <Column padding width={ 3 }>
           <H2>Ekologisuus</H2>
           <Ingress>
-            Valaisimet on valmistettu kierrätysmateriaaleista ekologisesti ja luontoa kunnioittaen, täysin käsityönä.
+            Valaisimet on valmistettu kierrätysmateriaaleista ekologisesti ja
+            luontoa kunnioittaen, täysin käsityönä.
           </Ingress>
           <Spacer align='right' />
           <Paragraph>
-            Valaisinmateriaaleina käytämme luonnollisesti kaatuneita koivuja. Luonto ohjaa ja materiaali puhuu puolestaan.
+            Valaisinmateriaaleina käytämme luonnollisesti kaatuneita koivuja.
+            Luonto ohjaa ja materiaali puhuu puolestaan.
           </Paragraph>
           <Paragraph>
             "Ajatuksia on toki paljon, mutta usein on hyvä pysähtyä ja olla läsnä."
@@ -95,15 +97,19 @@ export default function Home () {
           <Spacer align='right' />
           <H3>Kotimaasta, kierrätettynä ja uusiokäytettynä</H3>
           <Paragraph>
-            Yksilölliset tunnelmavalaisimet ovat kotimaista käsityötä. Tuohisen arvot lepäävätkin vahvasti ekologisen
+            Yksilölliset tunnelmavalaisimet ovat kotimaista käsityötä.
+            Tuohisen arvot lepäävätkin vahvasti ekologisen
             kestävyyden ja luonnon monimuotoisuuden säilyttämisessä.
           </Paragraph>
           <Paragraph>
-            Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan. Materiaalit aina maanomistajan luvalla.
+            Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan.
+            Materiaalit aina maanomistajan luvalla.
           </Paragraph>
           <Paragraph>
-            Jokaisella valaisimella on oma tarinansa. Ennen kaikkea materiaalissa sen kunnioitus: historia, tarina, uusiokäyttö. Ajan patina.
-            Materiaalia pitää osata lukea ja ennen kaikkea kunnioittaa. Sen muoto, ja olemus - kiertokulku.
+            Jokaisella valaisimella on oma tarinansa. Ennen kaikkea
+            materiaalissa sen kunnioitus: historia, tarina, uusiokäyttö.
+            Ajan patina. Materiaalia pitää osata lukea ja ennen kaikkea
+            kunnioittaa. Sen muoto, ja olemus - kiertokulku.
           </Paragraph>
 
           <Spacer align='right' />
@@ -130,6 +136,7 @@ export default function Home () {
           <Spacer align='right' />
           <Paragraph>
             Valmistettu rakkaudella ja tunteella luonnon kanssa harmoniassa. Luontoäidin säännöillä, sydämellä.
+            Materiaalia pitää osata lukea, ja jos muokata haluaa, niin korostaen.
           </Paragraph>
         </Column>
       </>}
@@ -145,9 +152,11 @@ export default function Home () {
           </Ingress>
           <Paragraph>
             Tompuri toimi tatuointiartistina vuosia. Kaiken ohella hän on aina tehnyt taidetta.
+            Aidon käsityöläisen kädenjälki näkyy tuohisen tuotteissa.
           </Paragraph>
           <Paragraph>
-            Aidon käsityöläisen kädenjälki näkyy tuohisen tuotteissa.
+            Taiteilija Otto Mikael Tompuri haluaa antaa estradin kansallispuullemme koivulle
+            ja sen pelkistetylle kauneudelle.
           </Paragraph>
 
           <Spacer align='right' />
@@ -176,6 +185,19 @@ export default function Home () {
           <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
             <Img alt='' image={ photoPhotoshopMadeMeDoIt } />
           </LightboxItem>
+        </Column>
+      </>}
+    </Segment>
+
+    <Segment title='Ympäri suomen'>
+      {(Column) => <>
+        <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+          <H2>Esillä ympäri suomen</H2>
+          <Ingress>
+            Tuohisen valaisimet ovat esillä ympäri suomen. Ravintoloissa,
+            hotelleissa ja matkailukohteissa. Nettisivuille päivittyy
+            jatkossa kartta, josta voit nähdä missä valaisimet luovat tunnelmaa.
+          </Ingress>
         </Column>
       </>}
     </Segment>
