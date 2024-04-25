@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@lexical/react": "^0.14.3",
+    "@vercel/analytics": "^1.2.2",
     "@zeit/next-stylus": "^1.0.1",
     "classnames": "^2.5.1",
     "lexical": "^0.14.3",

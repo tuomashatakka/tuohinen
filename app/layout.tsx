@@ -6,6 +6,8 @@ import metadata from '@/lib/metadata'
 import '@/styles/globals.scss'
 import BodyContent from './_components/BodyContent'
 
+import { Analytics } from '@vercel/analytics/react'
+
 
 const className = classNameWithFont('epilogue')
 
@@ -20,6 +22,7 @@ export default function RootLayout ({ children }: RootLayoutProps) {
       <BodyContent>
         {children}
       </BodyContent>
+      <Analytics />
     </body>
   </html>
 }
