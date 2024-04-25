@@ -9,5 +9,9 @@
     "."
   ],
   "eslint.enable": true,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
