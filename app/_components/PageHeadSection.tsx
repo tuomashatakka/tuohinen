@@ -8,35 +8,34 @@ import slides from './PageHeadImages'
 import style from './PageHeadSection.module.sass'
 
 
-export default function PageHeadSection () {
-  return <>
-    <section className='banner min-h-screen animate-blur-in'>
-      <CarouselComponent
-        className='h-100 h-screen'
-        slides={ slides }
-      />
-      {/* <Image image={heroImage} alt='background' className='backdrop' /> */}
-      <header className={ style.heading_content }>
-        <Subtitle>
-          {metadata.title}
-        </Subtitle>
-        <Title>
-          <div className='rotating-text-container'>
-            <span>Tuo</span>
-            <span className='rotating-text'>
-              <span>luonto</span>
-              <span>lämpö</span>
-              <span>valo</span>
-              <span>luonto</span>
-              <span>lämpö</span>
-              <strong>valo</strong>
-            </span>
-            <span>kotiisi.</span>
-          </div>
-        </Title>
-      </header>
 
-      <ScrollDownButton />
-    </section>
-  </>
+const RotatingText = ({ prefix, suffix, children }: { prefix: string, suffix: string, children: string }) =>
+  <div className='rotating-text-container'>
+    <span>{prefix}</span>
+    <span className='rotating-text'>
+      {children.split(/\s´+/).map(text =>
+        <span key={ text }>{text}</span>)}
+    </span>
+    <span>{suffix}</span>
+  </div>
+
+
+export default function PageHeadSection () {
+  return <section className='banner min-h-screen animate-blur-in'>
+    <CarouselComponent className='h-100 h-screen' slides={ slides } />
+
+    <header className={ style.heading_content }>
+      <Subtitle>
+        {metadata.title}
+      </Subtitle>
+
+      <Title>
+        <RotatingText prefix='tuo' suffix='kotiisi.'>
+          luonto lämpö valo luonto lämpö valo
+        </RotatingText>
+      </Title>
+    </header>
+
+    <ScrollDownButton />
+  </section>
 }

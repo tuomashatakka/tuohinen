@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import * as Segments from '../_components/Segments'
 
-export default function ContactPage () {
+export default function GalleriaPage () {
   return <>
-    <Segments.Artisti />
+    <Segments.Galleria />
   </>
 }

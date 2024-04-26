@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { MouseEventHandler, useEffect, useState } from 'react'
 
 import Image from '@/lib/components/Img'
-import NavigationLink from './NavigationLink'
+import NavigationLink, { StaticNavigationLink  } from './NavigationLink'
 import { usePages } from './NavigationContext'
 import metadata from '@/lib/metadata'
 import { usePathname } from 'next/navigation'
@@ -65,8 +65,12 @@ export default function Navigation () {
     </div>
     <NavigationMenuButton onClick={ handleClick } />
     <ul className={ classNamesWithMontserrat('list') }>
+      <StaticNavigationLink id='etusivu' url='/'>Etusivu</StaticNavigationLink>
+      <StaticNavigationLink id='tuote' url='/tuotteesta'>Tuote</StaticNavigationLink>
+      <StaticNavigationLink id='taiteilija' url='/taiteilijasta'>Taiteilija</StaticNavigationLink>
+      <StaticNavigationLink id='galleria' url='/galleria'>Galleria</StaticNavigationLink>
+      <StaticNavigationLink id='contact' url='/contact'>Ota yhteyttä</StaticNavigationLink>
       <DynamicNavigationLinks />
-      {/* <NavigationLink href=''>Etusivu</NavigationLink> */}
       {/* <NavigationLink href='contact'>Ota yhteyttä</NavigationLink> */}
     </ul>
 

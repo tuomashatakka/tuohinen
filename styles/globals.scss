@@ -52,7 +52,9 @@ html {
   font-size:        24px;
   font-weight:      300;
   width:            100vw;
+  height:           100vh;
   overflow-x:       hidden;
+  overflow-y:       hidden;
 
   @include sm {
     font-size: 18px;
@@ -66,7 +68,9 @@ body {
   color:            var(--foreground-color);
   background-color: var(--background-color);
   width:            100vw;
+  height:           100vh;
   overflow-x:       hidden;
+  overflow-y:       auto;
   font-family:      var(--typeface);
   line-height:      var(--line-height, 1.65em);
 
@@ -148,6 +152,14 @@ img {
   background-position: 0 center;
   position: absolute;
   z-index: -1;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 0.2em;
+}
+
+p {
+  margin-bottom: 0.75em;
 }
 
 h1 {
@@ -306,6 +318,7 @@ button {
 .spacer {
   margin:         1em 15vw;
   border-bottom:  1px solid;
+  filter:         brightness(0.5);
 }
 
 .spacer.align_right {

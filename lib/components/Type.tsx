@@ -8,7 +8,7 @@ type HeadingProps               = HTMLProps<HTMLHeadingElement>
 type ParagraphProps             = HTMLProps<HTMLParagraphElement>
 const classNameWith             = classNameWithFont('epilogue')
 const classNameWithMontserrat   = classNameWithFont('montserrat')
-const classNameWithGluten       = classNameWithFont('gluten')
+const classNameWithGluten       = classNameWithFont('montserrat')
 
 export const Title = ({ children, className }: Readonly<HeadingProps>) =>
   <h1 className={ classNameWithGluten(className) }>
