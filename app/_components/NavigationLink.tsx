@@ -5,7 +5,7 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import { NavigationPage } from './NavigationContext'
 
-export default function NavigationLink ( { url, hash, href, children, offset, active }: PropsWithChildren<NavigationPage> ) {
+export default function NavigationLink ( { hash, href, children, active }: PropsWithChildren<NavigationPage> ) {
   const className = classNames( 'list_item', { list_item_active: active } )
 
   return <li className={ className } key={ href }>
