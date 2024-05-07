@@ -49,13 +49,13 @@ export const Menneesta = () => <Segment title='Hieman menneestä'>
       <H3>Valmistettu sydämellä</H3>
       <Paragraph>
           Tuohisen ja Tompurin yhteinen tarina alkoi vuonna 2016 heidän kohdatessa
-          hämyisem lehdon katveessa. Kevätauringon pilkahdellessa puiden latvoista
+          hämyisen lehdon katveessa. Kevätauringon pilkahdellessa puiden latvoista
           Tuohinen tarkkaili Tompurin metsässä samoilua.
           Voimakkaan yhteenkuuluvuuden tunteen voimalla Tuohinen teki jotain mitä
           ei ollut tehnyt satoihin vuosiin — Tuohinen paljasti todellisen olomuotonsa Tompurille.
       </Paragraph>
       <Paragraph>
-          Rakkaudesta luontoa kohtaan Tuohisen ja Tompurin yhteine taival alkoi Tompurin
+          Rakkaudesta luontoa kohtaan Tuohisen ja Tompurin yhteinen taival alkoi Tompurin
           osaavissa käsissä. Kaatuneet koivut saavat uuden elämäntarinan kotien katseenvangitsijoina.
       </Paragraph>
 
