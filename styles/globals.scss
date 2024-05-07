@@ -133,10 +133,6 @@ body {
       font-weight: 400;
     }
   }
-
-  header p.subheading {
-    font-size: 1.5em;
-  }
 }
 
 
@@ -173,8 +169,19 @@ h1 {
 
 h2,
 p.subheading {
-  font-size:    1.4em;
+  font-size:    1.5em;
   font-weight:  200;
+}
+
+p.subheading {
+  margin: 0;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 0px;
+  letter-spacing: -0.1em;
+  font-size: 3em;
+  line-height: 0.9em;
+  margin-bottom: -0.5em;
 }
 
 h2 {

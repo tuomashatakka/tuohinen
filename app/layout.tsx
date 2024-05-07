@@ -1,12 +1,11 @@
 import { PropsWithChildren } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import { classNameWithFont } from '@/theme/fonts'
 import metadata from '@/lib/metadata'
-
-import '@/styles/globals.scss'
 import BodyContent from './_components/BodyContent'
 
-import { Analytics } from '@vercel/analytics/react'
+import '@/styles/globals.scss'
 
 
 const className = classNameWithFont('epilogue')

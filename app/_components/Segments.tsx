@@ -21,10 +21,8 @@ export const Visio = () => <Segment variant={ SegmentVariantType.dark } title='V
     <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
       <H2>Lämpöä ja tunnelmaa</H2>
       <Ingress>
-          Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin
-          kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on
-          elämän ja kuoleman yhdistäjä. Tompurin tavoitteena on liittää kaatuneiden
-          koivujen henki tunnelmallisiin valaisimiin.
+          Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle.<br/>
+          Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä.
       </Ingress>
       <Paragraph>
           Tärkeintä valaisimien suunnittelussa ja valmistamisessa on

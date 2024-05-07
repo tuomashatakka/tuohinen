@@ -1,6 +1,5 @@
 import { Subtitle, Title } from '@/components/Type'
 import metadata from '@/metadata'
-
 import ScrollDownButton from './ScrollDownButton'
 import CarouselComponent from '@/lib/components/Carousel'
 
