@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
-import { H2, H3, Ingress, Paragraph, Spacer, Separator } from '@/components/Type'
+
+import { H2, H3, Ingress, Paragraph, Quote, Spacer, Separator } from '@/components/Type'
 import Segment, { SegmentVariantType } from '@/components/Segment'
 import { ScreenSize } from '@/lib/theme/ScreenSize'
 import LightboxItem, { LightboxImageItem } from '@/lib/components/Lightbox'
@@ -15,9 +16,10 @@ import heroLukee from '@/public/hero/lukee.jpg'
 import heroTunnelmoi from '@/public/hero/tunnelmoi.jpg'
 import heroHakkaa from '@/public/hero/hakkaa.jpg'
 import heroKyykkii from '@/public/hero/kyykkii.jpg'
+import { ElementType } from 'react'
 
 export const Visio = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
-  {(Column) => <>
+  {(Column: ElementType) => <>
     <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
       <H2>Lämpöä ja tunnelmaa</H2>
       <Ingress>
@@ -169,7 +171,11 @@ export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title=
       <H3>Tompuri, maailman matkaaja</H3>
       <Paragraph>
         Tompuri on kiertänyt useita kertoja ympäri Aasiaa ja saanut usein kuulla paikallisilta kommentin:
-        <blockquote>Et vaikuta yhtään Suomalaiselta ihmiseltä, haha.</blockquote>
+      </Paragraph>
+      <Quote>
+        Et vaikuta yhtään Suomalaiselta ihmiseltä, haha.
+      </Quote>
+      <Paragraph>
         Kyllä, tiedän, Tompuri on aina tällöin miettinyt.
       </Paragraph>
       <Paragraph>
@@ -240,7 +246,7 @@ export const Kartta = () => <Segment title='Ympäri suomen'>
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
       <H2>Esillä ympäri suomen</H2>
       <Ingress>
-          Tuohisen valaisimet ovat esillä ympäri suomen. Ravintoloissa,
+          Tuohisen valaisimet ovat esillä ympäri suomen. Ravintoloissa,8
           hotelleissa ja matkailukohteissa. Nettisivuille päivittyy
           jatkossa kartta, josta voit nähdä missä valaisimet luovat tunnelmaa.
       </Ingress>

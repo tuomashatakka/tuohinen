@@ -6,6 +6,8 @@ import { HTMLProps } from 'react'
 
 type HeadingProps               = HTMLProps<HTMLHeadingElement>
 type ParagraphProps             = HTMLProps<HTMLParagraphElement>
+type QuoteProps                 = HTMLProps<HTMLQuoteElement>
+
 const classNameWith             = classNameWithFont('epilogue')
 const classNameWithMontserrat   = classNameWithFont('montserrat')
 const classNameWithGluten       = classNameWithFont('montserrat')
@@ -46,6 +48,11 @@ export const Ingress = ({ className, ...props }: ParagraphProps) =>
   <p { ...props } className={ classNameWith(style.ingress, className) }>
     {props.children}
   </p>
+
+export const Quote = ({ className, ...props }: QuoteProps) =>
+  <blockquote { ...props } className={ classNameWith(style.ingress, className) }>
+    {props.children}
+  </blockquote>
 
 export const Spacer = ({ align }: { align?: 'left' | 'right'}) => {
   const classes = classNames(style.spacer, 'spacer', { align_right: align === 'right', align_left: align === 'left' })
