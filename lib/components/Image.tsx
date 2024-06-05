@@ -7,7 +7,7 @@ export function Background ({ image }: { image: string }) {
     backgroundImage: `url(${image})`
   }
 
-  return <div className='background-image' style={style} />
+  return <div className='background-image' style={ style } />
 }
 
 
@@ -16,12 +16,13 @@ function BackgroundImage ({ alt, image, ...props }: BackgroundImagePropTypes, re
 
   return <Image
     ref={ ref }
-    alt={alt || ''}
-    src={image.src}
-    width={width || 640}
-    height={height || 640}
-    quality={100}
-    {...attrs} />
+    alt={ alt || '' }
+    src={ image.src }
+    width={ width || 640 }
+    height={ height || 640 }
+    quality={ 100 }
+    { ...attrs }
+  />
 }
 
 type BackgroundImagePropTypes = Omit<ImageProps, 'src'> & {

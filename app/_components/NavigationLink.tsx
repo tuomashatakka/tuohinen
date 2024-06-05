@@ -1,29 +1,34 @@
 'use client'
 
 import { PropsWithChildren } from 'react'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import classNames from 'classnames'
+import { usePathname } from 'next/navigation'
+
 import { NavigationPage } from './NavigationContext'
 
-export default function NavigationLink ( { url, hash, href, children, offset, active }: PropsWithChildren<NavigationPage> ) {
+
+export default function NavigationLink ( { hash, href, children, active }: PropsWithChildren<NavigationPage> ) {
   const className = classNames( 'list_item', { list_item_active: active } )
 
-  if (typeof offset === 'number') {
+  return <li className={ className } key={ href }>
+    <a
 
-    return <li className={className} key={href}>
-      <a
+      // onClick={ handleClick }
+      className={ 'list_item_link' }
+      href={ hash }>
+      { children }
+    </a>
+  </li>
+}
 
-        // onClick={ handleClick }
-        className={'list_item_link'}
-        href={ hash }>
-        { children }
-      </a>
-    </li>
-  }
+export function StaticNavigationLink ({ id, url, children }: PropsWithChildren<{ id: string, url: string }>) {
+  const pathname  = usePathname()
+  const active    = pathname === url
+  const className = classNames('list_item', { list_item_active: active })
 
-  return <li className={className} key={href}>
-    <Link className={'list_item_link'} href={url}>
+  return <li className={ className } key={ id }>
+    <Link className={ 'list_item_link' } href={ url }>
       {children}
     </Link>
   </li>

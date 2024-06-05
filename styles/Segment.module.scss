@@ -37,9 +37,9 @@
 
 }
 .segment-column {
-  transform:  translateY(4em) scale(1.2);
+  transform:  translateY(4em) scale(1);
   opacity:    0;
-  transition-duration: 4s;
+  transition-duration: 2s;
   transition-property: transform, opacity;
   transition-timing-function: cubic-bezier(.17,.84,.44,1);
 

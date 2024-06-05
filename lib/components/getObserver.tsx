@@ -12,7 +12,7 @@ const OBSERVER_OPTIONS = {
 }
 
 
-const intersectionHandlers: Set<Function> = new Set()
+const intersectionHandlers: Set<IntersectionObserverCallback> = new Set()
 
 
 const handleRegisteredIntersectionCallbacks = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) =>
@@ -21,9 +21,20 @@ const handleRegisteredIntersectionCallbacks = (entries: IntersectionObserverEntr
 
 
 export default function getObserver (): IntersectionObserver {
-  getObserver.prototype._observer =
-    getObserver.prototype._observer ||
-    new IntersectionObserver(handleRegisteredIntersectionCallbacks, OBSERVER_OPTIONS)
+  try {
+    getObserver.prototype._observer =
+      getObserver.prototype._observer ||
+      new IntersectionObserver(handleRegisteredIntersectionCallbacks, OBSERVER_OPTIONS)
+  }
+  catch (err) {
+
+    // For esdom
+    getObserver.prototype._observer =
+      {
+        observe: () => {},
+        unobserve: () => {},
+      }
+  }
 
   return getObserver.prototype._observer
 }

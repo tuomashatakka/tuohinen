@@ -1,49 +1,61 @@
 'use client'
-import { createContext, ReactElement, RefObject, useContext, useEffect, useReducer, useRef, useState, PropsWithChildren, ComponentClass, ReactNode, ReducerAction, createRef, MouseEventHandler } from 'react'
+import { createContext, ReactElement, useContext, useEffect, useReducer, PropsWithChildren, ReactNode, MouseEventHandler } from 'react'
 
 import ImageComponent from './Img'
 import { StaticImageData } from 'next/image'
-import { createPortal } from 'react-dom'
 import { Paragraph } from './Type'
-
-type LightboxComponentProps = {
-
-  // @ts-ignore
-  // eslint-disable-next-line no-unused-vars
-  children: (Column: ComponentClass) => ReactNode,
-}
-
-const LightboxItemNode = (props: LightboxItemType) => {
-  console.log(props) // eslint-disable-line
-
-  return <ImageComponent
-    key={ props.id }
-    image={ props.image }
-    alt={ props.description || '' } />
-}
 
 enum LightboxActionType {
   addItem,
   removeItem,
   setActiveItem,
+  setActiveItemByIndex,
 }
 
-type LightboxItemType<ID = string | null> = {
-  id: ID,
-  image: StaticImageData,
-  description: string | null,
+type LightboxItemType = {
+  id: string,
+  content: ReactNode,
+  description: string,
   active: boolean,
 }
 
-type LightboxItemProps = {
+type LightboxItemProps = PropsWithChildren<{
   id: string,
+  description: string,
+}>
+
+type LightboxImageItemProps = {
+  description: string,
   image: StaticImageData,
-  description?: string,
 }
+
+type LightboxAddItemActionPayloadType = {
+  id: string,
+  content: ReactNode,
+  description: string,
+}
+
+type LightboxRemoveItemActionPayloadType = {
+  id: string,
+}
+
+type LightboxSetActiveItemActionPayloadType = {
+  id: string | null
+}
+
+type LightboxSetActiveItemByIndexActionPayloadType = {
+  id: number
+}
+
+type LightboxActionPayloadType =
+  LightboxAddItemActionPayloadType |
+  LightboxRemoveItemActionPayloadType |
+  LightboxSetActiveItemActionPayloadType |
+  LightboxSetActiveItemByIndexActionPayloadType
 
 type LightboxAction = {
   type: LightboxActionType
-  payload: Partial<LightboxItemType>
+  payload: LightboxActionPayloadType
 }
 
 type Dispatch = (action: LightboxAction) => void
@@ -52,7 +64,7 @@ const initialLightboxItems: LightboxItemType[]  = []
 const LightboxContext                       = createContext<LightboxItemType[]>(initialLightboxItems)
 const LightboxDispatchContext               = createContext<Dispatch | null>(null)
 
-export function useActiveLightboxItem (): LightboxItemType | null {
+export function useActiveLightboxItem (): [ LightboxItemType | null, number ] {
   const context = useContext(LightboxContext)
 
   if (!context)
@@ -60,19 +72,19 @@ export function useActiveLightboxItem (): LightboxItemType | null {
 
   const index   = context.findIndex(item => item.active)
   if (index === -1)
-    return null
+    return [ null, -1 ]
 
-  return context[index]
+  return [ context[index], index ]
 }
 
 export function useLightboxDispatch () {
   const dispatch = useContext(LightboxDispatchContext)
 
-  const dispatchAction = (type: LightboxActionType, payload: Partial<LightboxItemType>) =>
+  const dispatchAction = (type: LightboxActionType, payload: LightboxActionPayloadType) =>
     dispatch && dispatch({ type, payload })
 
-  const addItem = (id: string, image: StaticImageData, description: string | null  = null) => {
-    dispatchAction(LightboxActionType.addItem, { id, image, description })
+  const addItem = (id: string, content: ReactNode, description: string) => {
+    dispatchAction(LightboxActionType.addItem, { id, content, description })
   }
 
   const removeItem = (id: string) => {
@@ -83,80 +95,109 @@ export function useLightboxDispatch () {
     dispatchAction(LightboxActionType.setActiveItem, { id })
   }
 
-  return { addItem, removeItem, setActiveItem }
+  const setActiveItemByIndex = (id: number) => {
+    dispatchAction(LightboxActionType.setActiveItemByIndex, { id })
+  }
+
+  return { addItem, removeItem, setActiveItem, setActiveItemByIndex }
 }
 
-export default function LightboxItem ({ id, description, image, children }: PropsWithChildren<LightboxItemProps>) {
+export default function LightboxItem ({ id, description, children }: PropsWithChildren<LightboxItemProps>) {
   const { addItem, removeItem, setActiveItem } = useLightboxDispatch()
-  const slug = useRef<string>()
+
+  const style = {
+    display:  'contents',
+    cursor:   'pointer',
+  }
 
   useEffect(() => {
-    addItem(id, image, description)
+    addItem(id, children, description)
 
     return () => {
       removeItem(id)
     }
-  }, [ description, image, id, addItem, removeItem ])
+  }, [ description, id, addItem, removeItem, children ])
 
-  // @ts-ignore
-  return <div key={ id } onClick={ () => setActiveItem(id) }>
-    <ImageComponent image={ image } alt={ description || ''} />
+  return <div key={ id } onClick={ () => setActiveItem(id) } style={ style }>
+    { children }
   </div>
 }
+
+
+export function LightboxImageItem ({ description, image }: LightboxImageItemProps) {
+  return <LightboxItem id={ description } description={ description }>
+    <ImageComponent image={ image } alt={ description } />
+  </LightboxItem>
+}
+
 
 const Dialog = ({ open, children, onClick }: { open: boolean, onClick: MouseEventHandler, children: () => ReactElement }) =>
   <dialog
     aria-modal={ true }
     open={ open }
     onClick={ onClick }>
-    <div>
+    <div className='dialog-content-wrapper'>
       { open && children() }
     </div>
   </dialog>
 
 const LightboxModal = () => {
-  const item  = useActiveLightboxItem() as LightboxItemProps
-  const { setActiveItem } = useLightboxDispatch()
-  const ref   = createRef<typeof Dialog>()
+  const [ item, index ]  = useActiveLightboxItem() as [ LightboxItemType, number ]
+  const { setActiveItem, setActiveItemByIndex } = useLightboxDispatch()
 
-  useEffect(() => {
+  const onSelectNext: MouseEventHandler = (e) => {
+    setActiveItemByIndex(index + 1)
+    e.stopPropagation()
+  }
 
-  }, [ item ])
+  const onSelectPrevious: MouseEventHandler = (e) => {
+    setActiveItemByIndex(index - 1)
+    e.stopPropagation()
+  }
 
-  return <Dialog open={ item !== null } onClick={() => setActiveItem(null) }>
+  return <Dialog
+    open={ item !== null }
+    onClick={ () => setActiveItem(null) }>
     {() => <>
-      <div>
-        <ImageComponent image={ item.image } alt={ item.description || ''} />
+      <div className='content'>
+        { item.content }
       </div>
-      <Paragraph>{ item.description }</Paragraph>
+      <aside className='info'>
+        <Paragraph>{ item.description }</Paragraph>
+        <div className='controls'>
+          <button className='previous' onClick={ onSelectPrevious }>Edellinen</button>
+          <button className='next' onClick={ onSelectNext }>Seuraava</button>
+        </div>
+      </aside>
     </>}
   </Dialog>
 }
 
 
-export const Lightbox = ({ children }: PropsWithChildren<{}>) =>
+export const Lightbox = ({ children }: PropsWithChildren<object>) =>
   <LightboxProvider>
     { children }
     <LightboxModal />
   </LightboxProvider>
 
 
-function LightboxProvider ({ children }: PropsWithChildren<{}>) {
-
-  // @ts-ignore
+function LightboxProvider ({ children }: PropsWithChildren<object>) {
   const [ pages, dispatch ] = useReducer(
     lightboxReducer,
     initialLightboxItems
   )
 
-  return <LightboxContext.Provider value={pages}>
-    <LightboxDispatchContext.Provider value={dispatch}>
+  return <LightboxContext.Provider value={ pages }>
+    <LightboxDispatchContext.Provider value={ dispatch }>
       {children}
     </LightboxDispatchContext.Provider>
   </LightboxContext.Provider>
 }
 
-function lightboxReducer (items: LightboxItemType[], action: LightboxAction) {
+type LightboxReducerType = (items: LightboxItemType[], action: LightboxAction) => LightboxItemType[]
+
+// @ts-expect-error FIXME
+const lightboxReducer: LightboxReducerType = (items, action) => {
   switch (action.type) {
 
   case LightboxActionType.addItem:
@@ -168,6 +209,13 @@ function lightboxReducer (items: LightboxItemType[], action: LightboxAction) {
   case LightboxActionType.setActiveItem:
     return items.map((t) =>
       Object.assign(t, { active: t.id === action.payload.id }))
+
+  case LightboxActionType.setActiveItemByIndex: {
+    const index = (Number(action.payload.id) + items.length) % items.length
+
+    return items.map((t, n) =>
+      Object.assign(t, { active: n === index }))
+  }
 
   default:
     throw Error('Unknown action: ' + action.type)

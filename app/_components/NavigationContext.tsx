@@ -52,55 +52,60 @@ export function useNavigation () {
 
   const addPage = (text: string, offset: number = 0, active = false) => {
     const href = toSlug(text)
-    dispatch({
-      type: 'added',
-      page: {
-        href,
-        text,
-        offset,
-        active,
-      }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'added',
+        page: {
+          href,
+          text,
+          offset,
+          active,
+        }
+      })
 
     return href
   }
 
   const removePage = (text: string) => {
     const id = toSlug(text)
-    dispatch({
-      type: 'deleted',
-      page: { id },
-    })
+    if (dispatch)
+      dispatch({
+        type: 'deleted',
+        page: { id },
+      })
   }
 
   const updatePage = (id: string, text: string) => {
     const href = toSlug(text)
-    dispatch({
-      type: 'changed',
-      page: { id, href, text },
-    })
+    if (dispatch)
+      dispatch({
+        type: 'changed',
+        page: { id, href, text },
+      })
   }
 
   const setActivePage = (id: string = '', state?: boolean) => {
     console.warn('Set active page', id) // eslint-disable-line no-console
-    dispatch({
-      type: 'active',
-      page: { id, state }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'active',
+        page: { id, state }
+      })
   }
 
   const setActiveStatusesForPages = (statuses: Map<string, boolean>) => {
-    dispatch({
-      type: 'actives',
-      page: { statuses }
-    })
+    if (dispatch)
+      dispatch({
+        type: 'actives',
+        page: { statuses }
+      })
   }
 
   return { addPage, removePage, updatePage, setActivePage, setActiveStatusesForPages }
 }
 
-export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<any> }) {
-  const { addPage, removePage, setActivePage, setActiveStatusesForPages } = useNavigation()
+export function WithNavigationItem ({ text, children }: { text: string, children: ReactElement<unknown> }) {
+  const { addPage, removePage, setActiveStatusesForPages } = useNavigation()
   const slug = useRef<string>()
 
   const [ active, ref ] = useWithinViewport((entry) => {
@@ -128,24 +133,23 @@ export function WithNavigationItem ({ text, children }: { text: string, children
 
   // }, [ active, setActivePage ])
 
-  // @ts-ignore
-  return <div ref={ ref } id={ slug.current } className={ classNames({ active })}>
+  // @ts-expect-error FIXME
+  return <div ref={ ref } id={ slug.current } className={ classNames({ active }) }>
     { children }
   </div>
 }
 
 
-export function NavigationProvider ({ children }: PropsWithChildren<{}>) {
+export function NavigationProvider ({ children }: PropsWithChildren<unknown>) {
 
-  // @ts-ignore
+  // @ts-expect-error TODO: define explicit types for actions
   const [ pages, dispatch ] = useReducer(
     pagesReducer,
     initialPages
   )
 
-  return <NavigationPagesContext.Provider value={pages}>
-    {/* @ts-ignore */}
-    <NavigationPagesDispatchContext.Provider value={dispatch}>
+  return <NavigationPagesContext.Provider value={ pages }>
+    <NavigationPagesDispatchContext.Provider value={ dispatch }>
       {children}
     </NavigationPagesDispatchContext.Provider>
   </NavigationPagesContext.Provider>
@@ -197,11 +201,6 @@ function pagesReducer (pages: NavigationPage[], action: { type: 'added' | 'chang
   }
 }
 
-type MutableRefObject<T> = {
-  current: T;
-};
-
-// @ts-ignore
 export const useEffectInEvent = <K extends keyof WindowEventMap>( // eslint-disable-line
   event: K,
   set: () => void,
@@ -234,7 +233,6 @@ export const useRect = <T extends HTMLElement | null>(): [
   const set = (): void => {
     const bodyRect = document.body.getBoundingClientRect()
     const elemRect = ref.current?.getBoundingClientRect() as DOMRect
-    const offset   = elemRect.top - bodyRect.top
     setRect(elemRect)
     setOffset(elemRect.top - bodyRect.top)
 

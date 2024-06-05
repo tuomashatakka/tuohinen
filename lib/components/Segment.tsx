@@ -1,9 +1,9 @@
-import { ComponentType, createRef, MutableRefObject, PropsWithChildren, ReactNode, Ref, useEffect, useRef, useState } from 'react'
+import { ComponentType, MutableRefObject, PropsWithChildren, ReactNode, useEffect, useRef, useState } from 'react'
 
 import classNames from 'classnames'
 import { WithNavigationItem } from '@/app/_components/NavigationContext'
 import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
-import getObserver, { IntersectionObserverCallback, observeIntersection } from './getObserver'
+import { IntersectionObserverCallback, observeIntersection } from './getObserver'
 
 
 function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {
@@ -28,9 +28,8 @@ export default function Segment ({ children, variant, title }: SegmentPropsType)
     [`segment-${variant}`]: !!variant
   })
 
-  return <WithNavigationItem text={title}>
-    {/* @ts-ignore */}
-    <section className={classes}>
+  return <WithNavigationItem text={ title }>
+    <section className={ classes }>
       {children(SegmentColumn)}
     </section>
   </WithNavigationItem>
@@ -42,7 +41,7 @@ export function useWithinViewport (onShow?: (entry: IntersectionObserverEntry) =
 
   useEffect(() => {
 
-    const handleIntersectionObservation: IntersectionObserverCallback = (entries, observer) => {
+    const handleIntersectionObservation: IntersectionObserverCallback = (entries, _observer) => {
       const index = entries.findIndex(entry => entry.target === ref.current)
       if (index === -1)
         return
@@ -68,10 +67,15 @@ export function useWithinViewport (onShow?: (entry: IntersectionObserverEntry) =
 
 
 
+export enum SegmentVariantType {
+  dark = 'dark',
+  light = 'light',
+}
+
 type SegmentPropsType = {
   // eslint-disable-next-line no-unused-vars
   children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode,
-  variant?: 'light' | 'dark',
+  variant?: SegmentVariantType,
   title:    string,
 }
 

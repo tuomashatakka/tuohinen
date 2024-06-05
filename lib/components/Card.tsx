@@ -23,7 +23,7 @@ import { Subheading } from './Type'
 
 export default function Card ({ children, title, image }: CardProps ) {
   return <div className='card rounded overflow-hidden shadow-lg'>
-    <Image width={640} height={640} className='object-cover w-full' src={image} alt='Tits or gtfo' />
+    <Image width={ 640 } height={ 640 } className='object-cover w-full' src={ image } alt='Tits or gtfo' />
     <div className='px-6 py-4 text-center'>
       <Subheading>{title}</Subheading>
       {children}

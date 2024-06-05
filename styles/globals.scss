@@ -17,6 +17,8 @@
               sans-serif;
   --line-height: 1.65em;
 
+  --navigation-dropdown-shadow: 0px 24px 48px rgba(0, 0, 0, 0.25);
+
   --foreground-color: #dfddd6;
   --background-color: #131212;
 
@@ -24,7 +26,7 @@
   --navigation-item-text-hover:       var(--foreground-color);
   --navigation-item-text-focus:       #e0e0e0;
 
-  --navigation-item-background:                   transparent;
+  --navigation-item-background:                 #131212;
   --navigation-item-background-hover:           #292727;
   --navigation-item-background-focus:           #191818;
   --navigation-item-background-focus-secondary: #191818;
@@ -44,11 +46,15 @@
 
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:  smooth;
   font-family:      var(--typeface);
   line-height:      var(--line-height, 1.65em);
   font-size:        24px;
   font-weight:      300;
+  width:            100vw;
+  height:           100vh;
+  overflow-x:       hidden;
+  overflow-y:       hidden;
 
   @include sm {
     font-size: 18px;
@@ -62,7 +68,9 @@ body {
   color:            var(--foreground-color);
   background-color: var(--background-color);
   width:            100vw;
+  height:           100vh;
   overflow-x:       hidden;
+  overflow-y:       auto;
   font-family:      var(--typeface);
   line-height:      var(--line-height, 1.65em);
 
@@ -92,7 +100,7 @@ body {
   }
 
   .backdrop {
-    position: absolute;
+    position:       absolute;
     top:            0;
     left:           0;
     right:          0;
@@ -104,6 +112,9 @@ body {
   }
 
   header h1 {
+    color: white;
+    font-weight: 100;
+    letter-spacing: -0.08em;
     @media screen and (max-width: $breakpoint-xl) {
       font-size: 3em;
     }
@@ -113,10 +124,14 @@ body {
     @media screen and (max-width: $breakpoint-sm) {
       font-size: 1em;
     }
-  }
 
-  header p.subheading {
-    font-size: 0.75em;
+    span {
+      font-weight: inherit;
+      text-align: left;
+    }
+    strong {
+      font-weight: 400;
+    }
   }
 }
 
@@ -135,6 +150,14 @@ img {
   z-index: -1;
 }
 
+h1, h2, h3, h4 {
+  margin-bottom: 0.2em;
+}
+
+p {
+  margin-bottom: 0.75em;
+}
+
 h1 {
   font-size:        4em;
   font-weight:      300;
@@ -146,8 +169,17 @@ h1 {
 
 h2,
 p.subheading {
-  font-size:    1.4em;
+  font-size:    1.5em;
   font-weight:  200;
+}
+
+p.subheading {
+  margin: 0;
+  margin-bottom: 0px;
+  letter-spacing: -0.1em;
+  font-size: 3em;
+  line-height: 0.9em;
+  margin-bottom: -0.5em;
 }
 
 h2 {
@@ -171,7 +203,7 @@ h3 {
 
 
 .animate-in {
-  animation: animate-in 1000ms ease-out 0ms paused 1;
+  animation: animate-in 2000ms ease-out 0ms paused 1;
 }
 
 
@@ -249,8 +281,8 @@ button {
   box-sizing:       border-box;
   height:           60px;
   padding:          0.75em 1em;
-  font-size:        1em;
-  letter-spacing:   0.2em;
+  font-size:        0.65em;
+  letter-spacing:   0.3em;
 }
 
 
@@ -259,7 +291,7 @@ button {
 
 
 .animate-blur-in {
-  animation: 5s animate-blur-in 500ms ease 1;
+  animation: 5s animate-blur-in 0ms ease 1;
 }
 
 
@@ -269,7 +301,7 @@ button {
   width: 100px;
   height: 100px;
 }
-.animated-words{
+.animated-words {
   position: relative;
   transform-style: preserve-3d;
   display: block;
@@ -291,6 +323,7 @@ button {
 .spacer {
   margin:         1em 15vw;
   border-bottom:  1px solid;
+  filter:         brightness(0.5);
 }
 
 .spacer.align_right {
@@ -304,37 +337,16 @@ button {
 }
 
 
-dialog {
-  position:         fixed;
-  top:              0;
-  left:             0;
-  right:            0;
-  bottom:           0;
-  background:       rgba(0, 0, 0, 0.75);
-  margin:           0;
-  padding:          0;
-  appearance:       none;
-  width:            auto;
-  height:           100vh;
-  align-items:      center;
-  justify-content:  center;
-  z-index:          1000;
-  cursor:           pointer;
-  user-select:      none;
-}
-
-dialog:active {
-  opacity: 0.85;
-}
-
-dialog[open] {
-  display:          flex;
-}
-
-dialog > div {
-  max-width:  100%;
-  width:      60rem;
+.logo-container {
+  width:      16vw;
+  height:     16vw;
+  padding:    1em;
+  flex:       0 0 auto;
   box-sizing: border-box;
-  padding:    8vw;
-  color:      var(--foreground-color);
+  align-self: flex-start;
+}
+
+.logo {
+  width:      100%;
+  height:     inherit;
 }

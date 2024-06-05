@@ -1,52 +1,25 @@
 import { Subtitle, Title } from '@/components/Type'
-import logoImage from '@/public/logo-white.png'
-import Image from '@/lib/components/Img'
-import metadata from '@/metadata'
-
-import style from './PageHeadSection.module.css'
 import ScrollDownButton from './ScrollDownButton'
 import CarouselComponent from '@/lib/components/Carousel'
 
-const SLIDES = [
-  require('@/public/hero/lukee.jpg').default,
-  require('@/public/hero/tunnelmoi.jpg').default,
-  require('@/public/hero/hakkaa.jpg').default,
-  require('@/public/hero/istuu.jpg').default,
-  require('@/public/hero/kyykkii.jpg').default,
-]
+import slides from './PageHeadImages'
+import style from './PageHeadSection.module.sass'
+
 
 export default function PageHeadSection () {
-  return <>
-    <section className='banner min-h-screen animate-blur-in'>
-      <CarouselComponent
-        className='h-100 h-screen'
-        slides={ SLIDES } />
-      {/* <Image image={heroImage} alt='background' className='backdrop' /> */}
-      <header className={ style.heading_content }>
-        <Image image={logoImage} alt='Tuohinen logo' className={style.logo} width={160} height={160} />
-        <div>
-          <Title>{metadata.title}</Title>
+  return <section className='banner min-h-screen animate-blur-in'>
+    <CarouselComponent className='h-100 h-screen' slides={ slides } />
 
-          <Subtitle>
-            {/* {metadata.description} */}
-            <div className='rotating-text-container'>
-              <span>Tuo</span>
-              <span className='rotating-text'>
-                <span>luonto</span>
-                <span>lämpö</span>
-                <span>valo</span>
-                <span>anoppis</span>
-                <span>-tanto</span>
-                <strong>luonto</strong>
-              </span>
-              <span>kotiisi.</span>
-            </div>
-          </Subtitle>
+    <header className={ style.heading_content }>
+      <Subtitle>
+        Tuohinen tunnelmavalaisimet
+      </Subtitle>
 
-        </div>
-      </header>
+      <Title>
+       tuo luonto kotiisi.
+      </Title>
+    </header>
 
-      <ScrollDownButton />
-    </section>
-  </>
+    <ScrollDownButton />
+  </section>
 }

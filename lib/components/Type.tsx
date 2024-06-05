@@ -6,16 +6,19 @@ import { HTMLProps } from 'react'
 
 type HeadingProps               = HTMLProps<HTMLHeadingElement>
 type ParagraphProps             = HTMLProps<HTMLParagraphElement>
+type QuoteProps                 = HTMLProps<HTMLQuoteElement>
+
 const classNameWith             = classNameWithFont('epilogue')
 const classNameWithMontserrat   = classNameWithFont('montserrat')
+const classNameWithGluten       = classNameWithFont('montserrat')
 
 export const Title = ({ children, className }: Readonly<HeadingProps>) =>
-  <h1 className={classNameWith(className)}>
+  <h1 className={ classNameWithGluten(className) }>
     {children}
   </h1>
 
 export const Subtitle = ({ children, className }: Readonly<HeadingProps>) =>
-  <p className={classNameWith('subheading', className)}>
+  <p className={ classNameWith('subheading', className) }>
     {children}
   </p>
 
@@ -42,14 +45,19 @@ export const Paragraph = (props: HeadingProps) =>
   <p { ...props }>{ props.children }</p>
 
 export const Ingress = ({ className, ...props }: ParagraphProps) =>
-  <p {...props} className={classNameWith(style.ingress, className)}>
+  <p { ...props } className={ classNameWith(style.ingress, className) }>
     {props.children}
   </p>
+
+export const Quote = ({ className, ...props }: QuoteProps) =>
+  <blockquote { ...props } className={ classNameWith(style.ingress, className) }>
+    {props.children}
+  </blockquote>
 
 export const Spacer = ({ align }: { align?: 'left' | 'right'}) => {
   const classes = classNames(style.spacer, 'spacer', { align_right: align === 'right', align_left: align === 'left' })
 
-  return <p className={ classes} />
+  return <p className={ classes } />
 }
 
 export function Separator () {

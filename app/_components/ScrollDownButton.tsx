@@ -18,5 +18,6 @@ export default function ScrollDownButton () {
     ref={ ref }
     onClick={ handleClick }
     className={ style.scrollDownButton }
-    aria-label='Scroll to content' />
+    aria-label='Scroll to content'
+  />
 }

@@ -1,0 +1,61 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: cimg/node:21.7.2
+    steps:
+      - checkout
+      - run: echo "Running tests"
+      - run: npm install
+      - run: npm run ci:lint
+      - run: npm run ci:test
+      - store_artifacts:
+          path: coverage
+      - store_artifacts:
+          path: reports
+      - store_artifacts:
+          path: junit.xml
+
+  build:
+    docker:
+      - image: cimg/node:21.7.2
+    steps:
+      - checkout
+      - run: echo "build project"
+      - run: npm install
+      - run: npm run build
+  report:
+    environment:
+      CC_TEST_REPORTER_ID: $CC_TEST_REPORTER_ID
+    docker:
+      - image: "mileschou/xdebug:7.3"
+    steps:
+      - checkout
+      - run:
+          name: Setup dependencies
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            ./cc-test-reporter before-build
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+
+workflows:
+  test_build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      # - report:
+      #     requires:
+      #       - test

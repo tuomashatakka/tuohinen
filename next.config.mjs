@@ -1,5 +1,7 @@
+import withVercelToolbar from '@vercel/toolbar/plugins/next'
 
 const plugins = [
+  withVercelToolbar()
 ]
 
 /** @type {import('next').NextConfig} */

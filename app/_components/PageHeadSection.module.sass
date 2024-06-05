@@ -1,0 +1,21 @@
+w.heading_content
+  flex-direction: column
+  align-items:    center
+  position:       absolute
+  display:        flex
+  left:           50%
+  top:            50%
+  transform:      translate(-50%, -50%)
+  gap:            1em
+
+  padding:        10vw
+  z-index:        200
+  box-sizing:     border-box
+  color:          var(--header-text)
+  word-break:     keep-all
+  word-wrap:      nowrap
+  text-align:     center
+
+  @media screen and (max-width: 960px)
+    max-width:    100vw
+    transform:    translate(-50%, -50%) scale(0.8)

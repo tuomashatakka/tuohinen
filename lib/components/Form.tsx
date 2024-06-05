@@ -1,7 +1,7 @@
 'use client'
 
 /* eslint-disable no-unused-vars */
-import { ChangeEvent, FormEvent, FormEventHandler, useCallback, useState } from 'react'
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
 
 const initialFormData = {
   contact: '',

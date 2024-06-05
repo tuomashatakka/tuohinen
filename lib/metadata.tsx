@@ -7,7 +7,7 @@ export interface Metadata extends NextMetadata {
 }
 
 const metadata: Metadata = {
-  title:        'Tuohinen\n-tunnelmavalaisimet',
+  title:        'Tuohinen',
   description:  'Tuo luonto kotiisi',
 }
 

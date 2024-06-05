@@ -14,11 +14,11 @@ export default function Button ({ children, onClick }: PropsWithChildren<{ onCli
 }
 
 
-export function AlertButton ({ children }: PropsWithChildren<{}>) {
+export function AlertButton ({ children }: PropsWithChildren<Record<string, never>>) {
   const callback = () => alert('mahdollista vasta ensi vuonna :(')
   const handleButtonPress = useCallback(callback, [])
 
-  return <Button onClick={handleButtonPress}>
+  return <Button onClick={ handleButtonPress }>
     {children}
   </Button>
 }

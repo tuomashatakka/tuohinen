@@ -19,7 +19,8 @@ export default function ImageComponent (props: ImgProps) {
     height={ height || width || 640 }
     className={ clsName }
     quality={ 100 }
-    {...attrs} />
+    { ...attrs }
+  />
 }
 
 export type ImgProps = Omit<ImageProps & {
