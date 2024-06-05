@@ -3,6 +3,6 @@ import * as Segments from '../_components/Segments'
 
 export default function ContactPage () {
   return <>
-    <Segments.Artisti />
+    <Segments.OtaYhteytta />
   </>
 }
