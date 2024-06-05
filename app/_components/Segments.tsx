@@ -21,7 +21,7 @@ import { ElementType } from 'react'
 export const Visio = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
   {(Column: ElementType) => <>
     <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <H2>Lämpöä ja tunnelmaa</H2>
+      <H2>Pohjoisen symboliikassa koivu on elämän ja kuoleman yhdistäjä.</H2>
       <Ingress>
           Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle.<br/>
           Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä.
@@ -73,55 +73,46 @@ export const Menneesta = () => <Segment title='Hieman menneestä'>
   </>}
 </Segment>
 
+export const Kasityo = () => <Segment title='Käsityö'>
+  {(Column) => <>
+    <Column padding width={ 3 }>
+      <H3>Suomalaista valaisintaidetta käsityönä</H3>
+      <Paragraph>
+          Yksilölliset tunnelmavalaisimet ovat kotimaista käsityötä.
+      </Paragraph>
+      <Paragraph>
+          Jokaisella valaisimella on oma tarinansa. Täysin yksilöllisissä
+          valaisimissa puu tyhjennetään käsin ja tuohirulla on leikkaamaton.
+          Materiaalia pitää osata lukea ja ennen kaikkea
+          kunnioittaa. Sen muoto, ja olemus - kiertokulku.
+      </Paragraph>
+      <Paragraph>
+          Tuohisen arvot lepäävätkin vahvasti ekologisen
+          kestävyyden ja luonnon monimuotoisuuden säilyttämisessä.
+      </Paragraph>
+    </Column>
+  </> }
+</Segment>
+
 export const Ekologisuus = () => <Segment variant={ SegmentVariantType.light } title='Ekologisuus'>
   {(Column) => <>
     <Column padding width={ 3 }>
       <H2>Ekologisuus</H2>
       <Ingress>
-          Valaisimet on valmistettu kierrätysmateriaaleista ekologisesti ja
+          Valaisimet valmistetaan kierrätysmateriaaleista ekologisesti ja
           luontoa kunnioittaen, täysin käsityönä.
       </Ingress>
-      <Spacer align='right' />
       <Paragraph>
+          Tuohisen arvoihin kuuluu, että puita ei kaadeta turhaan.
           Valaisinmateriaaleina käytämme luonnollisesti kaatuneita koivuja.
+      </Paragraph>
+      <Paragraph>
           Luonto ohjaa ja materiaali puhuu puolestaan.
       </Paragraph>
-      <Paragraph>
-          "Ajatuksia on toki paljon, mutta usein on hyvä pysähtyä ja olla läsnä."
-      </Paragraph>
-      <Spacer align='right' />
-      <H3>Kotimaasta, kierrätettynä ja uusiokäytettynä</H3>
-      <Paragraph>
-          Yksilölliset tunnelmavalaisimet ovat kotimaista käsityötä.
-          Tuohisen arvot lepäävätkin vahvasti ekologisen
-          kestävyyden ja luonnon monimuotoisuuden säilyttämisessä.
-      </Paragraph>
-      <Paragraph>
-          Tuohisen arvoihin kuuluu, että mitään ei kaadeta turhaan.
-          Materiaalit aina maanomistajan luvalla.
-      </Paragraph>
-      <Paragraph>
-          Jokaisella valaisimella on oma tarinansa. Ennen kaikkea
-          materiaalissa sen kunnioitus: historia, tarina, uusiokäyttö.
-          Ajan patina. Materiaalia pitää osata lukea ja ennen kaikkea
-          kunnioittaa. Sen muoto, ja olemus - kiertokulku.
-      </Paragraph>
-
       <Spacer align='right' />
 
-      <Ingress>
-          Koivussa minua inspiroi moni asia: sen pelkistetty kauneus.
-      </Ingress>
       <Paragraph>
-          Hyvälaatuisen materiaalin käyttökelpoisuuteen vaikuttaa moni asia.
-      </Paragraph>
-      <Paragraph>
-          On käynyt monesti niinkin, että maanomistajan siunaus on, mutta laadukasta,
-          kriteerit täyttävää materiaalia ei löydy.
-          Vaikein osuus materiaalin suhteen on löytää laadukas tuohirulla.
-      </Paragraph>
-      <Paragraph>
-          Kaikki valaisimissa käytetyt tuohiaihiot on tarkkaan tarkistettu ja ehjiä.
+          Kaikki valaisimissa käytetyt tuohiaihiot on tarkkaan valikoitu. Valitsemme vain parhaan ja käsittelemme mahdollisimman vähän.
       </Paragraph>
       <Paragraph>
           Metallivarret ovat kaikki kierrätysmateriaalia. Kaikkeen liittyy tarina,
@@ -131,7 +122,6 @@ export const Ekologisuus = () => <Segment variant={ SegmentVariantType.light } t
       <Spacer align='right' />
       <Paragraph>
           Valmistettu rakkaudella ja tunteella luonnon kanssa harmoniassa. Luontoäidin säännöillä, sydämellä.
-          Materiaalia pitää osata lukea, ja jos muokata haluaa, niin korostaen.
       </Paragraph>
     </Column>
   </>}
@@ -140,40 +130,35 @@ export const Ekologisuus = () => <Segment variant={ SegmentVariantType.light } t
 export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title='Artisti'>
   {(Column) => <>
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-      <H2>Artistista, Tompurista</H2>
+      <H2>Artisti ja artesaani Tompuri</H2>
       <Ingress>
-        Helsingissä varttunut Tompuri on koulutukseltaan kirvesmies.
-        Hän on vuosia rehkinyt käsityöläisen hommien parissa; metallihommia telakalla ja tehtailla.
-      </Ingress>
-      <Ingress>
-        Aidon käsityöläisen kädenjälki näkyy tuohisen tuotteissa.
+        Taiteilija Otto Mikael Tompuri antaa estradin kansallispuullemme koivulle
+        ja sen pelkistetylle kauneudelle.
+        Aidon käsityöläisen kädenjälki näkyy Tuohisen tuotteissa.
       </Ingress>
       <Spacer align='right' />
 
+      <Paragraph>
+        Helsingissä varttunut Tompuri on koulutukseltaan kirvesmies.
+        Hän on vuosia työskennellyt käsityön parissa; metallihommia telakalla ja tehtailla.
+      </Paragraph>
       <Paragraph>
         Metallihommien ohessa Tompuri on toteuttanut itseään tatuointiartistina ja
         graafisen taiteen luojana yli vuosikymmenen ajan.
         Tatuoiminen on Tompurille yksi taiteen muoto muiden joukossa.
         Kuin maalaaminen, mutta elävällä kanvaksella.
       </Paragraph>
-      <Ingress>
-        Itsensä toteuttaminen taiteen keinoin on aina kulkenut elämässä mukana, tilanteessa kuin tilanteessa.
-      </Ingress>
+      <Paragraph>
+        "Itsensä toteuttaminen taiteen keinoin on aina kulkenut elämässäni mukana, tilanteessa kuin tilanteessa."
+      </Paragraph>
       <Spacer align='right' />
 
-      <H3>Artisti ja artesaani</H3>
-      <Paragraph>
-        Taiteilija Otto Mikael Tompuri haluaa antaa estradin kansallispuullemme koivulle
-        ja sen pelkistetylle kauneudelle. Valmistetut valaisimet on loihdittu yhdistämällä useamman vuosikymmenen kokemus
-        toisaalta käytännön käsityöläisenä ja toisaalta luovana artistisieluna.
-      </Paragraph>
-
-      <H3>Tompuri, maailman matkaaja</H3>
+      <H3>Maailmanmatkaaja Tompuri</H3>
       <Paragraph>
         Tompuri on kiertänyt useita kertoja ympäri Aasiaa ja saanut usein kuulla paikallisilta kommentin:
       </Paragraph>
       <Quote>
-        Et vaikuta yhtään Suomalaiselta ihmiseltä, haha.
+        Et vaikuta yhtään suomalaiselta ihmiseltä, haha.
       </Quote>
       <Paragraph>
         Kyllä, tiedän, Tompuri on aina tällöin miettinyt.
@@ -200,17 +185,15 @@ export const Tunnelma = () => <Segment variant={ SegmentVariantType.light } titl
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
       <H2>Taide & tunnelma</H2>
       <Ingress>
-        On sitä huonoakin tuohta. Ja paljonkin...
+        "Koivussa minua inspiroi moni asia: sen pelkistetty kauneus."
       </Ingress>
       <Paragraph>
-        Valaisimien saatavuus on täysin kytköksissä materiaalien saatavuuteen.
-        Koko prosessi on pitkä ja kivinen. aina materiaalien hankkimisesta valaisimien viimeistelyyn asti.
-        Ei ole lainkaan itsestäänselvyys, että hyvää, kaunista ja laadukasta tuohiaihiota löytyy lainkaan -
+        Ei ole lainkaan itsestäänselvää että hyvää, kaunista ja laadukasta tuohiaihiota löytyy lainkaan -
         etsiminen voi kestää päiviä, vaikka hyvä apaja olisikin tiedossa.
       </Paragraph>
       <Paragraph>
         Tompuri on vuosien ajan tutkinut luontoa, etenkin koivun tuohta ja siihen vaikuttavia tekijöitä.
-        Koivun tuohta tutkiessa on valehtelematta kierretty koko Suomi:
+        Koivun tuohta tutkiessa on kierretty koko Suomi:
         Lapissa varhaiskoivuja lumikengillä samoillen, Etelä-Suomessa ympäri saaristoja veneillen.
       </Paragraph>
 
@@ -218,9 +201,6 @@ export const Tunnelma = () => <Segment variant={ SegmentVariantType.light } titl
       <Paragraph>
         Kuten valaisimien saatavuus on kytköksissä materiaalien saatavuuteen,
         materiaalien saatavuus puolestaan on täysin kytköksissä siihen mitä luonto antaa.
-        Esimerkiksi ulkoisesti hyvännäköinen lahopuu saattaa olla sammaleen puolelta täysin mätä;
-        usean vuoden mättäillä makaaminen on tehnyt tehtävänsä, kuten luonnon kuuluukin -
-        lahopuilla on tärkeä rooli luonnon monimuotoisuuden ylläpitämisessä.
       </Paragraph>
       <Paragraph>
         Pyrkimys on, että mitään ei oteta turhaan - jos edes otetaan.
@@ -241,14 +221,24 @@ export const Tunnelma = () => <Segment variant={ SegmentVariantType.light } titl
   </>}
 </Segment>
 
+export const OtaYhteytta = () => <Segment title='Ota yhteyttä'>
+  {(Column) => <>
+    <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+      <H2>Kaikki valaisimet tilaustyönä</H2>
+      <Paragraph>
+        Ota yhteyttä <a href='mailto:ottomikaelt@gmail.com'>ottomikaelt@gmail.com</a>
+      </Paragraph>
+    </Column>
+  </>}
+</Segment>
+
 export const Kartta = () => <Segment title='Ympäri suomen'>
   {(Column) => <>
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
       <H2>Esillä ympäri suomen</H2>
       <Ingress>
-          Tuohisen valaisimet ovat esillä ympäri suomen. Ravintoloissa,8
-          hotelleissa ja matkailukohteissa. Nettisivuille päivittyy
-          jatkossa kartta, josta voit nähdä missä valaisimet luovat tunnelmaa.
+          Tuohisen valaisimet ovat esillä ympäri Suomen. Ravintoloissa,
+          hotelleissa ja matkailukohteissa.
       </Ingress>
     </Column>
   </>}

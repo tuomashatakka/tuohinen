@@ -6,12 +6,13 @@ import * as Segments from './_components/Segments'
 
 export default function Home () {
   return <>
+    <Segments.Kasityo />
     <Segments.Visio />
     <Segments.Menneesta />
     <Segments.Ekologisuus />
     <Segments.Artisti />
     <Segments.Tunnelma />
-    <Segments.Kartta />
+    <Segments.OtaYhteytta />
     <Separator />
     <Segments.Galleria />
   </>
