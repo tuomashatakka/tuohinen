@@ -1,7 +1,7 @@
 'use client'
 
 import { StaticImageData } from 'next/image'
-import BackgroundImage from './Image'
+import { BackgroundImageWithRef } from './Image'
 import classNames from 'classnames'
 import { AnimationEventHandler, createRef, useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
