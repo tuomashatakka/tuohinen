@@ -5,6 +5,11 @@ import { WithNavigationItem } from '@/app/_components/NavigationContext'
 import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
 import { IntersectionObserverCallback, observeIntersection } from './getObserver'
 
+let index = 0
+
+const getNextRunningIndex = () => 
+  String(++index)
+
 
 function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {
   const classes = classNames(
@@ -28,11 +33,17 @@ export default function Segment ({ children, variant, title }: SegmentPropsType)
     [`segment-${variant}`]: !!variant
   })
 
-  return <WithNavigationItem text={ title }>
-    <section className={ classes }>
-      {children(SegmentColumn)}
-    </section>
-  </WithNavigationItem>
+  if (title)
+    return <WithNavigationItem text={ title || getNextRunningIndex() }>
+      <section className={ classes }>
+        {children(SegmentColumn)}
+      </section>
+    </WithNavigationItem>
+
+  return <section className={ classes }>
+    {children(SegmentColumn)}
+  </section>
+
 }
 
 export function useWithinViewport (onShow?: (entry: IntersectionObserverEntry) => void): [ boolean, MutableRefObject<HTMLElement | undefined> ] {
@@ -76,7 +87,7 @@ type SegmentPropsType = {
   // eslint-disable-next-line no-unused-vars
   children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode,
   variant?: SegmentVariantType,
-  title:    string,
+  title?:   string,
 }
 
 
