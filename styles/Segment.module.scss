@@ -29,28 +29,30 @@
 }
 
 .segment-column {
-  flex:             1 1;
-  position:         relative;
-  text-align:       right;
-  align-content:    center;
-  box-sizing: border-box;
-
-}
-.segment-column {
-  transform:  translateY(4em) scale(1);
-  opacity:    0;
-  transition-duration: 2s;
-  transition-property: transform, opacity;
+  flex:                       1 1;
+  position:                   relative;
+  text-align:                 right;
+  align-content:              center;
+  box-sizing:                 border-box;
+  transform:                  translateY(4em) scale(1);
+  opacity:                    0;
+  transition-duration:        2s;
+  transition-property:        transform, opacity;
   transition-timing-function: cubic-bezier(.17,.84,.44,1);
 
   .active .segment & {
-
     transition-duration: 4s;
-    transition-delay: 800ms;
-    transform:  translateY(0);
-    opacity:    1;
+    transition-delay:    800ms;
+    transform:           translateY(0);
+    opacity:             1;
   }
 
+  // Column content alignment
+  &.align-left   { text-align: left }
+  &.align-right  { text-align: right }
+  &.align-center { text-align: center }
+
+  // Column widths
   @for $i from 1 through 12 {
     &.column-#{$i} {
       flex-grow: #{$i};

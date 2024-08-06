@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import * as Segments from '../_components/Segments'
 
-export default function TaiteilijaPage () {
+export default function MuotoilijaPage () {
   return <>
-    <Segments.Artisti />
+    <Segments.Muotoilija />
   </>
 }

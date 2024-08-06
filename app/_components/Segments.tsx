@@ -44,7 +44,7 @@ export const Tuote = () => <Segment variant={ SegmentVariantType.dark }>
       <H2>Tuote</H2>
       <Ingress>
         Tuohinen -tunnelmavalaisimet valmistetaan ekologisesti kierrätysmateriaaleista ja luontoa
-        kunnioittaen, täysin käsityönä. (väliotsikko)
+        kunnioittaen, täysin käsityönä.
       </Ingress>
       <Paragraph>
         Tuohisen arvoihin kuuluu, että puita ei kaadeta turhaan. Valaisinmateriaaleina käytetään
@@ -99,62 +99,80 @@ export const Tuote = () => <Segment variant={ SegmentVariantType.dark }>
 
 export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
-    <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <Paragraph>
-        Tirskuipa tiainen puusta:
-        “Eipä nouse Osmon ohra,
-        ei kasva Kalevan kaura,
-        ilman maan alistamatta,
-        ilman kasken kaatamatta,
-        tuon tulella polttamatta.”
-        Vaka vanha Väinämöinen
-        teetti kirvehen terävän.
-        Siitä kaatoi kasken suuren,
-        mahottoman maan alisti.
-        Kaikki sorti puut soreat;
-        yhen jätti koivahaisen.
-        Lintujen leposijaksi,
-        käkösen kukuntapuuksi.
-        Kalevala: toinen runo.
-        Lieneekö sattumaa, että Väinämöinen jätti ainoastaan koivun kaatamatta kaskea varten?
-        Koivun, jonka tummat kuvioinnit tanssivat vaalealla kanvaksellaan lumen keskeltä
-        pilkistävien kivien lailla.
-        Koivun, jonka kevään heleän vihreän lehdet talven synkkyyden kaikottaa.
-        Koivun, jonka pehmeät lehdet yöttömänä yönä ihoon leyhähtää.
-        Koivun, jonka syksy kultaan maalaa.
-        Vaka vanha Väinämöinen,
-        kerran tapasi Tuohisen,
-        alla kaunihin koivahaisen.
-        Kysyi vanha Väinämöinen:
-        Ken lienehet matkalainen,
-        kuis lepäät alla pesän tiaisen.
-        Tuohinen siihen virkki:
-        löysinpä minä puun kaunehimman,
-        Luonnottaren anneista mahtavimman.
-        Kuul’ kuinka sen kuiskaus soipi,
-        lehtien laulun suuremmoisin,
-        havinahan ihanimman.
-        Ainiaaks’ tähän jäädä voisin,
-        juurtununna puuhun Jumalan.
-        Väinämöinen siit’ ilahtui,
-        ajatus häl kirkastui.
-        Ajattelee, arvelee,
-        päässähänsä ynnää:
-        aura miehel mainio,
-        loistavahan kaksikko.
-        Terävähän nuorikko,
-        ja komea koivikko.
-        Sanoi vanha Väinämöinen:
-        sielut teiän voin yhteen liittää,
-        jos mielit sa puutas hyysää.
-        Koivahaisen pidellä hyvänä,
-        säilyis liitto teijän pyhänä.
+    <Column width={ 1 } />
+    <Column 
+      padding 
+      align='center'
+      width={ 2 } 
+      minWidth={ ScreenSize.lg }>
+      <H2>Tuohisen tarina</H2>
+      <Paragraph className='keep-spacing'>
+        <br />        Tirskuipa tiainen puusta:
+        <br />        “Eipä nouse Osmon ohra,
+        <br />        ei kasva Kalevan kaura,
+        <br />        ilman maan alistamatta,
+        <br />        ilman kasken kaatamatta,
+        <br />        tuon tulella polttamatta.”
+        <br />
+        <br />        Vaka vanha Väinämöinen
+        <br />        teetti kirvehen terävän.
+        <br />        Siitä kaatoi kasken suuren,
+        <br />        mahottoman maan alisti.
+        <br />
+        <br />        Kaikki sorti puut soreat;
+        <br />        yhen jätti koivahaisen.
+        <br />        Lintujen leposijaksi,
+        <br />        käkösen kukuntapuuksi.
+        <br />
+        <br />        Kalevala: toinen runo.
+        <br />        Lieneekö sattumaa, että Väinämöinen jätti ainoastaan koivun kaatamatta kaskea varten?
+        <br />        Koivun, jonka tummat kuvioinnit tanssivat vaalealla kanvaksellaan lumen keskeltä
+        <br />        pilkistävien kivien lailla.
+        <br />        Koivun, jonka kevään heleän vihreän lehdet talven synkkyyden kaikottaa.
+        <br />        Koivun, jonka pehmeät lehdet yöttömänä yönä ihoon leyhähtää.
+        <br />        Koivun, jonka syksy kultaan maalaa.
+        <br />
+        <br />        Vaka vanha Väinämöinen,
+        <br />        kerran tapasi Tuohisen,
+        <br />        alla kaunihin koivahaisen.
+        <br />
+        <br />        Kysyi vanha Väinämöinen:
+        <br />        Ken lienehet matkalainen,
+        <br />        kuis lepäät alla pesän tiaisen.
+        <br />
+        <br />        Tuohinen siihen virkki:
+        <br />        löysinpä minä puun kaunehimman,
+        <br />        Luonnottaren anneista mahtavimman.
+        <br />
+        <br />        Kuul’ kuinka sen kuiskaus soipi,
+        <br />        lehtien laulun suuremmoisin,
+        <br />        havinahan ihanimman.
+        <br />
+        <br />        Ainiaaks’ tähän jäädä voisin,
+        <br />        juurtununna puuhun Jumalan.
+        <br />
+        <br />        Väinämöinen siit’ ilahtui,
+        <br />        ajatus häl kirkastui.
+        <br />        Ajattelee, arvelee,
+        <br />        päässähänsä ynnää:
+        <br />
+        <br />        aura miehel mainio,
+        <br />        loistavahan kaksikko.
+        <br />        Terävähän nuorikko,
+        <br />        ja komea koivikko.
+        <br />
+        <br />        Sanoi vanha Väinämöinen:
+        <br />        sielut teiän voin yhteen liittää,
+        <br />        jos mielit sa puutas hyysää.<br />
+        <br />      
+        <br />        Koivahaisen pidellä hyvänä,
+        <br />        säilyis liitto teijän pyhänä.
       </Paragraph>
     </Column>
+    <Column width={ 1 } />
   </>
   }
 </Segment>
-
 
 export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
@@ -188,11 +206,9 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
   }
 </Segment>
 
-
 export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
     <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <H2>Tuohisen tarina</H2>
       <Paragraph>
         Jo vuosisatojen ajan Tuohinen on vaeltanut ympäri Suomenmaan. Kevein kosketuksin, hellin
         henkäyksin ja puuskuttavin puhurein Tuohinen on karaissut suomalaisen koivun, joka elonsa
@@ -217,7 +233,6 @@ export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
   </>
   }
 </Segment>
-
 
 export const Visio = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
   {(Column: ElementType) => <>

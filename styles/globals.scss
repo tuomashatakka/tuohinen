@@ -200,6 +200,12 @@ h3 {
   text-transform:   uppercase;
 }
 
+.keep-spacing {
+  white-space: pre-line;
+  word-break: keep-all;
+  text-align: left;
+}
+
 
 
 .animate-in {

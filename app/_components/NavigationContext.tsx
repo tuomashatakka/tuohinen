@@ -1,6 +1,6 @@
 'use client'
 
-import { useWithinViewport } from '@/lib/components/Segment'
+import useWithinViewport from '@/lib/components/useWithinViewport'
 import classNames from 'classnames'
 import { createContext, PropsWithChildren, ReactElement, RefObject, useContext, useEffect, useReducer, useRef, useState } from 'react'
 

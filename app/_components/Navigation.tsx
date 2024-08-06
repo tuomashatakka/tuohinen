@@ -9,6 +9,7 @@ import metadata from '@/lib/metadata'
 import { classNameWithFont } from '@/theme/fonts'
 
 import logoImage from '@/public/logo-white.png'
+import Link from 'next/link'
 
 
 const classNamesWithMontserrat = classNameWithFont('montserrat')
@@ -20,7 +21,11 @@ const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
       onClick={ onClick }>
       ⁝
     </button>
-    <h1 className='navigation_h1'>{ metadata.title }</h1>
+    <h1 className='navigation_h1'>
+      <Link className={ 'list_item_link' } href='/'>
+        { metadata.title }
+      </Link>
+    </h1>
   </div>
 
 export default function Navigation () {
@@ -38,13 +43,15 @@ export default function Navigation () {
     <div className='logo-container' style={{ order: 10 }}>
       <Image image={ logoImage } alt='Tuohinen logo' className='logo' />
     </div>
+
     <NavigationMenuButton onClick={ handleClick } />
+
     <ul className={ classNamesWithMontserrat('list') }>
-      <StaticNavigationLink id='etusivu' url='/'>Etusivu</StaticNavigationLink>
       <StaticNavigationLink id='tuote' url='/tuotteesta'>Tuote</StaticNavigationLink>
-      <StaticNavigationLink id='taiteilija' url='/taiteilijasta'>Taiteilija</StaticNavigationLink>
+      <StaticNavigationLink id='muotoilija' url='/muotoilija'>Muotoilija</StaticNavigationLink>
+      <StaticNavigationLink id='tarina' url='/tarina'>Tarina</StaticNavigationLink>
       <StaticNavigationLink id='galleria' url='/galleria'>Galleria</StaticNavigationLink>
-      <StaticNavigationLink id='contact' url='/contact'>Ota yhteyttä</StaticNavigationLink>
+      <StaticNavigationLink id='contact' url='/ota-yhteytta'>Ota yhteyttä</StaticNavigationLink>
     </ul>
 
   </nav>
