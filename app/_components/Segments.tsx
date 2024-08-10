@@ -20,17 +20,25 @@ import { ElementType } from 'react'
 
 export const Etusivu = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
   {(Column: ElementType) => <>
-    <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <H2>Suomalaista valaisintaidetta käsityönä</H2>
+    <Column 
+      padding 
+      width={ 1 } 
+      minWidth={ ScreenSize.lg }
+      align='center'>
+      <H2>Suomalaista valaisintaidetta</H2>
       <Paragraph>
         Muotoilija Otto-Mikael Tompuri antaa estradin kansallispuullemme koivulle ja sen
         pelkistetylle kauneudelle. Valaisimen katseenvangitsijoina toimivat käsin koverretut
         tuohirullat, joiden lovista läpäisevä valo luo ympäristöönsä valojen ja varjojen leikin.
+      </Paragraph>
+      <Paragraph>
         Tompurin arvot lepäävät vahvasti ekologisen kestävyyden ja luonnon monimuotoisuuden
         säilyttämisessä. Valaisimissa käytetyt metallivarret ovat kierrätysmateriaalia eikä valaisimiin
-        ole kaadettu yhtäkään elävää puuta. Tärkeintä valaisimien suunnittelussa ja
-        valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän
-        valaisimien materiaalia muokataan - sen parempi.
+        ole kaadettu yhtäkään elävää puuta.
+      </Paragraph>
+      <Paragraph> 
+        Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto 
+        ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
       </Paragraph>
     </Column>
   </>
