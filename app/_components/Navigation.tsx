@@ -15,18 +15,11 @@ import Link from 'next/link'
 const classNamesWithMontserrat = classNameWithFont('montserrat')
 
 const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
-  <div className='menuToggleWrapper'>
-    <button
-      className='menuToggle'
-      onClick={ onClick }>
-      ⁝
-    </button>
-    <h1 className='navigation_h1'>
-      <Link className={ 'list_item_link' } href='/'>
-        { metadata.title }
-      </Link>
-    </h1>
-  </div>
+  <button
+    className='menuToggle'
+    onClick={ onClick }>
+    ☰
+  </button>
 
 export default function Navigation () {
   const [ menuOpen, toggleMenu ] = useState(false)
@@ -44,7 +37,14 @@ export default function Navigation () {
       <Image image={ logoImage } alt='Tuohinen logo' className='logo' />
     </div>
 
-    <NavigationMenuButton onClick={ handleClick } />
+    <div className='menuToggleWrapper'>
+      <NavigationMenuButton onClick={ handleClick } />
+      <h1 className='navigation_h1'>
+        <Link className={ 'list_item_link' } href='/'>
+          { metadata.title }
+        </Link>
+      </h1>
+    </div>
 
     <ul className={ classNamesWithMontserrat('list') }>
       <StaticNavigationLink id='tuote' url='/tuotteesta'>Tuote</StaticNavigationLink>

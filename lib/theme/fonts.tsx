@@ -22,7 +22,7 @@ const lobster = Lobster_Two({
 
 const montserrat = Montserrat({
   subsets:  [ 'latin' ],
-  weight:   [ '400', '700', '900' ]
+  weight:   [ '200', '400', '700', '900' ]
 })
 
 const fondamento = Fondamento({

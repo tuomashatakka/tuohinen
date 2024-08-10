@@ -17,7 +17,7 @@
               sans-serif;
   --line-height: 1.65em;
 
-  --navigation-dropdown-shadow: 0px 24px 48px rgba(0, 0, 0, 0.25);
+  --navigation-dropdown-shadow: 0px 24px 48px rgba(0, 0, 0, 0.8);
 
   --foreground-color: #dfddd6;
   --background-color: #131212;
@@ -112,9 +112,12 @@ body {
   }
 
   header h1 {
-    color: white;
-    font-weight: 100;
+    color:        white;
+    font-weight:    400;
+    line-height:    0.9em;
     letter-spacing: -0.08em;
+    padding-top:    0.2em;
+
     @media screen and (max-width: $breakpoint-xl) {
       font-size: 3em;
     }
@@ -123,14 +126,6 @@ body {
     }
     @media screen and (max-width: $breakpoint-sm) {
       font-size: 1em;
-    }
-
-    span {
-      font-weight: inherit;
-      text-align: left;
-    }
-    strong {
-      font-weight: 400;
     }
   }
 }
@@ -280,7 +275,7 @@ input {
 button {
   display:          block;
   border-radius:    1.5px;
-  background-color: white !important;
+  background-color: white;
   color:          black;
   text-transform:   uppercase;
   font-weight:      900;

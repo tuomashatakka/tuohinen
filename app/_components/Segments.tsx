@@ -410,47 +410,6 @@ export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title=
   </>}
 </Segment>
 
-export const Tunnelma = () => <Segment variant={ SegmentVariantType.light } title='Taide & tunnelma'>
-  {(Column) => <>
-    <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-      <H2>Taide & tunnelma</H2>
-      <Ingress>
-        "Koivussa minua inspiroi moni asia: sen pelkistetty kauneus."
-      </Ingress>
-      <Paragraph>
-        Ei ole lainkaan itsestäänselvää että hyvää, kaunista ja laadukasta tuohiaihiota löytyy lainkaan -
-        etsiminen voi kestää päiviä, vaikka hyvä apaja olisikin tiedossa.
-      </Paragraph>
-      <Paragraph>
-        Tompuri on vuosien ajan tutkinut luontoa, etenkin koivun tuohta ja siihen vaikuttavia tekijöitä.
-        Koivun tuohta tutkiessa on kierretty koko Suomi:
-        Lapissa varhaiskoivuja lumikengillä samoillen, Etelä-Suomessa ympäri saaristoja veneillen.
-      </Paragraph>
-
-      <H3>Luontoa pitää osata lukea</H3>
-      <Paragraph>
-        Kuten valaisimien saatavuus on kytköksissä materiaalien saatavuuteen,
-        materiaalien saatavuus puolestaan on täysin kytköksissä siihen mitä luonto antaa.
-      </Paragraph>
-      <Paragraph>
-        Pyrkimys on, että mitään ei oteta turhaan - jos edes otetaan.
-        "En itsekään mene kalaan ja riistä sen henkeä jos en aio syödä", Tompuri tiivistää.
-        "Luontoa ja sen herkkiä prosesseja haluan vaalia ja varjella viimeiseen asti."
-      </Paragraph>
-      <Paragraph>
-        Kun hyvä tuohiaihio vihdoin löytyy, materiaali pestään ja puhdistetaan heti,
-        alustavasti paikan päällä ja huolellisemmin sen kuljettua varastoon.
-        Kaikki ylimääräinen jätetään luontoon myös tässä mielessä.
-      </Paragraph>
-    </Column>
-    <Column width={ 2 } minWidth={ ScreenSize.sm }>
-      <LightboxItem id='photoPhotoshopMadeMeDoIt' description=''>
-        <Img alt='' image={ photoPhotoshopMadeMeDoIt } />
-      </LightboxItem>
-    </Column>
-  </>}
-</Segment>
-
 export const OtaYhteytta = () => <Segment title='Ota yhteyttä'>
   {(Column) => <>
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
