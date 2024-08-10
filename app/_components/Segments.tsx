@@ -184,20 +184,25 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
 
 export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
-    <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
+    <Column padding width={ 1 } minWidth={ ScreenSize.lg } align='left'>
       <H2>Muotoilija</H2>
       <Paragraph>
-        Otto-Mikael Tompuri on helsinkiläinen kirvesmies, hitsaaja, tatuointiartisti ja ennen kaikkea
-        tekijä. Tompuri on pienestä pitäen kasvanut taiteen ympäröimänä perheessä, jossa
-        taiteilijoita on esiintynyt useammassa sukupolvessa. Otto-Mikaelille taide näyttäytyy
-        vapautena, itse elämänä, jota Tompuri ilmaisee omalla ainutkertaisella tyylillään.
+        <strong>Otto-Mikael Tompuri</strong> on helsinkiläinen kirvesmies, 
+        hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija. 
+        Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän. 
+        Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa. 
+        Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri 
+        toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.
       </Paragraph>
 
       <Paragraph>
         Ilman luontoa ei ole elämää, ajattelee Tompuri, jolle luonto merkitsee aitoa läsnäoloa. Luonto
-        rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurille halun
-        tuoda komean kansallispuumme taiteen avulla osaksi jokapäiväistä elämäämme. Ensin tuli
-        idea, ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
+        rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurissa halun
+        tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme.
+      </Paragraph>
+
+      <Paragraph>
+        Ensin tuli idea, ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
         Tompuri tutki ja kokeili, miten koivua parhaiten käsitellään: miten koivukiekko kuivataan
         parhaiten ilman halkeamien syntymistä, millainen kyllästysaine tuo koivun luontaiset kuviot
         parhaiten esille, miten tuohirulla saadaan säilymään yhtenäisenä… Tompuri kokeili ja oppi,
