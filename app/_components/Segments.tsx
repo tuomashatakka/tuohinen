@@ -194,21 +194,22 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
         Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri 
         toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.
       </Paragraph>
-
       <Paragraph>
         Ilman luontoa ei ole elämää, ajattelee Tompuri, jolle luonto merkitsee aitoa läsnäoloa. Luonto
         rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurissa halun
         tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme.
       </Paragraph>
 
+      <H3>Ensin tuli koivu</H3>
+      <Ingress>
+        Ensin tuli koivu, sitten idea. Ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
+      </Ingress>
       <Paragraph>
-        Ensin tuli idea, ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
         Tompuri tutki ja kokeili, miten koivua parhaiten käsitellään: miten koivukiekko kuivataan
         parhaiten ilman halkeamien syntymistä, millainen kyllästysaine tuo koivun luontaiset kuviot
         parhaiten esille, miten tuohirulla saadaan säilymään yhtenäisenä… Tompuri kokeili ja oppi,
         oppi ja kokeili. Vuosien saatossa Tuohinen kasvoi ja kehittyi yhdessä Tompurin kanssa.
       </Paragraph>
-
       <Paragraph>
         Yhteisiin vuosiin on mahtunut koko tunteiden kirjo: oivalluksia, turhautumista, iloa,
         epätoivoa… Monesti Tompuri on pohtinut, onko työssä mitään järkeä. Mutta Tompurin oli
