@@ -16,6 +16,7 @@ import heroLukee from '@/public/hero/lukee.jpg'
 import heroTunnelmoi from '@/public/hero/tunnelmoi.jpg'
 import heroHakkaa from '@/public/hero/hakkaa.jpg'
 import heroKyykkii from '@/public/hero/kyykkii.jpg'
+import photoTompuri from '@/public/tompuri.jpg'
 import { ElementType } from 'react'
 
 export const Etusivu = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
@@ -184,7 +185,11 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
 
 export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
-    <Column padding width={ 1 } minWidth={ ScreenSize.lg } align='left'>
+    <Column width={ 1 } minWidth={ ScreenSize.lg } />
+    <Column width={ 2 } minWidth={ ScreenSize.md }>
+      <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain', margin: '1.5em' }} />
+    </Column>
+    <Column width={ 5 } minWidth={ ScreenSize.lg } padding align='left'>
       <H2>Muotoilija</H2>
       <Paragraph>
         <strong>Otto-Mikael Tompuri</strong> on helsinkiläinen kirvesmies, 
@@ -216,6 +221,7 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
         pakko jatkaa, Otto-Mikaelista oli tullut Tuohi-Tompuri.
       </Paragraph>
     </Column>
+    <Column width={ 2 } minWidth={ ScreenSize.lg } />
   </>
   }
 </Segment>
