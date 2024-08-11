@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { classNameWithFont } from '@/theme/fonts'
 import metadata from '@/lib/metadata'
@@ -16,12 +17,14 @@ export default function RootLayout ({ children }: RootLayoutProps) {
   return <html lang='en'>
     <head>
       <title>{ metadata.title }</title>
+      <meta property='description' content={ metadata.description as string } />
     </head>
     <body className={ bodyClassName }>
       <BodyContent>
         {children}
       </BodyContent>
       <Analytics />
+      <SpeedInsights />
     </body>
   </html>
 }
