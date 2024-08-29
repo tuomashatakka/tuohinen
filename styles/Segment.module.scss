@@ -19,13 +19,13 @@
   background-color: rgba(0, 0, 0, 0.05)
 }
 
-.padding {
-  box-sizing: border-box;
-  padding:    15vw;
-
-  @include md {
-    padding: 8vw;
-  }
+.segment-break {
+  flex:     1 0 100%;
+  width:    100%;
+  height:   0;
+  margin:   0;
+  padding:  0;
+  border:   none;
 }
 
 .segment-column {
@@ -64,9 +64,36 @@
   }
 }
 
+.padding {
+  box-sizing: border-box;
+  padding:    15vw;
+
+  @include md {
+    padding: 8vw;
+  }
+}
+
 
 .segment-column {
-  max-width:        100vw;
+  max-width:        100%;
+}
+
+
+.artist-section {
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  flex: 0 0 auto !important;
+  width: 12em;
+  min-width: 25vw !important;
+  align-content: center;
+  // transform: rotate(30deg) !important;
+
+  img {
+  // animation: 2s rotate 0s linear alternate-reverse infinite;
+  }
 }
 
 /* style={{ flex: '1 1 auto', alignContent: 'center', textAlign: 'right' }} */

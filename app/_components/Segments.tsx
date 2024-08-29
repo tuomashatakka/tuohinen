@@ -19,11 +19,32 @@ import heroKyykkii from '@/public/hero/kyykkii.jpg'
 import photoTompuri from '@/public/tompuri.jpg'
 import { ElementType } from 'react'
 
-export const Etusivu = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
-  {(Column: ElementType) => <>
-    <Column 
-      padding 
-      width={ 1 } 
+export const Etusivu = () => <Segment padding variant={ SegmentVariantType.dark } title='Visio'>
+  {(Column) => <>
+    {/* <Column align='center'>
+      <Icon name='table_restaurant' />
+      <H4>Tervetuloa</H4>
+      <Paragraph>
+        koti sivuilleni ;_)
+      </Paragraph>
+    </Column>
+    <Column align='center'>
+      <Icon name='table_restaurant' />
+      <H4>Tervetuloa</H4>
+      <Paragraph>
+        koti sivuilleni ;_)
+      </Paragraph>
+    </Column>
+    <Column align='center'>
+      <Icon name='table_restaurant' />
+      <H4>Tervetuloa</H4>
+      <Paragraph>
+        koti sivuilleni ;_)
+      </Paragraph>
+    </Column>
+    <Break padding /> */}
+    <Column
+      width={ 1 }
       minWidth={ ScreenSize.lg }
       align='center'>
       <H2>Suomalaista valaisintaidetta</H2>
@@ -37,8 +58,8 @@ export const Etusivu = () => <Segment variant={ SegmentVariantType.dark } title=
         säilyttämisessä. Valaisimissa käytetyt metallivarret ovat kierrätysmateriaalia eikä valaisimiin
         ole kaadettu yhtäkään elävää puuta.
       </Paragraph>
-      <Paragraph> 
-        Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto 
+      <Paragraph>
+        Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto
         ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
       </Paragraph>
     </Column>
@@ -109,10 +130,10 @@ export const Tuote = () => <Segment variant={ SegmentVariantType.dark }>
 export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
     <Column width={ 1 } />
-    <Column 
-      padding 
+    <Column
+      padding
       align='center'
-      width={ 2 } 
+      width={ 2 }
       minWidth={ ScreenSize.lg }>
       <H2>Tuohisen tarina</H2>
       <Paragraph className='keep-spacing'>
@@ -173,7 +194,7 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
         <br />        Sanoi vanha Väinämöinen:
         <br />        sielut teiän voin yhteen liittää,
         <br />        jos mielit sa puutas hyysää.<br />
-        <br />      
+        <br />
         <br />        Koivahaisen pidellä hyvänä,
         <br />        säilyis liitto teijän pyhänä.
       </Paragraph>
@@ -183,20 +204,20 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
   }
 </Segment>
 
-export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
+export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } padding className='artist-section'>
   {(Column: ElementType) => <>
-    <Column width={ 1 } minWidth={ ScreenSize.lg } />
-    <Column width={ 2 } minWidth={ ScreenSize.md }>
-      <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain', margin: '1.5em' }} />
+    <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'> 
+      <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain' }} />
     </Column>
-    <Column width={ 5 } minWidth={ ScreenSize.lg } padding align='left'>
+    <Column width={ 1 } minWidth={ ScreenSize.lg } />
+    <Column width={ 5 } minWidth={ ScreenSize.lg } align='left'>
       <H2>Muotoilija</H2>
       <Paragraph>
-        <strong>Otto-Mikael Tompuri</strong> on helsinkiläinen kirvesmies, 
-        hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija. 
-        Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän. 
-        Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa. 
-        Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri 
+        <strong>Otto-Mikael Tompuri</strong> on helsinkiläinen kirvesmies,
+        hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija.
+        Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän.
+        Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa.
+        Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri
         toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.
       </Paragraph>
       <Paragraph>
@@ -221,7 +242,6 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark }>
         pakko jatkaa, Otto-Mikaelista oli tullut Tuohi-Tompuri.
       </Paragraph>
     </Column>
-    <Column width={ 2 } minWidth={ ScreenSize.lg } />
   </>
   }
 </Segment>
