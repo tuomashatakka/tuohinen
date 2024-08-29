@@ -14,6 +14,9 @@ export default function BodyContent ( { children }: RootLayoutProps ) {
         <main className='main-content min-h-screen'>
           {children}
         </main>
+        <footer style={{ height: '25vh' }}>
+
+        </footer>
       </div>
     </Lightbox>
   </NavigationProvider>
