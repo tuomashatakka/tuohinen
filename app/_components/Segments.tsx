@@ -205,7 +205,7 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
 </Segment>
 
 export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } padding className='artist-section'>
-  {(Column: ElementType) => <>
+  {(Column) => <>
     <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'> 
       <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain' }} />
     </Column>
@@ -249,21 +249,10 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } pad
 export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
     <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <Paragraph>
-        Jo vuosisatojen ajan Tuohinen on vaeltanut ympäri Suomenmaan. Kevein kosketuksin, hellin
-        henkäyksin ja puuskuttavin puhurein Tuohinen on karaissut suomalaisen koivun, joka elonsa
-        päättyessä saa uuden elämän Otto-Mikael Tompurin osaavissa käsissä.
-      </Paragraph>
-      <Paragraph>
-        Tuohisen ja Tompurin yhteinen tarina alkoi vuonna 2016 heidän kohdatessa hämyisen
-        lehdon katveessa. Kevätauringon ilkikuristen säteiden pilkahdellessa puiden latvoista
-        Tuohinen tarkkaili Tompurin metsässä samoilua. Voimakkaan yhteenkuuluvuuden tunteen
-        johdosta Tuohinen teki jotain, mitä ei ollut satoihin vuosiin tehnyt: hän paljasti todellisen
-        olomuotonsa Tompurille. Rakkaudesta luontoa kohtaan Tuohinen ja Tompuri päättivät
-        toteuttaa yhteistä filosofiaa luonnon ehdoilla; osaavissa käsissä kaatuneet koivut saavat
-        uuden elämäntarinan kotien katseenvangitsijoina. Tuohisen johdatuksella Tompuri kaivertaa
+      <Ingress>
+        Tompuri kaivertaa
         koivun sisustan säilyttäen koivun sielun, tuohen.
-      </Paragraph>
+      </Ingress>
       <Paragraph>
         Valaisimien kuviot Tompuri on suunnitellut yhteistyössä luonnon kanssa siten, että koivun
         olemus pääsee esille elementissään. Tuohinen -valaisimien avulla voitkin tuoda palan
