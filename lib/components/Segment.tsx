@@ -1,15 +1,29 @@
-import { ComponentType, MutableRefObject, PropsWithChildren, ReactNode, useEffect, useRef, useState } from 'react'
+import { ComponentType, PropsWithChildren, ReactNode } from 'react'
 
 import classNames from 'classnames'
 import { WithNavigationItem } from '@/app/_components/NavigationContext'
 import { ScreenSize, SCREEN_SIZES } from '@/theme/ScreenSize'
-import { IntersectionObserverCallback, observeIntersection } from './getObserver'
+
+let index = 0
+
+const getNextRunningIndex = () =>
+  String(++index)
 
 
-function SegmentColumn ({ children, width = 1, padding = false, minWidth = ScreenSize.nil }: SegmentColumnPropsType) {
+function SegmentColumn ({
+  children,
+  className, 
+  width = 1,
+  align = 'right',
+  padding = false,
+  minWidth = ScreenSize.nil
+}: SegmentColumnPropsType) {
+
   const classes = classNames(
     'segment-column',
     `column-${width}`,
+    `align-${align}`,
+    className,
     {
       padding,
       [`min-width-${SCREEN_SIZES[minWidth]}`]: minWidth,
@@ -21,51 +35,28 @@ function SegmentColumn ({ children, width = 1, padding = false, minWidth = Scree
   </div>
 }
 
+function SegmentBreak ({ padding }: SegmentBreakPropsType) {
+  const classes = classNames(
+    'segment-break',
+    { padding },
+  )
 
-export default function Segment ({ children, variant, title }: SegmentPropsType) {
+  return <hr className={ classes } />
+}
 
-  const classes = classNames('segment', {
-    [`segment-${variant}`]: !!variant
+export default function Segment ({ className, children, variant, title, padding }: SegmentPropsType) {
+
+  const classes = classNames('segment', className, {
+    [`segment-${variant}`]: !!variant,
+    padding,
   })
 
-  return <WithNavigationItem text={ title }>
+  return <WithNavigationItem text={ title || getNextRunningIndex() }>
     <section className={ classes }>
-      {children(SegmentColumn)}
+      {children(SegmentColumn, SegmentBreak)}
     </section>
   </WithNavigationItem>
 }
-
-export function useWithinViewport (onShow?: (entry: IntersectionObserverEntry) => void): [ boolean, MutableRefObject<HTMLElement | undefined> ] {
-  const ref = useRef<HTMLElement>()
-  const [ visible, setVisibilityState ] = useState(false)
-
-  useEffect(() => {
-
-    const handleIntersectionObservation: IntersectionObserverCallback = (entries, _observer) => {
-      const index = entries.findIndex(entry => entry.target === ref.current)
-      if (index === -1)
-        return
-      const entry  = [ ...entries ][index]
-
-      if (!entry)
-        return setVisibilityState(false)
-
-      setVisibilityState(entry.isIntersecting)
-      if (onShow && index > -1)
-        return onShow(entry)
-    }
-
-    if (ref.current) {
-      return observeIntersection(ref.current, handleIntersectionObservation).dispose
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ ref ])
-
-
-  return [ visible, ref ]
-}
-
-
 
 export enum SegmentVariantType {
   dark = 'dark',
@@ -74,14 +65,21 @@ export enum SegmentVariantType {
 
 type SegmentPropsType = {
   // eslint-disable-next-line no-unused-vars
-  children: (Column: ComponentType<SegmentColumnPropsType>) => ReactNode,
-  variant?: SegmentVariantType,
-  title:    string,
+  children:   (Column: ComponentType<SegmentColumnPropsType>, Break: ComponentType<SegmentBreakPropsType>) => ReactNode,
+  className?: string,
+  variant?:   SegmentVariantType,
+  padding?:   boolean | undefined,
+  title?:     string,
 }
 
+type SegmentBreakPropsType = {
+  padding?: boolean,
+}
 
 type SegmentColumnPropsType = PropsWithChildren<{
-  width:      number,
-  padding?:    boolean | undefined,
-  minWidth?:   ScreenSize | undefined,
+  width?:       number,
+  align?:       string,
+  padding?:     boolean | undefined,
+  minWidth?:    ScreenSize | undefined,
+  className?:   string,
 }>

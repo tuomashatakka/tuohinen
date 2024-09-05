@@ -10,15 +10,14 @@ type QuoteProps                 = HTMLProps<HTMLQuoteElement>
 
 const classNameWith             = classNameWithFont('epilogue')
 const classNameWithMontserrat   = classNameWithFont('montserrat')
-const classNameWithGluten       = classNameWithFont('montserrat')
 
 export const Title = ({ children, className }: Readonly<HeadingProps>) =>
-  <h1 className={ classNameWithGluten(className) }>
+  <h1 className={ classNameWithMontserrat(className) }>
     {children}
   </h1>
 
 export const Subtitle = ({ children, className }: Readonly<HeadingProps>) =>
-  <p className={ classNameWith('subheading', className) }>
+  <p className={ classNameWithMontserrat('subheading', className) }>
     {children}
   </p>
 
@@ -38,8 +37,8 @@ export const H2 = (props: HeadingProps) =>
 export const H3 = ({ className, ...props }: HeadingProps) =>
   <h3 { ...props } className={ classNameWithMontserrat(className) }>{ props.children }</h3>
 
-export const H4 = (props: HeadingProps) =>
-  <h4 { ...props }>{ props.children }</h4>
+export const H4 = ({ className, ...props }: HeadingProps) =>
+  <h4 { ...props } className={ classNameWithMontserrat(className) }>{ props.children }</h4>
 
 export const Paragraph = (props: HeadingProps) =>
   <p { ...props }>{ props.children }</p>

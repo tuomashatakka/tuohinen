@@ -16,7 +16,7 @@ export default function PageHeadSection () {
       </Subtitle>
 
       <Title>
-       tuo luonto kotiisi.
+        tuo luonto kotiisi.
       </Title>
     </header>
 

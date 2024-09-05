@@ -1,5 +1,6 @@
 .navigation {
   --menu-size:      4rem;
+
   position:         relative;
   display:          flex;
   z-index:          400;
@@ -46,7 +47,7 @@
 .list_item {
   cursor:           pointer;
   pointer-events:   none;
-  flex:             1 0 auto;
+  flex:             0 0 auto;
   text-transform:   uppercase;
   letter-spacing:   0.25em;
   font-size:        0.45em;
@@ -63,6 +64,7 @@
 }
 
 .list_item:focus,
+.list_item:active,
 .list_item:hover {
   background-color:   var(--navigation-item-background-hover);
   color:              var(--navigation-item-text-hover);
@@ -78,14 +80,12 @@
     color:            var(--navigation-item-text-focus-secondary);
 
     .list_item_link {
-      border-width:   0 0 0 1px;
+      border-width:   0;
       border-style:   solid;
     }
   }
 
   .list_item_link {
-    border-width:         0 0 0 2.4em;
-    border-style:         solid;
     transition-duration:  200ms;
   }
 }
@@ -95,10 +95,11 @@
   display:          block;
   height:           inherit;
   width:            100%;
+  font-weight:      500;
   margin:           0.6em 1em 0.6em 1px;
-  border-left:      1px solid #988;
+  border-left:      0px solid #988;
   padding-left:     1.2em;
-  transition:       1400ms border;
+  color:            inherit;
 }
 
 .navigation_h1 {
@@ -106,11 +107,16 @@
   letter-spacing:   -0.02em;
   font-weight:      100;
   line-height:      1em;
-  padding:          1em;
+  padding:          0;
+  margin:           0;
   white-space:      nowrap;
 }
 
 .navigation {
+  --menu-toggle-text-color: white;
+  --menu-toggle-background-color: transparant;
+  --menu-toggle-text-color-hover: black;
+  --menu-toggle-background-color-hover: white;
   position:         fixed;
   top:              0;
   left:             0;
@@ -118,7 +124,17 @@
   background-color: var(--background-color);
 
   .menuToggle {
-    display:        none;
+    display:          none;
+    transition:       all 200ms;
+    background-color: var(--menu-toggle-background-color);
+    color:            var(--menu-toggle-text-color);
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: var(--menu-toggle-background-color-hover);
+      color:            var(--menu-toggle-text-color-hover);
+    }
   }
 
   @include lg {
@@ -131,14 +147,18 @@
     .list {
       flex-flow:        column nowrap;
       transition-delay: 1s;
-      max-height:       0;
-      gap:              0;
       justify-content:  stretch;
       align-items:      stretch;
       position:         absolute;
       bottom:           0;
+      max-height:       0;
+      gap:              0;
       transform:        translateY(100%);
       box-shadow:       var(--navigation-dropdown-shadow)
+    }
+
+    .list_item {
+      letter-spacing:   0.05em;
     }
 
     .list_item_link {

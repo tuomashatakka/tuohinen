@@ -25,11 +25,15 @@
   to
     filter: blur(0px)
 
-@keyframes animate-words
-  from
-    transform: rotateX(0)
-  to
-    transform: rotateX(360deg)
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  50%
+    transform: rotate(180deg) scaleX(1.5)
+  75%
+    transform: rotate(270deg) scaleY(1.5)
+  100%
+    transform: rotate(360deg)
 
 @keyframes animate-in
   from
