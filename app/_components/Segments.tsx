@@ -206,7 +206,7 @@ export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
 
 export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } padding className='artist-section'>
   {(Column) => <>
-    <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'> 
+    <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'>
       <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain' }} />
     </Column>
     <Column width={ 1 } minWidth={ ScreenSize.lg } />
@@ -428,9 +428,12 @@ export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title=
 export const OtaYhteytta = () => <Segment title='Ota yhteyttä'>
   {(Column) => <>
     <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-      <H2>Kaikki valaisimet tilaustyönä</H2>
+      <H2>Miten otan yhteyttä</H2>
       <Paragraph>
-        Ota yhteyttä <a href='mailto:ottomikaelt@gmail.com'>ottomikaelt@gmail.com</a>
+        Sähköpostiosoite <a href='mailto:tompurintuohi@gmail.com'>tompurintuohi@gmail.com</a>
+      </Paragraph>
+      <Paragraph>
+        Puhelinnumero <a href='tel.:+358465826396'>+358 46 582 6396</a>
       </Paragraph>
     </Column>
   </>}
