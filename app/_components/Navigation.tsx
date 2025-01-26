@@ -47,11 +47,12 @@ export default function Navigation () {
     </div>
 
     <ul className={ classNamesWithMontserrat('list') }>
-      <StaticNavigationLink id='tuote' url='/tuotteesta'>Tuote</StaticNavigationLink>
+      <StaticNavigationLink id='etusivu' url='/'>Etusivu</StaticNavigationLink>
+      <StaticNavigationLink id='valaisimet' url='/valaisimet'>Valaisimet</StaticNavigationLink>
       <StaticNavigationLink id='muotoilija' url='/muotoilija'>Muotoilija</StaticNavigationLink>
       <StaticNavigationLink id='tarina' url='/tarina'>Tarina</StaticNavigationLink>
       <StaticNavigationLink id='galleria' url='/galleria'>Galleria</StaticNavigationLink>
-      <StaticNavigationLink id='contact' url='/ota-yhteytta'>Ota yhteyttä</StaticNavigationLink>
+      <StaticNavigationLink id='contact' url='/yhteystiedot'>Yhteystiedot</StaticNavigationLink>
     </ul>
 
   </nav>
