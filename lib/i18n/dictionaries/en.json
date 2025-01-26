@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Home",
+    "lamps": "Lamps",
+    "designer": "Designer",
+    "story": "Story",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "header": {
+    "title": "Tuohinen Mood Lighting",
+    "slogan": "bring nature into your home"
+  },
+  "home": {
+    "title": "Finnish Lighting Art",
+    "intro": {
+      "p1": "Designer Otto-Mikael Tompuri gives the stage to our national tree, the birch, and its minimalist beauty. The eye-catching elements of the lamp are hand-carved birch bark rolls, whose notches create a play of light and shadow in their surroundings.",
+      "p2": "Tompuri's values rest firmly on ecological sustainability and preserving biodiversity. The metal arms used in the lamps are recycled materials, and no living trees have been cut down for the lamps.",
+      "p3": "The most important aspect in designing and manufacturing the lamps is understanding that nature guides and sets the pace. The less the lamp materials are modified - the better."
+    }
+  },
+  "product": {
+    "title": "Product",
+    "intro": "Tuohinen mood lamps are manufactured ecologically from recycled materials and with respect for nature, entirely by hand.",
+    "description": {
+      "p1": "One of Tuohinen's values is that trees are not cut down unnecessarily. We use naturally fallen birch trees as lamp materials, which have been sourced with landowners' permission from the northern fells to the southern archipelago.",
+      "p2": "Each hollowed birch bark roll is a unique individual, which must be taken into account in their handling.",
+      "p3": "The lamps are the result of years of development and learning. Through trials, errors, and successes, Tompuri has learned to read and highlight nature's most beautiful features with the right, most natural treatment methods."
+    }
+  },
+  "designer": {
+    "title": "Designer",
+    "intro": "is a Helsinki-based carpenter, welder, tattoo artist —— and above all, an artist.",
+    "description": {
+      "p1": "Tompuri grew up in a family where art has surrounded him throughout his life. Artists have appeared in the family for several generations. For Otto-Mikael, art appears as free self-expression that Tompuri implements in his own unique, uncompromising style.",
+      "p2": "Without nature, there is no life, thinks Tompuri, for whom nature means genuine presence. Nature calms, excites, and inspires. The magnificent and versatile birch bark awakened in Tompuri a desire to bring our handsome national tree closer to our lives through art."
+    }
+  },
+  "story": {
+    "title": "The Story of Tuohinen",
+    "poem": {
+      "part1": "A titmouse chirped from the tree:\n\"Osmo's barley will not rise,\nKaleva's oats will not grow,\nwithout subduing the land,\nwithout felling the swidden,\nwithout burning it with fire.\"",
+      "part2": "Steady old Väinämöinen\nhad a sharp axe made.\nThen he felled a great swidden,\nsubdued the mighty land.",
+      "part3": "All the fair trees he felled;\none birch he left standing.\nAs a resting place for birds,\na cuckoo's calling tree."
+    },
+    "reflection": "Could it be a coincidence that Väinämöinen left only the birch standing when clearing the swidden? The birch, whose dark patterns dance on their pale canvas like stones peeking through the snow. The birch, whose bright green spring leaves dispel winter's gloom. The birch, whose soft leaves caress the skin in the nightless night. The birch, which autumn paints in gold."
+  },
+  "vision": {
+    "title": "In Northern symbolism, the birch is the connector of life and death.",
+    "intro": "Artist Otto-Mikael Tompuri wanted to give rights and stage to our national tree, the Birch. In Northern symbolism, the birch is the connector of life and death.",
+    "description": {
+      "p1": "The most important thing in designing and manufacturing the lamps is understanding that nature guides and sets the pace. The less the lamp materials are modified - the better.",
+      "p2": "Tompuri's vision is to bring nature into people's homes. Welcome to enjoy the world of light and shadow and discover the world of Tuohinen!"
+    }
+  },
+  "contact": {
+    "title": "How to Contact",
+    "email": "Email address",
+    "phone": "Phone number"
+  }
+} 

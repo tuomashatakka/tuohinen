@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Etusivu",
+    "lamps": "Valaisimet",
+    "designer": "Muotoilija",
+    "story": "Tarina",
+    "gallery": "Galleria",
+    "contact": "Yhteystiedot"
+  },
+  "header": {
+    "title": "Tuohinen tunnelmavalaisimet",
+    "slogan": "tuo luonto kotiisi"
+  },
+  "home": {
+    "title": "Suomalaista valaisintaidetta",
+    "intro": {
+      "p1": "Muotoilija Otto-Mikael Tompuri antaa estradin kansallispuullemme koivulle ja sen pelkistetylle kauneudelle. Valaisimen katseenvangitsijoina toimivat käsin koverretut tuohirullat, joiden lovista läpäisevä valo luo ympäristöönsä valojen ja varjojen leikin.",
+      "p2": "Tompurin arvot lepäävät vahvasti ekologisen kestävyyden ja luonnon monimuotoisuuden säilyttämisessä. Valaisimissa käytetyt metallivarret ovat kierrätysmateriaalia eikä valaisimiin ole kaadettu yhtäkään elävää puuta.",
+      "p3": "Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi."
+    }
+  },
+  "product": {
+    "title": "Tuote",
+    "intro": "Tuohinen -tunnelmavalaisimet valmistetaan ekologisesti kierrätysmateriaaleista ja luontoa kunnioittaen, täysin käsityönä.",
+    "description": {
+      "p1": "Tuohisen arvoihin kuuluu, että puita ei kaadeta turhaan. Valaisinmateriaaleina käytetään luonnollisesti kaatuneita koivuja, joita on etsitty maanomistajien luvalla aina pohjoisen tuntureista etelän saaristoihin saakka.",
+      "p2": "Tyhjäksi koverretut tuohirullat ovat jokainen toisistaan poikkeava yksilö, mikä täytyy huomioida niiden käsittelyissä.",
+      "p3": "Valaisimet ovat vuosien kehittelyn ja opettelun tulosta. Yritysten, erheiden ja onnistumisten kautta Tompuri on oppinut lukemaan ja korostamaan luonnon kauneimpia piirteitä oikeilla, mahdollisimman luonnollisilla käsittelytavoilla."
+    }
+  },
+  "designer": {
+    "title": "Muotoilija",
+    "intro": "on helsinkiläinen kirvesmies, hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija.",
+    "description": {
+      "p1": "Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän. Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa. Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.",
+      "p2": "Ilman luontoa ei ole elämää, ajattelee Tompuri, jolle luonto merkitsee aitoa läsnäoloa. Luonto rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurissa halun tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme."
+    }
+  },
+  "story": {
+    "title": "Tuohisen tarina",
+    "poem": {
+      "part1": "Tirskuipa tiainen puusta:\n\"Eipä nouse Osmon ohra,\nei kasva Kalevan kaura,\nilman maan alistamatta,\nilman kasken kaatamatta,\ntuon tulella polttamatta.\"",
+      "part2": "Vaka vanha Väinämöinen\nteetti kirvehen terävän.\nSiitä kaatoi kasken suuren,\nmahottoman maan alisti.",
+      "part3": "Kaikki sorti puut soreat;\nyhen jätti koivahaisen.\nLintujen leposijaksi,\nkäkösen kukuntapuuksi."
+    },
+    "reflection": "Lieneekö sattumaa, että Väinämöinen jätti ainoastaan koivun kaatamatta kaskea varten? Koivun, jonka tummat kuvioinnit tanssivat vaalealla kanvaksellaan lumen keskeltä pilkistävien kivien lailla. Koivun, jonka kevään heleän vihreän lehdet talven synkkyyden kaikottaa. Koivun, jonka pehmeät lehdet yöttömänä yönä ihoon leyhähtää. Koivun, jonka syksy kultaan maalaa."
+  },
+  "vision": {
+    "title": "Pohjoisen symboliikassa koivu on elämän ja kuoleman yhdistäjä.",
+    "intro": "Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä.",
+    "description": {
+      "p1": "Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.",
+      "p2": "Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!"
+    }
+  },
+  "contact": {
+    "title": "Miten otan yhteyttä",
+    "email": "Sähköpostiosoite",
+    "phone": "Puhelinnumero"
+  }
+} 

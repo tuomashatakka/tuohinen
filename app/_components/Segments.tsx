@@ -18,54 +18,32 @@ import heroHakkaa from '@/public/hero/hakkaa.jpg'
 import heroKyykkii from '@/public/hero/kyykkii.jpg'
 import photoTompuri from '@/public/tompuri.jpg'
 import { ElementType } from 'react'
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
-export const Etusivu = () => <Segment padding variant={ SegmentVariantType.dark } title='Visio'>
-  {(Column) => <>
-    {/* <Column align='center'>
-      <Icon name='table_restaurant' />
-      <H4>Tervetuloa</H4>
-      <Paragraph>
-        koti sivuilleni ;_)
-      </Paragraph>
-    </Column>
-    <Column align='center'>
-      <Icon name='table_restaurant' />
-      <H4>Tervetuloa</H4>
-      <Paragraph>
-        koti sivuilleni ;_)
-      </Paragraph>
-    </Column>
-    <Column align='center'>
-      <Icon name='table_restaurant' />
-      <H4>Tervetuloa</H4>
-      <Paragraph>
-        koti sivuilleni ;_)
-      </Paragraph>
-    </Column>
-    <Break padding /> */}
-    <Column
-      width={ 1 }
-      minWidth={ ScreenSize.lg }
-      align='center'>
-      <H2>Suomalaista valaisintaidetta</H2>
-      <Paragraph>
-        Muotoilija Otto-Mikael Tompuri antaa estradin kansallispuullemme koivulle ja sen
-        pelkistetylle kauneudelle. Valaisimen katseenvangitsijoina toimivat käsin koverretut
-        tuohirullat, joiden lovista läpäisevä valo luo ympäristöönsä valojen ja varjojen leikin.
-      </Paragraph>
-      <Paragraph>
-        Tompurin arvot lepäävät vahvasti ekologisen kestävyyden ja luonnon monimuotoisuuden
-        säilyttämisessä. Valaisimissa käytetyt metallivarret ovat kierrätysmateriaalia eikä valaisimiin
-        ole kaadettu yhtäkään elävää puuta.
-      </Paragraph>
-      <Paragraph>
-        Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto
-        ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
-      </Paragraph>
-    </Column>
-  </>
-  }
-</Segment>
+export const Etusivu = () => {
+  const { t } = useTranslation()
+  
+  return <Segment padding variant={ SegmentVariantType.dark } title='Visio'>
+    {(Column) => <>
+      <Column
+        width={ 1 }
+        minWidth={ ScreenSize.lg }
+        align='center'>
+        <H2>{t('home.title')}</H2>
+        <Paragraph>
+          {t('home.intro.p1')}
+        </Paragraph>
+        <Paragraph>
+          {t('home.intro.p2')}
+        </Paragraph>
+        <Paragraph>
+          {t('home.intro.p3')}
+        </Paragraph>
+      </Column>
+    </>
+    }
+  </Segment>
+}
 
 
 export const Tuote = () => <Segment variant={ SegmentVariantType.dark }>
@@ -126,125 +104,48 @@ export const Tuote = () => <Segment variant={ SegmentVariantType.dark }>
 </Segment>
 
 
+export const Muotoilija = () => {
+  const { t } = useTranslation()
 
-export const Runo = () => <Segment variant={ SegmentVariantType.dark }>
-  {(Column: ElementType) => <>
-    <Column width={ 1 } />
-    <Column
-      padding
-      align='center'
-      width={ 2 }
-      minWidth={ ScreenSize.lg }>
-      <H2>Tuohisen tarina</H2>
-      <Paragraph className='keep-spacing'>
-        <br />        Tirskuipa tiainen puusta:
-        <br />        “Eipä nouse Osmon ohra,
-        <br />        ei kasva Kalevan kaura,
-        <br />        ilman maan alistamatta,
-        <br />        ilman kasken kaatamatta,
-        <br />        tuon tulella polttamatta.”
-        <br />
-        <br />        Vaka vanha Väinämöinen
-        <br />        teetti kirvehen terävän.
-        <br />        Siitä kaatoi kasken suuren,
-        <br />        mahottoman maan alisti.
-        <br />
-        <br />        Kaikki sorti puut soreat;
-        <br />        yhen jätti koivahaisen.
-        <br />        Lintujen leposijaksi,
-        <br />        käkösen kukuntapuuksi.
-        <br />
-        <br />        Kalevala: toinen runo.
-        <br />        Lieneekö sattumaa, että Väinämöinen jätti ainoastaan koivun kaatamatta kaskea varten?
-        <br />        Koivun, jonka tummat kuvioinnit tanssivat vaalealla kanvaksellaan lumen keskeltä
-        <br />        pilkistävien kivien lailla.
-        <br />        Koivun, jonka kevään heleän vihreän lehdet talven synkkyyden kaikottaa.
-        <br />        Koivun, jonka pehmeät lehdet yöttömänä yönä ihoon leyhähtää.
-        <br />        Koivun, jonka syksy kultaan maalaa.
-        <br />
-        <br />        Vaka vanha Väinämöinen,
-        <br />        kerran tapasi Tuohisen,
-        <br />        alla kaunihin koivahaisen.
-        <br />
-        <br />        Kysyi vanha Väinämöinen:
-        <br />        Ken lienehet matkalainen,
-        <br />        kuis lepäät alla pesän tiaisen.
-        <br />
-        <br />        Tuohinen siihen virkki:
-        <br />        löysinpä minä puun kaunehimman,
-        <br />        Luonnottaren anneista mahtavimman.
-        <br />
-        <br />        Kuul’ kuinka sen kuiskaus soipi,
-        <br />        lehtien laulun suuremmoisin,
-        <br />        havinahan ihanimman.
-        <br />
-        <br />        Ainiaaks’ tähän jäädä voisin,
-        <br />        juurtununna puuhun Jumalan.
-        <br />
-        <br />        Väinämöinen siit’ ilahtui,
-        <br />        ajatus häl kirkastui.
-        <br />        Ajattelee, arvelee,
-        <br />        päässähänsä ynnää:
-        <br />
-        <br />        aura miehel mainio,
-        <br />        loistavahan kaksikko.
-        <br />        Terävähän nuorikko,
-        <br />        ja komea koivikko.
-        <br />
-        <br />        Sanoi vanha Väinämöinen:
-        <br />        sielut teiän voin yhteen liittää,
-        <br />        jos mielit sa puutas hyysää.<br />
-        <br />
-        <br />        Koivahaisen pidellä hyvänä,
-        <br />        säilyis liitto teijän pyhänä.
-      </Paragraph>
-    </Column>
-    <Column width={ 1 } />
-  </>
-  }
-</Segment>
+  return <Segment variant={ SegmentVariantType.dark } padding className='artist-section'>
+    {(Column) => <>
+      <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'>
+        <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain' }} />
+      </Column>
+      <Column width={ 1 } minWidth={ ScreenSize.lg } />
+      <Column width={ 5 } minWidth={ ScreenSize.lg } align='left'>
+        <H2>{t('designer.title')}</H2>
+        <Paragraph>
+          <strong>Otto-Mikael Tompuri</strong> {t('designer.intro')}
+        </Paragraph>
+        <Paragraph>
+          {t('designer.description.p1')}
+        </Paragraph>
+        <Paragraph>
+          {t('designer.description.p2')}
+        </Paragraph>
 
-export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } padding className='artist-section'>
-  {(Column) => <>
-    <Column width={ 2 } minWidth={ ScreenSize.md } className='profile-image'>
-      <Img alt='' image={ photoTompuri } style={{ objectFit: 'contain' }} />
-    </Column>
-    <Column width={ 1 } minWidth={ ScreenSize.lg } />
-    <Column width={ 5 } minWidth={ ScreenSize.lg } align='left'>
-      <H2>Muotoilija</H2>
-      <Paragraph>
-        <strong>Otto-Mikael Tompuri</strong> on helsinkiläinen kirvesmies,
-        hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija.
-        Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän.
-        Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa.
-        Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri
-        toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.
-      </Paragraph>
-      <Paragraph>
-        Ilman luontoa ei ole elämää, ajattelee Tompuri, jolle luonto merkitsee aitoa läsnäoloa. Luonto
-        rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurissa halun
-        tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme.
-      </Paragraph>
+        <H2>Luonto</H2>
+        <Ingress>
+          Ensin tuli koivu, sitten idea. Ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
+        </Ingress>
+        <Paragraph>
+          Tompuri tutki ja kokeili, miten koivua parhaiten käsitellään: miten koivukiekko kuivataan
+          parhaiten ilman halkeamien syntymistä, millainen kyllästysaine tuo koivun luontaiset kuviot
+          parhaiten esille, miten tuohirulla saadaan säilymään yhtenäisenä… Tompuri kokeili ja oppi,
+          oppi ja kokeili. Vuosien saatossa Tuohinen kasvoi ja kehittyi yhdessä Tompurin kanssa.
+        </Paragraph>
+        <Paragraph>
+          Yhteisiin vuosiin on mahtunut koko tunteiden kirjo: oivalluksia, turhautumista, iloa,
+          epätoivoa… Monesti Tompuri on pohtinut, onko työssä mitään järkeä. Mutta Tompurin oli
+          pakko jatkaa, Otto-Mikaelista oli tullut Tuohi-Tompuri.
+        </Paragraph>
+      </Column>
+    </>
+    }
+  </Segment>
+}
 
-      <H2>Luonto</H2>
-      <Ingress>
-        Ensin tuli koivu, sitten idea. Ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
-      </Ingress>
-      <Paragraph>
-        Tompuri tutki ja kokeili, miten koivua parhaiten käsitellään: miten koivukiekko kuivataan
-        parhaiten ilman halkeamien syntymistä, millainen kyllästysaine tuo koivun luontaiset kuviot
-        parhaiten esille, miten tuohirulla saadaan säilymään yhtenäisenä… Tompuri kokeili ja oppi,
-        oppi ja kokeili. Vuosien saatossa Tuohinen kasvoi ja kehittyi yhdessä Tompurin kanssa.
-      </Paragraph>
-      <Paragraph>
-        Yhteisiin vuosiin on mahtunut koko tunteiden kirjo: oivalluksia, turhautumista, iloa,
-        epätoivoa… Monesti Tompuri on pohtinut, onko työssä mitään järkeä. Mutta Tompurin oli
-        pakko jatkaa, Otto-Mikaelista oli tullut Tuohi-Tompuri.
-      </Paragraph>
-    </Column>
-  </>
-  }
-</Segment>
 
 export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
   {(Column: ElementType) => <>
@@ -263,29 +164,29 @@ export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
   }
 </Segment>
 
-export const Visio = () => <Segment variant={ SegmentVariantType.dark } title='Visio'>
-  {(Column: ElementType) => <>
-    <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
-      <H2>Pohjoisen symboliikassa koivu on elämän ja kuoleman yhdistäjä.</H2>
-      <Ingress>
-        Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle.<br />
-        Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä.
-      </Ingress>
-      <Paragraph>
-        Tärkeintä valaisimien suunnittelussa ja valmistamisessa on
-        ymmärrys siitä, että luonto ohjaa ja määrää tahdin.
-        Mitä vähemmän valaisimien materiaalia muokataan - sen parempi.
-      </Paragraph>
-      <Paragraph>
-        Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan
-        valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!
-      </Paragraph>
-    </Column>
-    <Column width={ 2 }>
-      <Img alt='' image={ photoLaituri } />
-    </Column>
-  </>}
-</Segment>
+export const Visio = () => {
+  const { t } = useTranslation()
+  
+  return <Segment variant={ SegmentVariantType.dark } title='Visio'>
+    {(Column: ElementType) => <>
+      <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
+        <H2>{t('vision.title')}</H2>
+        <Ingress>
+          {t('vision.intro')}
+        </Ingress>
+        <Paragraph>
+          {t('vision.description.p1')}
+        </Paragraph>
+        <Paragraph>
+          {t('vision.description.p2')}
+        </Paragraph>
+      </Column>
+      <Column width={ 2 }>
+        <Img alt='' image={ photoLaituri } />
+      </Column>
+    </>}
+  </Segment>
+}
 
 export const Menneesta = () => <Segment title='Hieman menneestä'>
   {(Column) => <>
@@ -425,19 +326,23 @@ export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title=
   </>}
 </Segment>
 
-export const OtaYhteytta = () => <Segment title='Ota yhteyttä'>
-  {(Column) => <>
-    <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
-      <H2>Miten otan yhteyttä</H2>
-      <Paragraph>
-        Sähköpostiosoite <a href='mailto:tompurintuohi@gmail.com'>tompurintuohi@gmail.com</a>
-      </Paragraph>
-      <Paragraph>
-        Puhelinnumero <a href='tel.:+358465826396'>+358 46 582 6396</a>
-      </Paragraph>
-    </Column>
-  </>}
-</Segment>
+export const OtaYhteytta = () => {
+  const { t } = useTranslation()
+  
+  return <Segment title='Ota yhteyttä'>
+    {(Column) => <>
+      <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
+        <H2>{t('contact.title')}</H2>
+        <Paragraph>
+          {t('contact.email')} <a href='mailto:tompurintuohi@gmail.com'>tompurintuohi@gmail.com</a>
+        </Paragraph>
+        <Paragraph>
+          {t('contact.phone')} <a href='tel.:+358465826396'>+358 46 582 6396</a>
+        </Paragraph>
+      </Column>
+    </>}
+  </Segment>
+}
 
 export const Kartta = () => <Segment title='Ympäri suomen'>
   {(Column) => <>

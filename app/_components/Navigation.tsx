@@ -11,6 +11,8 @@ import { classNameWithFont } from '@/theme/fonts'
 import logoImage from '@/public/logo-white.png'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useTranslation } from '@/lib/i18n/useTranslation'
 
 
 const classNamesWithMontserrat = classNameWithFont('montserrat')
@@ -23,12 +25,12 @@ export type Page = {
 
 // Create a dictionary of pages
 export const pages: Record<string, Page> = {
-  etusivu: { id: 'etusivu', url: '/', text: 'Etusivu' },
-  valaisimet: { id: 'valaisimet', url: '/valaisimet', text: 'Valaisimet' },
-  muotoilija: { id: 'muotoilija', url: '/muotoilija', text: 'Muotoilija' },
-  tarina: { id: 'tarina', url: '/tarina', text: 'Tarina' },
-  galleria: { id: 'galleria', url: '/galleria', text: 'Galleria' },
-  yhteystiedot: { id: 'contact', url: '/yhteystiedot', text: 'Yhteystiedot' },
+  etusivu: { id: 'etusivu', url: '/', text: 'navigation.home' },
+  valaisimet: { id: 'valaisimet', url: '/valaisimet', text: 'navigation.lamps' },
+  muotoilija: { id: 'muotoilija', url: '/muotoilija', text: 'navigation.designer' },
+  tarina: { id: 'tarina', url: '/tarina', text: 'navigation.story' },
+  galleria: { id: 'galleria', url: '/galleria', text: 'navigation.gallery' },
+  yhteystiedot: { id: 'contact', url: '/yhteystiedot', text: 'navigation.contact' },
 }
 
 export function useActivePage () {
@@ -50,6 +52,7 @@ export default function Navigation () {
   const className   = classNames('navigation', { menuOpen })
   const handleClick = () => toggleMenu(!menuOpen)
   const closeMenu   = () => toggleMenu(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (menuOpen)
@@ -73,10 +76,14 @@ export default function Navigation () {
     <ul className={ classNamesWithMontserrat('list') }>
       {Object.values(pages).map(page =>
         <StaticNavigationLink key={ page.id } id={ page.id } url={ page.url }>
-          {page.text}
+          {t(page.text)}
         </StaticNavigationLink>
       )}
     </ul>
+
+    <div className="flex items-center ml-auto mr-4">
+      <LanguageSwitcher />
+    </div>
 
   </nav>
 }
