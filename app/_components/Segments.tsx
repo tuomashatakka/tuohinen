@@ -226,7 +226,7 @@ export const Muotoilija = () => <Segment variant={ SegmentVariantType.dark } pad
         tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme.
       </Paragraph>
 
-      <H3>Ensin tuli koivu</H3>
+      <H2>Luonto</H2>
       <Ingress>
         Ensin tuli koivu, sitten idea. Ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.
       </Ingress>
