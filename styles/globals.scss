@@ -122,13 +122,13 @@ body {
     padding-top:    0.2em;
 
     @media screen and (max-width: $breakpoint-xl) {
-      font-size: 3em;
-    }
-    @media screen and (max-width: $breakpoint-md) {
       font-size: 2em;
     }
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: 1.5em;
+    }
     @media screen and (max-width: $breakpoint-sm) {
-      font-size: 1em;
+      font-size: 1.5em;
     }
   }
 }
@@ -157,7 +157,7 @@ p {
 }
 
 h1 {
-  font-size:        4em;
+  font-size:        2.5em;
   font-weight:      300;
   letter-spacing:   -0.025em;
   line-height:      0.8em;
@@ -245,7 +245,7 @@ h4 {
 .spacer-bg {
   height:               24em;
   background-size:      cover;
-  background-position:  center 
+  background-position:  center
 }
 
 

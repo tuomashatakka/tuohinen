@@ -10,9 +10,33 @@ import { classNameWithFont } from '@/theme/fonts'
 
 import logoImage from '@/public/logo-white.png'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 
 const classNamesWithMontserrat = classNameWithFont('montserrat')
+
+export type Page = {
+  id: string,
+  url: string,
+  text: string,
+}
+
+// Create a dictionary of pages
+export const pages: Record<string, Page> = {
+  etusivu: { id: 'etusivu', url: '/', text: 'Etusivu' },
+  valaisimet: { id: 'valaisimet', url: '/valaisimet', text: 'Valaisimet' },
+  muotoilija: { id: 'muotoilija', url: '/muotoilija', text: 'Muotoilija' },
+  tarina: { id: 'tarina', url: '/tarina', text: 'Tarina' },
+  galleria: { id: 'galleria', url: '/galleria', text: 'Galleria' },
+  yhteystiedot: { id: 'contact', url: '/yhteystiedot', text: 'Yhteystiedot' },
+}
+
+export function useActivePage () {
+  const pathname = usePathname()
+  const isPathname = (page: Page) => page.url === pathname
+
+  return Object.values(pages).find(isPathname)
+}
 
 const NavigationMenuButton = ({ onClick }: { onClick: MouseEventHandler }) =>
   <button
@@ -47,12 +71,11 @@ export default function Navigation () {
     </div>
 
     <ul className={ classNamesWithMontserrat('list') }>
-      <StaticNavigationLink id='etusivu' url='/'>Etusivu</StaticNavigationLink>
-      <StaticNavigationLink id='valaisimet' url='/valaisimet'>Valaisimet</StaticNavigationLink>
-      <StaticNavigationLink id='muotoilija' url='/muotoilija'>Muotoilija</StaticNavigationLink>
-      <StaticNavigationLink id='tarina' url='/tarina'>Tarina</StaticNavigationLink>
-      <StaticNavigationLink id='galleria' url='/galleria'>Galleria</StaticNavigationLink>
-      <StaticNavigationLink id='contact' url='/yhteystiedot'>Yhteystiedot</StaticNavigationLink>
+      {Object.values(pages).map(page =>
+        <StaticNavigationLink key={ page.id } id={ page.id } url={ page.url }>
+          {page.text}
+        </StaticNavigationLink>
+      )}
     </ul>
 
   </nav>
