@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "lamps": "Lampor",
+    "designer": "Designer",
+    "story": "Historia",
+    "gallery": "Galleri",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "title": "Tuohinen stämningsbelysning",
+    "slogan": "för naturen in i ditt hem"
+  },
+  "home": {
+    "title": "Finsk belysningskonst",
+    "intro": {
+      "p1": "Designer Otto-Mikael Tompuri ger scenen till vårt nationalträd, björken, och dess minimalistiska skönhet. Lampans iögonfallande element är handskurna näverrullar, vars skåror skapar ett spel av ljus och skugga i omgivningen.",
+      "p2": "Tompuris värderingar vilar fast på ekologisk hållbarhet och bevarande av biologisk mångfald. Metallarmarna som används i lamporna är återvunnet material, och inga levande träd har huggits ner för lamporna.",
+      "p3": "Det viktigaste i design och tillverkning av lamporna är förståelsen för att naturen vägleder och sätter takten. Ju mindre lampmaterialen modifieras - desto bättre."
+    }
+  },
+  "product": {
+    "title": "Produkt",
+    "intro": "Tuohinen stämningslampor tillverkas ekologiskt av återvunnet material och med respekt för naturen, helt för hand.",
+    "description": {
+      "p1": "Ett av Tuohinens värden är att träd inte huggs ner i onödan. Vi använder naturligt fallna björkar som lampmaterial, som har hämtats med markägarnas tillstånd från de norra fjällen till den södra skärgården.",
+      "p2": "Varje urholkad näverrulle är en unik individ, vilket måste beaktas vid hanteringen.",
+      "p3": "Lamporna är resultatet av års utveckling och lärande. Genom försök, misstag och framgångar har Tompuri lärt sig att läsa och framhäva naturens vackraste egenskaper med de rätta, mest naturliga behandlingsmetoderna."
+    }
+  },
+  "designer": {
+    "title": "Designer",
+    "intro": "är en Helsingforsbaserad snickare, svetsare, tatueringsartist —— och framför allt konstnär.",
+    "description": {
+      "p1": "Tompuri växte upp i en familj där konst har omgett honom genom hela livet. Konstnärer har förekommit i familjen i flera generationer. För Otto-Mikael framstår konst som fritt självuttryck som Tompuri implementerar i sin egen unika, kompromisslösa stil.",
+      "p2": "Utan natur finns inget liv, tänker Tompuri, för vilken naturen betyder äkta närvaro. Naturen lugnar, upphetsas och inspirerar. Den magnifika och mångsidiga nävern väckte i Tompuri en önskan att genom konst föra vårt ståtliga nationalträd närmare våra liv."
+    }
+  },
+  "story": {
+    "title": "Historien om Tuohinen",
+    "poem": {
+      "part1": "En mes kvittrade från trädet:\n\"Osmos korn kommer inte att växa,\nKalevas havre kommer inte att gro,\nutan att underkuva marken,\nutan att fälla svedjan,\nutan att bränna den med eld.\"",
+      "part2": "Stadige gamle Väinämöinen\nlät göra en vass yxa.\nSedan fällde han en stor svedja,\nunderkuvade det mäktiga landet.",
+      "part3": "Alla vackra träd fällde han;\nen björk lät han stå.\nSom viloplats för fåglar,\nett gökens ropande träd."
+    },
+    "reflection": "Kan det vara en slump att Väinämöinen lämnade endast björken stående när han röjde svedjan? Björken, vars mörka mönster dansar på sin bleka duk som stenar som kikar fram genom snön. Björken, vars ljusgröna vårblad skingrar vinterns dysterhet. Björken, vars mjuka blad smeker huden i den nattlösa natten. Björken, som hösten målar i guld."
+  },
+  "vision": {
+    "title": "I nordisk symbolik är björken förbindelsen mellan liv och död.",
+    "intro": "Konstnär Otto-Mikael Tompuri ville ge rättigheter och scen till vårt nationalträd, Björken. I nordisk symbolik är björken förbindelsen mellan liv och död.",
+    "description": {
+      "p1": "Det viktigaste i design och tillverkning av lamporna är förståelsen för att naturen vägleder och sätter takten. Ju mindre lampmaterialen modifieras - desto bättre.",
+      "p2": "Tompuris vision är att föra in naturen i människors hem. Välkommen att njuta av ljusets och skuggans värld och upptäcka Tuohinens värld!"
+    }
+  },
+  "contact": {
+    "title": "Hur man kontaktar",
+    "email": "E-postadress",
+    "phone": "Telefonnummer"
+  }
+} 
