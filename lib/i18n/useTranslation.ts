@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { useLanguage } from './LanguageContext'
 import getDictionary from './get-dictionary'
 
@@ -14,17 +14,20 @@ export default function useTranslation () {
 
   useEffect(() => {
     getDictionary(language)
-      .then((data) => setDictionary(data as Dictionary))
+      .then((data) => setDictionary(data))
       .catch(console.error) // eslint-disable-line no-console
   }, [ language ])
 
-  const t = (key: string): string => {
-    const value = key.split('.').reduce((obj: Dictionary | string, k: string) => {
-      if (typeof obj === 'string')
-        return obj
-      else
-        return obj?.[k]
-    }, dictionary)
+  const t = (...key: string[]): string[] | string => {
+    const value = key
+      .join('.')
+      .split('.')
+      .reduce((obj: Dictionary | string, k: string) => {
+        if (typeof obj === 'string')
+          return obj
+        else
+          return obj?.[k]
+      }, dictionary)
 
     return value?.toString() || key
   }

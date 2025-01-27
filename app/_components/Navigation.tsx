@@ -73,7 +73,7 @@ export default function Navigation () {
       </h1>
     </div>
 
-    <ul className={ classNamesWithMontserrat('list') }>
+    <ul className={ classNamesWithMontserrat('main_nav list') }>
       {Object.values(pages).map(page =>
         <StaticNavigationLink key={ page.id } id={ page.id } url={ page.url }>
           {t(page.text)}
@@ -81,9 +81,6 @@ export default function Navigation () {
       )}
     </ul>
 
-    <div className='flex items-center ml-auto mr-4'>
-      <LanguageSwitcher />
-    </div>
-
+    <LanguageSwitcher />
   </nav>
 }

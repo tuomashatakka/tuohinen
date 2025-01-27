@@ -2,22 +2,27 @@
 
 import { useLanguage, SUPPORTED_LANGUAGES } from '@/lib/i18n/LanguageContext'
 import { classNameWithFont } from '@/theme/fonts'
+import classNames from 'classnames'
 
 const classNamesWithMontserrat = classNameWithFont('montserrat')
 
 export default function LanguageSwitcher () {
   const { language, setLanguage } = useLanguage()
 
-  return <div className={ classNamesWithMontserrat('language-switcher flex gap-2') }>
-    {SUPPORTED_LANGUAGES.map((lang) => 
-      <button
-        key={ lang }
-        onClick={ () => setLanguage(lang) }
-        className={ `uppercase px-2 py-1 text-sm ${
-          language === lang ? 'font-bold' : 'opacity-70'
-        }` }>
-        {lang}
-      </button>
+  return <ul className={ classNamesWithMontserrat('language_switcher list') }>
+    {SUPPORTED_LANGUAGES.map((lang) => {
+      const active    = lang === language
+      const className = classNames('list_item', { list_item_active: active })
+
+      return <li className={ className } key={ lang }>
+        <span
+          key={ lang }
+          onClick={ () => setLanguage(lang) }
+          className='list_item_link'>
+          {lang}
+        </span>
+      </li>
+    }
     )}
-  </div>
-} 
+  </ul>
+}

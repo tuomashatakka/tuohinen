@@ -144,7 +144,7 @@
       display:      block;
     }
 
-    .list {
+    .main_nav.list {
       flex-flow:        column nowrap;
       transition-delay: 1s;
       justify-content:  stretch;
@@ -175,4 +175,9 @@
     max-height:         100vh !important;
     transition-delay:   0s;
   }
+}
+
+.language_switcher {
+  gap: 0;
+  justify-content: flex-end;
 }
