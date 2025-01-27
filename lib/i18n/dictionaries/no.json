@@ -1,0 +1,79 @@
+{
+  "navigation": {
+    "home": "Hjem",
+    "lamps": "Lamper",
+    "designer": "Designer",
+    "story": "Historie",
+    "gallery": "Galleri",
+    "contact": "Kontakt"
+  },
+
+  "header": {
+    "title": "Tuohinen Mood Lighting",
+    "slogan": "Bring natur inn i ditt hjem"
+  },
+
+  "home": {
+    "title": "Finsk lyskunst",
+    "intro": {
+      "p1": "Designer Otto-Mikael Tompuri gir scenen til vår nasjonale tre, bjørken, og dens forenklet skjønnhet. De håndhulede bjørkebarkrullene, som lyset passerer gjennom, skaper en lek av lys og skygge i miljøet.",
+      "p2": "Tompuri's verdier er sterkt basert på økologisk bærekraft og å bevare biodiversitet. Metallstengene som brukes i lampene er resirkulerte materialer, og ingen levende tre er blitt felt for lampene.",
+      "p3": "Det viktigste aspektet ved å designe og produsere lamper er å forstå at naturen guider og setter takten. Jo mindre lampematerialet er prosessert, jo bedre."
+    }
+  },
+
+  "product": {
+    "title": "Produkt",
+    "intro": "Tuohinen mood lamper er laget av økologisk resirkulerte materialer og naturlig respekt, helt for hånd.",
+    "description": {
+      "p1": "Tuohinens verdier inkluderer ikke å felle trær unødvendig. Lampematerialet er laget av naturlig falt bjørk, som er funnet med tillatelse fra landeiere fra de nordlige fjellene til de sørlige øyene. De mest fremtredende enkeltpersoner er nøye valgt, saget til ønsket størrelse og deretter hult ut for hånd for å bevare bjørkens dypeste essens: barken.",
+      "p2": "De tomme, håndhulede bjørkebarkrullene er hver enestående og må tas med i betraktning når de håndteres. Lampens metallstang må være laget spesielt for hver lampe for å oppnå riktig størrelse, og rullens mest skjøre deler må støttes. Lysstrålene som reflekteres fra trestammen oppnås ved å lage sprekker i rullen, og etterligner de unike mønstrene til trærne. Naturen selv har deltatt i arbeidet ved å lage hull i trærne. Resultatet er en lampe som skaper en lek av lys og skygge til å glede på mørkende kvelder.",
+      "p3": "Hovedmaterialet for lampens metallben er kobber og jern, som er skaffet fra, blant annet, demonterte bygninger. Utvalget av metallrør er blitt gjort med samme dedikasjon som tre materialet. I tillegg til de skinnende metallflatene, kan benene vise tegn på aldring, tidligere bruk og sveisinger gjort av arbeiderne.",
+      "p4": "Tuohinen kan stolt stå på enten de silkeste, jevne bjørkeskivene eller på naturlige steiner av forskjellige størrelser, former og farger. Lampens naturlige utseende er etterlignet av stoffkledde brytere og hovedsakelig cotton-dekkede strømledninger, men strømledningene kan også bestilles uten dekkning hvis ønsket.",
+      "p5": "Lampene er resultatet av års utvikling og læring. Gjennom forsøk, feil og suksesser, har Tompuri lært å lese og fremheve de mest vakre trekkene til naturen med rett, så naturlig som mulig, håndtering metoder. Materialet selv har blitt samlet over om lag ti år, testet bruken av forskjellige materialer. Hver fase av arbeidet har blitt gitt tid uten å spare for å oppnå det beste mulige resultatet. Hver lampe er utstyrt med en varmtonet og ikke-varmelse LED-lampe som fremhever den best.",
+      "p6": "Tuohinen er ikke bare en mood lampe. Tuohinen er et stykke historie, en utstilling av hjemlig håndverk og først og fremst, en hyllest til norsk natur. En lampe som forteller sin unike historie."
+    }
+  },
+
+  "designer": {
+    "title": "Designer",
+    "intro": "er en Helsinki-basert snekker, sveiser, tattoo kunstner — og først og fremst, en kunstner.",
+    "description": {
+      "p1": "Tompuri har grown opp i en familie hvor kunst har omgitt ham hele livet. Det har vært kunstnere i familien i mange generasjoner. For Otto-Mikael, er kunst en fri form for selvuttrykk som Tompuri realiserer i sin egen unike, kompromissløse stil.",
+      "p2": "Uten natur, er det ingen liv, tenker Tompuri, for hvem natur betyr ekte nærvær. Natur roer, inspirerer og inspirerer. Den praktfulle og mangfoldige barken til bjørken vekket i Tompuri ønsket om å bringe vår strålende nasjonale tre nærmere våre liv gjennom kunst."
+    }
+  },
+  "nature": {
+    "title": "Natur",
+    "intro": "Først kom bjørken, så ideen. Ideen ga opphav til skisser, og skissene ble de første prototyper.",
+    "description": {
+      "p1": "Tompuri studerte og eksperimenterte med hvordan håndtere bjørken best: hvordan tørke bjørkeskiven uten å spruke, hva slags farge bringer frem de naturlige mønstrene til bjørken, hvordan å holde bjørkebarken intakt… Tompuri eksperimenterte og lærte, lærte og eksperimenterte. Over årene har Tuohinen vokst og utviklet seg sammen med Tompuri.",
+      "p2": "Årene har inkludert hele spekteret av følelser: innsikt, frustrasjon, glede, fortvilelse… Mange ganger har Tompuri lurt på om det er noen mening med arbeidet. Men Tompuri hadde å fortsette, Otto-Mikael hadde blitt Bjørk-Tompuri."
+    }
+  },
+
+  "story": {
+    "title": "Historien om Tuohinen",
+    "intro": "Tompuri hogger bjørkens indre, og bevare bjørkens sjel, barken.",
+    "description": "Mønstrene på lampene er designet av Tompuri i samarbeid med naturen, så essensen til bjørken kan komme ut i sitt element. Med Tuohinen lamper, kan du bringe et stykke av den fortryllende nordlige naturen inn i ditt hjem."
+  },
+
+  "vision": {
+    "title": "I nordisk symbolikk er bjørken en forbinder av liv og død.",
+    "intro": "Kunstner Otto-Mikael Tompuri har ønsket å gi rettferdighet og scenen til vår nasjonale tre, bjørken. Ifølge nordisk symbolikk er bjørken en forbinder av liv og død.",
+    "description": {
+      "p1": "Det viktigste aspektet ved å designe og produsere lamper er å forstå at naturen guider og setter takten. Jo mindre lampematerialet er prosessert, jo bedre.",
+      "p2": "Tompuri's visjon er å bringe natur inn i folks hjem. Velkommen til å nyte verden av lys og skygge og bli kjent med verden til Tuohinen!"
+    }
+  },
+
+  "gallery": {
+    "title": "Skapende atmosfære"
+  },
+
+  "contact": {
+    "title": "Hvordan kontakte",
+    "email": "E-postadresse",
+    "phone": "Telefonnummer"
+  }
+}

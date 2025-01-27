@@ -2,11 +2,11 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
-export type Language = 'fi' | 'en' | 'sv'
+export type Language = 'fi' | 'en' | 'sv' | 'no' | 'ja'
 
 export const DEFAULT_LANGUAGE: Language = 'fi'
 
-export const SUPPORTED_LANGUAGES: Language[] = [ 'fi', 'en', 'sv' ]
+export const SUPPORTED_LANGUAGES: Language[] = [ 'fi', 'en', 'sv', 'no', 'ja' ]
 
 type LanguageContextType = {
   language: Language
@@ -60,4 +60,4 @@ export function useLanguage () {
   }
 
   return context
-} 
+}
