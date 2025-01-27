@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from '@/lib/i18n/useTranslation'
+import useTranslation from '@/lib/i18n/useTranslation'
 import { useActivePage } from './Navigation'
 import CarouselComponent from '@/lib/components/Carousel'
 import slides from './PageHeadImages'
