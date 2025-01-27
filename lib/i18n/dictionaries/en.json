@@ -7,55 +7,73 @@
     "gallery": "Gallery",
     "contact": "Contact"
   },
+
   "header": {
     "title": "Tuohinen Mood Lighting",
-    "slogan": "bring nature into your home"
+    "slogan": "Bring nature into your home"
   },
+
   "home": {
     "title": "Finnish Lighting Art",
     "intro": {
-      "p1": "Designer Otto-Mikael Tompuri gives the stage to our national tree, the birch, and its minimalist beauty. The eye-catching elements of the lamp are hand-carved birch bark rolls, whose notches create a play of light and shadow in their surroundings.",
-      "p2": "Tompuri's values rest firmly on ecological sustainability and preserving biodiversity. The metal arms used in the lamps are recycled materials, and no living trees have been cut down for the lamps.",
-      "p3": "The most important aspect in designing and manufacturing the lamps is understanding that nature guides and sets the pace. The less the lamp materials are modified - the better."
+      "p1": "Designer Otto-Mikael Tompuri gives the stage to our national tree, the birch, and its simplified beauty. The hand-hollowed birch bark rolls, which the light passes through, create a play of light and shadows in the environment.",
+      "p2": "Tompuri's values are strongly based on ecological sustainability and preserving biodiversity. The metal rods used in the lamps are recycled materials, and no living tree has been cut down for the lamps.",
+      "p3": "The most important aspect of designing and manufacturing lamps is understanding that nature guides and sets the pace. The less the lamp material is processed, the better."
     }
   },
+
   "product": {
     "title": "Product",
-    "intro": "Tuohinen mood lamps are manufactured ecologically from recycled materials and with respect for nature, entirely by hand.",
+    "intro": "Tuohinen mood lamps are made from ecologically recycled materials and natural respect, entirely by hand.",
     "description": {
-      "p1": "One of Tuohinen's values is that trees are not cut down unnecessarily. We use naturally fallen birch trees as lamp materials, which have been sourced with landowners' permission from the northern fells to the southern archipelago.",
-      "p2": "Each hollowed birch bark roll is a unique individual, which must be taken into account in their handling.",
-      "p3": "The lamps are the result of years of development and learning. Through trials, errors, and successes, Tompuri has learned to read and highlight nature's most beautiful features with the right, most natural treatment methods."
+      "p1": "Tuohinen's values include not cutting down trees unnecessarily. The lamp material is made from naturally fallen birch trees, which have been searched for with the permission of landowners from the northern mountains to the southern archipelago. The most beautiful individuals are carefully selected, sawn to the desired size, and then hollowed out by hand to preserve the birch's deepest essence: the bark.",
+      "p2": "The empty, hand-hollowed birch bark rolls are each unique and must be taken into account when handling them. The lamp's metal rod must be made specifically for each lamp to achieve the right size, and the roll's most fragile parts must be supported. The light beams reflecting from the tree trunk are achieved by making slits in the roll, imitating the unique patterns of the trees. Nature itself has participated in the work by creating holes in the trees. The result is a lamp that creates a play of light and shadows to delight on darkening evenings.",
+      "p3": "The main materials for the lamp's metal legs are copper and iron, which have been obtained from, among other things, dismantled buildings. The selection of metal pipes has been made with the same dedication as the wood materials. In addition to the shiny metal surfaces, the legs may show signs of aging, previous uses, and the welds made by the workers.",
+      "p4": "Tuohinen can proudly stand on either the silkiest, smoothest birch discs or on natural stones of different sizes, shapes, and colors. The lamps' natural appearance is imitated by the fabric-covered switches and the mostly cotton-covered power cords, but the power cords can also be ordered without covering if desired.",
+      "p5": "The lamps are the result of years of development and learning. Through attempts, mistakes, and successes, Tompuri has learned to read and emphasize the most beautiful features of nature with the right, as natural as possible, handling methods. The material itself has been collected over about ten years, testing the usability of different materials. Each stage of the work has been given time without saving to achieve the best possible result. Each lamp is equipped with a warm-toned and non-heating LED lamp that highlights it the best.",
+      "p6": "Tuohinen is not just a mood lamp. Tuohinen is a piece of history, a showcase of domestic handicraft, and above all, a tribute to Finnish nature. A lamp that tells its unique story."
     }
   },
+
   "designer": {
     "title": "Designer",
-    "intro": "is a Helsinki-based carpenter, welder, tattoo artist —— and above all, an artist.",
+    "intro": "is a Helsinki-based carpenter, welder, tattoo artist — and above all, an artist.",
     "description": {
-      "p1": "Tompuri grew up in a family where art has surrounded him throughout his life. Artists have appeared in the family for several generations. For Otto-Mikael, art appears as free self-expression that Tompuri implements in his own unique, uncompromising style.",
-      "p2": "Without nature, there is no life, thinks Tompuri, for whom nature means genuine presence. Nature calms, excites, and inspires. The magnificent and versatile birch bark awakened in Tompuri a desire to bring our handsome national tree closer to our lives through art."
+      "p1": "Tompuri has grown up in a family where art has surrounded him throughout his life. There have been artists in the family for several generations. For Otto-Mikael, art is a free form of self-expression that Tompuri realizes in his own unique, uncompromising style.",
+      "p2": "Without nature, there is no life, thinks Tompuri, for whom nature means authentic presence. Nature calms, inspires, and inspires. The magnificent and versatile bark of the birch tree awakened in Tompuri the desire to bring our magnificent national tree closer to our lives through art."
     }
   },
+  "nature": {
+    "title": "Nature",
+    "intro": "First came the birch, then the idea. The idea gave rise to sketches, and the sketches became the first prototypes.",
+    "description": {
+      "p1": "Tompuri studied and experimented with how to handle the birch best: how to dry the birch disc without cracking, what kind of dye brings out the natural patterns of the birch, how to keep the birch bark intact… Tompuri experimented and learned, learned and experimented. Over the years, Tuohinen has grown and developed together with Tompuri.",
+      "p2": "The years have included the entire range of emotions: insights, frustration, joy, despair… Many times Tompuri has wondered if there is any point to the work. But Tompuri had to continue, Otto-Mikael had become Birch-Tompuri."
+    }
+  },
+
   "story": {
     "title": "The Story of Tuohinen",
-    "poem": {
-      "part1": "A titmouse chirped from the tree:\n\"Osmo's barley will not rise,\nKaleva's oats will not grow,\nwithout subduing the land,\nwithout felling the swidden,\nwithout burning it with fire.\"",
-      "part2": "Steady old Väinämöinen\nhad a sharp axe made.\nThen he felled a great swidden,\nsubdued the mighty land.",
-      "part3": "All the fair trees he felled;\none birch he left standing.\nAs a resting place for birds,\na cuckoo's calling tree."
-    },
-    "reflection": "Could it be a coincidence that Väinämöinen left only the birch standing when clearing the swidden? The birch, whose dark patterns dance on their pale canvas like stones peeking through the snow. The birch, whose bright green spring leaves dispel winter's gloom. The birch, whose soft leaves caress the skin in the nightless night. The birch, which autumn paints in gold."
+    "intro": "Tompuri carves the birch's interior, preserving the birch's soul, the bark.",
+    "description": "The patterns on the lamps have been designed by Tompuri in collaboration with nature, so that the essence of the birch can come out in its element. With Tuohinen lamps, you can bring a piece of the enchanting northern nature into your home."
   },
+
   "vision": {
-    "title": "In Northern symbolism, the birch is the connector of life and death.",
-    "intro": "Artist Otto-Mikael Tompuri wanted to give rights and stage to our national tree, the Birch. In Northern symbolism, the birch is the connector of life and death.",
+    "title": "In Northern symbolism, the birch is a connector of life and death.",
+    "intro": "Artist Otto-Mikael Tompuri has wanted to give justice and the stage to our national tree, the birch. According to Northern symbolism, the birch is a connector of life and death.",
     "description": {
-      "p1": "The most important thing in designing and manufacturing the lamps is understanding that nature guides and sets the pace. The less the lamp materials are modified - the better.",
-      "p2": "Tompuri's vision is to bring nature into people's homes. Welcome to enjoy the world of light and shadow and discover the world of Tuohinen!"
+      "p1": "The most important aspect of designing and manufacturing lamps is understanding that nature guides and sets the pace. The less the lamp material is processed, the better.",
+      "p2": "Tompuri's vision is to bring nature into people's homes. Welcome to enjoy the world of light and shadow and get acquainted with the world of Tuohinen!"
     }
   },
+
+  "gallery": {
+    "title": "Creating atmosphere"
+  },
+
   "contact": {
-    "title": "How to Contact",
+    "title": "How to contact",
     "email": "Email address",
     "phone": "Phone number"
   }
-} 
+}

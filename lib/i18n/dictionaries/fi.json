@@ -7,10 +7,12 @@
     "gallery": "Galleria",
     "contact": "Yhteystiedot"
   },
+
   "header": {
     "title": "Tuohinen tunnelmavalaisimet",
     "slogan": "tuo luonto kotiisi"
   },
+
   "home": {
     "title": "Suomalaista valaisintaidetta",
     "intro": {
@@ -19,32 +21,43 @@
       "p3": "Tärkeintä valaisimien suunnittelussa ja valmistamisessa on ymmärrys siitä, että luonto ohjaa ja määrää tahdin. Mitä vähemmän valaisimien materiaalia muokataan - sen parempi."
     }
   },
+
   "product": {
     "title": "Tuote",
     "intro": "Tuohinen -tunnelmavalaisimet valmistetaan ekologisesti kierrätysmateriaaleista ja luontoa kunnioittaen, täysin käsityönä.",
     "description": {
-      "p1": "Tuohisen arvoihin kuuluu, että puita ei kaadeta turhaan. Valaisinmateriaaleina käytetään luonnollisesti kaatuneita koivuja, joita on etsitty maanomistajien luvalla aina pohjoisen tuntureista etelän saaristoihin saakka.",
-      "p2": "Tyhjäksi koverretut tuohirullat ovat jokainen toisistaan poikkeava yksilö, mikä täytyy huomioida niiden käsittelyissä.",
-      "p3": "Valaisimet ovat vuosien kehittelyn ja opettelun tulosta. Yritysten, erheiden ja onnistumisten kautta Tompuri on oppinut lukemaan ja korostamaan luonnon kauneimpia piirteitä oikeilla, mahdollisimman luonnollisilla käsittelytavoilla."
+      "p1": "Tuohisen arvoihin kuuluu, että puita ei kaadeta turhaan. Valaisinmateriaaleina käytetään luonnollisesti kaatuneita koivuja, joita on etsitty maanomistajien luvalla aina pohjoisen tuntureista etelän saaristoihin saakka. Tarkkaan valikoidut kauneimmat yksilöt sahataan haluttuun kokoon, jonka jälkeen puuaines koverretaan käsin säilyttäen koivun syvimmän olemuksen: tuohen. Tuohirullan koverruksen ja puhdistuksen yhteydessä syntyvä puumateriaali pyritään pitkälti päästämään takaisin luonnon kiertokulkuun.",
+      "p2": "Tyhjäksi koverretut tuohirullat ovat jokainen toisistaan poikkeava yksilö, mikä täytyy huomioida niiden käsittelyissä. Varjostimen tukirungot täytyy valmistaa oikean koon saavuttamiseksi jokaiseen valaisimeen erikseen sekä asettaa rullan hauraimpia osia tukemaan. Puun rungosta heijastuvat valonsäikeet saadaan aikaan tekemällä rullan läpäiseviä lävejä mukaillen puiden ainutlaatuisia kuviointeja. Työhön on osallistunut itse luontoäiti luoden puihin luonnollisesti syntyneitä kolosia. Lopputuloksena valaisimet synnyttävät valon ja varjojen leikin hämärtyviä iltoja ilahduttamaan.",
+      "p3": "Valaisimien metallijalkojen päämateriaaleina toimivat kupari ja rosteri, joita on saatu muun muassa elojensa päädyillä olevista purkutaloista. Metalliputkien valintaan on antauduttu yhtä suurella antaumuksella kuin puumateriaalienkin. Kiiltävien metallipintojen lisäksi jaloissa voi nähdä ajan patinoimia yksilöitä, entisiä käyttötarkoituksia sekä tehdä päätelmiä saumojen juotoksia tehneistä työmiehistä.",
+      "p4": "Tuohinen voi seistä ylpeänä niin silkin sileiksi hioittujen koivukiekkojen että eri kokoisten, muotoisten ja väristen luonnonkivien päällä. Valaisimien luonnonläheisiä olemuksia mukaillen kytkimillä varustetut sähköjohdot ovat pääasiassa verhottu punotulla hamppunarulla, mutta halutessaan sähköjohdot saa myös verhoamattomina.",
+      "p5": "Valaisimet ovat vuosien kehittelyn ja opettelun tulosta. Yritysten, erheiden ja onnistumisten kautta Tompuri on oppinut lukemaan ja korostamaan luonnon kauneimpia piirteitä oikeilla, mahdollisimman luonnollisilla käsittelytavoilla. Itse materiaalia on kerätty noin kymmenen vuoden ajan testaillen erilaisien materiaalien käytettävyyttä. Jokaiseen työvaiheeseen on paneuduttu aikaa säästelemättä parhaan mahdollisen lopputuloksen saavuttamiseksi. Kukin valaisin varustetaan sitä parhaiten korostavalla lämpimän sävyisellä ja lämpeämättömällä led-lampulla.",
+      "p6": "Tuohinen ei ole ainoastaan tunnelmavalaisin. Tuohinen on pala historiaa, kotimaisen käsityön taidonnäyte ja ennen kaikkea kunnianosoitus Suomen luontoa kohtaan. Valaisin, joka kertoo ainutlaatuista tarinaansa."
     }
   },
+
   "designer": {
     "title": "Muotoilija",
-    "intro": "on helsinkiläinen kirvesmies, hitsaaja, tatuointiartisti —— ja ennen kaikkea taiteilija.",
+    "intro": "on helsinkiläinen kirvesmies, hitsaaja, tatuointiartisti — ja ennen kaikkea taiteilija.",
     "description": {
       "p1": "Tompuri on kasvanut perheessä, jossa taide on ympäröinyt häntä koko elämän. Perheessä taiteilijoita on esiintynyt useammassa sukupolvessa. Otto-Mikaelille taide näyttäytyy vapaana itseilmaisuna jota Tompuri toteuttaa omalla, ainutkertaisella, tinkimättömällä tyylillään.",
       "p2": "Ilman luontoa ei ole elämää, ajattelee Tompuri, jolle luonto merkitsee aitoa läsnäoloa. Luonto rauhoittaa, innostaa ja inspiroi. Koivun upea ja monipuolinen tuohi herätti Tompurissa halun tuoda komean kansallispuumme taiteen avulla lähemmäksi elämäämme."
     }
   },
+  "nature": {
+    "title": "Luonto",
+    "intro": "Ensin tuli koivu, sitten idea. Ideasta syntyi hahmotelmia, hahmotelmat muuttuivat ensimmäisiksi prototyypeiksi.",
+    "description": {
+      "p1": "Tompuri tutki ja kokeili, miten koivua parhaiten käsitellään: miten koivukiekko kuivataan parhaiten ilman halkeamien syntymistä, millainen kyllästysaine tuo koivun luontaiset kuviot parhaiten esille, miten tuohirulla saadaan säilymään yhtenäisenä… Tompuri kokeili ja oppi, oppi ja kokeili. Vuosien saatossa Tuohinen kasvoi ja kehittyi yhdessä Tompurin kanssa.",
+      "p2": "Yhteisiin vuosiin on mahtunut koko tunteiden kirjo: oivalluksia, turhautumista, iloa, epätoivoa… Monesti Tompuri on pohtinut, onko työssä mitään järkeä. Mutta Tompurin oli pakko jatkaa, Otto-Mikaelista oli tullut Tuohi-Tompuri."
+    }
+  },
+
   "story": {
     "title": "Tuohisen tarina",
-    "poem": {
-      "part1": "Tirskuipa tiainen puusta:\n\"Eipä nouse Osmon ohra,\nei kasva Kalevan kaura,\nilman maan alistamatta,\nilman kasken kaatamatta,\ntuon tulella polttamatta.\"",
-      "part2": "Vaka vanha Väinämöinen\nteetti kirvehen terävän.\nSiitä kaatoi kasken suuren,\nmahottoman maan alisti.",
-      "part3": "Kaikki sorti puut soreat;\nyhen jätti koivahaisen.\nLintujen leposijaksi,\nkäkösen kukuntapuuksi."
-    },
-    "reflection": "Lieneekö sattumaa, että Väinämöinen jätti ainoastaan koivun kaatamatta kaskea varten? Koivun, jonka tummat kuvioinnit tanssivat vaalealla kanvaksellaan lumen keskeltä pilkistävien kivien lailla. Koivun, jonka kevään heleän vihreän lehdet talven synkkyyden kaikottaa. Koivun, jonka pehmeät lehdet yöttömänä yönä ihoon leyhähtää. Koivun, jonka syksy kultaan maalaa."
+    "intro": "Tompuri kaivertaa koivun sisustan säilyttäen koivun sielun, tuohen.",
+    "description":"Valaisimien kuviot Tompuri on suunnitellut yhteistyössä luonnon kanssa siten, että koivun olemus pääsee esille elementissään. Tuohinen -valaisimien avulla voitkin tuoda palan Pohjoisen lumoavasta luonnosta kotiisi."
   },
+
   "vision": {
     "title": "Pohjoisen symboliikassa koivu on elämän ja kuoleman yhdistäjä.",
     "intro": "Taiteilija Otto-Mikael Tompuri on halunnut antaa oikeuden ja estradin kansallispuullemme Koivulle. Pohjoisen symboliikan mukaan koivu on elämän ja kuoleman yhdistäjä.",
@@ -53,9 +66,14 @@
       "p2": "Tompurin visio on tuoda luonto ihmisten kotiin. Tervetuloa nauttimaan valon ja varjon maailmaan ja tutustumaan Tuohisen maailmaan!"
     }
   },
+
+  "gallery": {
+   "title": "Tunnelmaa luomaan"
+  },
+
   "contact": {
     "title": "Miten otan yhteyttä",
     "email": "Sähköpostiosoite",
     "phone": "Puhelinnumero"
   }
-} 
+}

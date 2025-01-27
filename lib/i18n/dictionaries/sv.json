@@ -3,59 +3,77 @@
     "home": "Hem",
     "lamps": "Lampor",
     "designer": "Designer",
-    "story": "Historia",
+    "story": "Berättelse",
     "gallery": "Galleri",
     "contact": "Kontakt"
   },
+
   "header": {
-    "title": "Tuohinen stämningsbelysning",
-    "slogan": "för naturen in i ditt hem"
+    "title": "Tuohinen Stämningsbelysning",
+    "slogan": "För in naturen i ditt hem"
   },
+
   "home": {
-    "title": "Finsk belysningskonst",
+    "title": "Finsk Ljustkonst",
     "intro": {
-      "p1": "Designer Otto-Mikael Tompuri ger scenen till vårt nationalträd, björken, och dess minimalistiska skönhet. Lampans iögonfallande element är handskurna näverrullar, vars skåror skapar ett spel av ljus och skugga i omgivningen.",
-      "p2": "Tompuris värderingar vilar fast på ekologisk hållbarhet och bevarande av biologisk mångfald. Metallarmarna som används i lamporna är återvunnet material, och inga levande träd har huggits ner för lamporna.",
-      "p3": "Det viktigaste i design och tillverkning av lamporna är förståelsen för att naturen vägleder och sätter takten. Ju mindre lampmaterialen modifieras - desto bättre."
+      "p1": "Formgivare Otto-Mikael Tompuri ger scenen till vår nationalträd, björken, och dess förenklade skönhet. De handhållda björkbarkrullarna, genom vilka ljuset passerar, skapar en lek av ljus och skuggor i omgivningen.",
+      "p2": "Tompuris värderingar är starkt baserade på ekologisk hållbarhet och bevarande av biologisk mångfald. De metallstänger som används i lamporna är återvunna material, och inga levande träd har fällts för lamporna.",
+      "p3": "Det viktigaste aspekten av design och tillverkning av lampor är att förstå att naturen styr och sätter takten. Ju mindre lampmaterialet bearbetas, desto bättre."
     }
   },
+
   "product": {
     "title": "Produkt",
-    "intro": "Tuohinen stämningslampor tillverkas ekologiskt av återvunnet material och med respekt för naturen, helt för hand.",
+    "intro": "Tuohinen-stämningslampor tillverkas av ekologiska återvunna material och natuurrespekt, helt för hand.",
     "description": {
-      "p1": "Ett av Tuohinens värden är att träd inte huggs ner i onödan. Vi använder naturligt fallna björkar som lampmaterial, som har hämtats med markägarnas tillstånd från de norra fjällen till den södra skärgården.",
-      "p2": "Varje urholkad näverrulle är en unik individ, vilket måste beaktas vid hanteringen.",
-      "p3": "Lamporna är resultatet av års utveckling och lärande. Genom försök, misstag och framgångar har Tompuri lärt sig att läsa och framhäva naturens vackraste egenskaper med de rätta, mest naturliga behandlingsmetoderna."
+      "p1": "Tuohinens värderingar inkluderar inte att fälla träd i onödan. Lampmaterialet tillverkas av naturligt fallna björkar, som har sökts med tillstånd av markägare från norra fjällen till södra skärgården. De vackraste exemplaren väljs ut, sågas till önskad storlek och sedan urholkas för hand för att bevara björkens innersta väsen: barken.",
+      "p2": "De tomma, handhålade björkbarkrullarna är var och en unika och måste beaktas när de hanteras. Lampans metallstänger måste tillverkas specifikt för varje lampa för att uppnå rätt storlek, och rullans mest sköraste delar måste stödjas. Ljusstrålarna som reflekteras från trädstammen uppnås genom att göra springor i rullen, som imiterar trädens unika mönster. Naturen själv har deltagit i arbetet genom att skapa hål i träden. Resultatet är en lampa som skapar en lek av ljus och skuggor för att glädja på mörkande kvällar.",
+      "p3": "Huvudmaterialet för lampans metallben är koppar och järn, som har erhållits från bland annat rivningshus. Valet av metallrör har gjorts med samma hängivenhet som trämaterialen. Förutom de skinande metallytorna kan benen visa tecken på åldring, tidigare användningsområden och svetsarna som har gjort arbetet.",
+      "p4": "Tuohinen kan stå med stolthet antingen på silkeslätta, släta björkskivor eller på naturliga stenar av olika storlekar, former och färger. Lampans naturinspirerade utseende imiteras av tygklädda strömbrytare och mestadels bomullsklädda elkablar, men elkablarna kan också beställas utan klädsel om så önskas.",
+      "p5": "Lamporna är resultatet av år av utveckling och lärande. Genom försök, misstag och framgångar har Tompuri lärt sig att läsa och betona naturens vackraste drag med rätt, så naturtrogen som möjligt, hanteringsmetoder. Materialet självt har samlats in under cirka tio år, testande användbarheten av olika material. Varje etapp i arbetet har getts tid utan att spara för att uppnå det bästa möjliga resultatet. Varje lampa är utrustad med en varmtonerad och icke-värmande LED-lampa som lyfter fram den på bästa sätt.",
+      "p6": "Tuohinen är inte bara en stämningslampa. Tuohinen är ett stycke historia, en utställning av inhemsk hantverk, och framför allt en hyllning till finsk natur. En lampa som berättar sin unika berättelse."
     }
   },
+
   "designer": {
-    "title": "Designer",
-    "intro": "är en Helsingforsbaserad snickare, svetsare, tatueringsartist —— och framför allt konstnär.",
+    "title": "Formgivare",
+    "intro": "är en helsingforsbaserad snickare, svetsare, tatueringartist — och framför allt en konstnär.",
     "description": {
-      "p1": "Tompuri växte upp i en familj där konst har omgett honom genom hela livet. Konstnärer har förekommit i familjen i flera generationer. För Otto-Mikael framstår konst som fritt självuttryck som Tompuri implementerar i sin egen unika, kompromisslösa stil.",
-      "p2": "Utan natur finns inget liv, tänker Tompuri, för vilken naturen betyder äkta närvaro. Naturen lugnar, upphetsas och inspirerar. Den magnifika och mångsidiga nävern väckte i Tompuri en önskan att genom konst föra vårt ståtliga nationalträd närmare våra liv."
+      "p1": "Tompuri har vuxit upp i en familj där konst har omgett honom hela livet. Det har funnits konstnärer i familjen i flera generationer. För Otto-Mikael är konst en fri form av självuttryck som Tompuri förverkligar i sin egen unika, kompromisslösa stil.",
+      "p2": "Utan natur finns inget liv, tycker Tompuri, för vilken natur betyder äkta närvaro. Naturen lugnar, inspirerar och inspirerar. Den magnifika och mångfacetterade björkbarken väckte hos Tompuri önskan att genom konst bringa vår magnifika nationalträd närmare våra liv."
     }
   },
+  "nature": {
+    "title": "Natur",
+    "intro": "Först kom björken, sedan idén. Idén gav upphov till skisser, och skisserna blev de första prototyperna.",
+    "description": {
+      "p1": "Tompuri studerade och experimenterade med hur man bäst hanterar björken: hur man torkar björkskivan utan att den spricker, vilken sorts färg brings ut björkens naturliga mönster, hur man bevarar björkbarken intakt… Tompuri experimenterade och lärde sig, lärde sig och experimenterade. Under åren har Tuohinen vuxit och utvecklats tillsammans med Tompuri.",
+      "p2": "Åren har inkluderat hela registret av känslor: insikter, frustration, glädje, desperation… Många gånger har Tompuri undrat om det finns någon mening med arbetet. Men Tompuri var tvungen att fortsätta, Otto-Mikael hade blivit Björk-Tompuri."
+    }
+  },
+
   "story": {
-    "title": "Historien om Tuohinen",
-    "poem": {
-      "part1": "En mes kvittrade från trädet:\n\"Osmos korn kommer inte att växa,\nKalevas havre kommer inte att gro,\nutan att underkuva marken,\nutan att fälla svedjan,\nutan att bränna den med eld.\"",
-      "part2": "Stadige gamle Väinämöinen\nlät göra en vass yxa.\nSedan fällde han en stor svedja,\nunderkuvade det mäktiga landet.",
-      "part3": "Alla vackra träd fällde han;\nen björk lät han stå.\nSom viloplats för fåglar,\nett gökens ropande träd."
-    },
-    "reflection": "Kan det vara en slump att Väinämöinen lämnade endast björken stående när han röjde svedjan? Björken, vars mörka mönster dansar på sin bleka duk som stenar som kikar fram genom snön. Björken, vars ljusgröna vårblad skingrar vinterns dysterhet. Björken, vars mjuka blad smeker huden i den nattlösa natten. Björken, som hösten målar i guld."
+    "title": "Tuohinens berättelse",
+    "intro": "Tompuri skulpterar björkens inre, bevarar björkens själ, barken.",
+    "description": "Mönstren på lamporna har designats av Tompuri i samarbete med naturen, så att björkens väsen kan komma ut i sitt element. Med Tuohinen-lampor kan du bringa en bit av den förtjusande norra naturen in i ditt hem."
   },
+
   "vision": {
-    "title": "I nordisk symbolik är björken förbindelsen mellan liv och död.",
-    "intro": "Konstnär Otto-Mikael Tompuri ville ge rättigheter och scen till vårt nationalträd, Björken. I nordisk symbolik är björken förbindelsen mellan liv och död.",
+    "title": "I nordisk symbolik är björken en förenare av liv och död.",
+    "intro": "Konstnär Otto-Mikael Tompuri har velat ge rättvisa och scenen till vår nationalträd, björken. Enligt nordisk symbolik är björken en förenare av liv och död.",
     "description": {
-      "p1": "Det viktigaste i design och tillverkning av lamporna är förståelsen för att naturen vägleder och sätter takten. Ju mindre lampmaterialen modifieras - desto bättre.",
-      "p2": "Tompuris vision är att föra in naturen i människors hem. Välkommen att njuta av ljusets och skuggans värld och upptäcka Tuohinens värld!"
+      "p1": "Det viktigaste aspekten av design och tillverkning av lampor är att förstå att naturen styr och sätter takten. Ju mindre lampmaterialet bearbetas, desto bättre.",
+      "p2": "Tompuris vision är att bringa naturen in i människors hem. Välkommen att njuta av världen av ljus och skugga och bekanta dig med världen av Tuohinen!"
     }
   },
+
+  "gallery": {
+    "title": "Skapar atmosfär"
+  },
+
   "contact": {
-    "title": "Hur man kontaktar",
+    "title": "Hur tar jag kontakt",
     "email": "E-postadress",
     "phone": "Telefonnummer"
   }
-} 
+}

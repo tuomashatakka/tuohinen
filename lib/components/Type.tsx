@@ -48,6 +48,11 @@ export const Ingress = ({ className, ...props }: ParagraphProps) =>
     {props.children}
   </p>
 
+export const Strong = ({ className, ...props }: ParagraphProps) =>
+  <strong { ...props } className={ classNameWith(style.strong, className) }>
+    {props.children}
+  </strong>
+
 export const Quote = ({ className, ...props }: QuoteProps) =>
   <blockquote { ...props } className={ classNameWith(style.ingress, className) }>
     {props.children}
