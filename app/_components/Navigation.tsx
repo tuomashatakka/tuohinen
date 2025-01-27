@@ -12,7 +12,7 @@ import logoImage from '@/public/logo-white.png'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import LanguageSwitcher from './LanguageSwitcher'
-import { useTranslation } from '@/lib/i18n/useTranslation'
+import useTranslation from '@/lib/i18n/useTranslation'
 
 
 const classNamesWithMontserrat = classNameWithFont('montserrat')
@@ -81,7 +81,7 @@ export default function Navigation () {
       )}
     </ul>
 
-    <div className="flex items-center ml-auto mr-4">
+    <div className='flex items-center ml-auto mr-4'>
       <LanguageSwitcher />
     </div>
 

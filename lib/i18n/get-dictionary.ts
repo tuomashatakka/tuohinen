@@ -6,4 +6,6 @@ const dictionaries = {
   sv: () => import('./dictionaries/sv.json').then((module) => module.default),
 }
 
-export const getDictionary = async (locale: Language) => dictionaries[locale]() 
+const getDictionary = async (locale: Language) => dictionaries[locale]()
+
+export default getDictionary

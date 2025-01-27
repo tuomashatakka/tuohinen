@@ -18,11 +18,11 @@ import heroHakkaa from '@/public/hero/hakkaa.jpg'
 import heroKyykkii from '@/public/hero/kyykkii.jpg'
 import photoTompuri from '@/public/tompuri.jpg'
 import { ElementType } from 'react'
-import { useTranslation } from '@/lib/i18n/useTranslation'
+import useTranslation from '@/lib/i18n/useTranslation'
 
 export const Etusivu = () => {
   const { t } = useTranslation()
-  
+
   return <Segment padding variant={ SegmentVariantType.dark } title='Visio'>
     {(Column) => <>
       <Column
@@ -166,7 +166,7 @@ export const Tarina = () => <Segment variant={ SegmentVariantType.dark }>
 
 export const Visio = () => {
   const { t } = useTranslation()
-  
+
   return <Segment variant={ SegmentVariantType.dark } title='Visio'>
     {(Column: ElementType) => <>
       <Column padding width={ 1 } minWidth={ ScreenSize.lg }>
@@ -328,7 +328,7 @@ export const Artisti = () => <Segment variant={ SegmentVariantType.dark } title=
 
 export const OtaYhteytta = () => {
   const { t } = useTranslation()
-  
+
   return <Segment title='Ota yhteyttä'>
     {(Column) => <>
       <Column padding width={ 3 } minWidth={ ScreenSize.lg }>
