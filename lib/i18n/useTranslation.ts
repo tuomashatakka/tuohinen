@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLanguage } from './LanguageContext'
 import getDictionary from './get-dictionary'
 
